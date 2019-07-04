@@ -1,0 +1,43 @@
+/* This file is for your main application css. */
+
+body,
+html {
+  width: 70%;
+  height: 100%;
+  font-size: 10px !important;
+  color: #4C1C00 !important;
+}
+
+body {
+    font-family: 'Titillium Web' !important; 
+    background-color: #4C1C00 !important;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 28px;
+}
+
+label {
+    color: #695A46 !important;
+}
+
+.masthead {
+    padding: 3rem;
+    background: #ffffff;
+}
+
+header {
+    margin-left: 5rem !important;
+}
+
+.btn-dark {
+    background: #000 !important;
+    font-size: 2rem !important;
+}
+
+input[type='submit'] {
+    border: 0.1rem solid #4C1C00;
+}
+
+@import "./phoenix.css";

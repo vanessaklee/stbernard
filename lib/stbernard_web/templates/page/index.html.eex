@@ -1,0 +1,55 @@
+
+<section class="container">
+  <h1 id="welcome"><%= gettext "Payment Information" %></h1>
+</section>
+<header class="masthead">
+  <p class="alert alert-info" id="form-flash" role="alert"><%= get_flash(@conn, :error) %></p>
+  <div class="container>
+    <%= form_for @changeset, StbernardWeb.Router.Helpers.page_path(@conn, :charge), [id: "payment_form", as: :payment], fn f -> %>
+    <label for="cardHoldersFullName">Full Name <span class="italic"></span> </label>
+    <%= text_input f, :cardholders_full_name, autocomplete: "off", value: @cardholders_full_name, class: "form-control" %>
+    <%= error_tag f, :cardholders_full_name %>
+
+    <label for="credit_card_postal_code">Postal Code</label>
+    <%= text_input f, :credit_card_postal_code, value: @postal_code, autocomplete: "new-password", class: "form-control" %>
+    <%= error_tag f, :postal_code %>
+
+    <label for="card-number2">Card Number</label>
+    <input id="credit_card_account" value="" class="form-control" name="credit_card[account]" autocomplete="new-password" type="text"/>
+    <%= error_tag f, :account %>
+
+    <label for="exp_month">Exp Month</label>
+    <%= select f, :exp_month, [
+        "Exp Month": [
+            {gettext("1"), "1"},
+            {gettext("2"), "2"},
+            {gettext("3"), "3"},
+            {gettext("4"), "4"},
+            {gettext("5"), "5"},
+            {gettext("6"), "6"},
+            {gettext("7"), "7"},
+            {gettext("8"), "8"},
+            {gettext("9"), "9"},
+            {gettext("10"), "10"},
+            {gettext("11"), "11"},
+            {gettext("12"), "12"},]
+        ], class: "form-control" %>
+    <%= error_tag f, :exp_month %>
+
+    <label for="exp_year">Exp Year</label>
+    <%= select f, :exp_year, @years, class: "form-control" %>
+    <%= error_tag f, :exp_year %>
+
+    <label for="cvv">CVV</label>
+    <%= text_input f, :cvv, value: nil, autocomplete: "new-password", class: "form-control" %>
+    <%= error_tag f, :cvv %>
+
+    <label for="amount">Amount</label>
+    <%= text_input f, :amount, value: @amount, autocomplete: "off", class: "form-control" %>
+    <%= error_tag f, :amount %>
+
+    <input type="submit" id="submit-answers" value="Pay" class="btn btn-xl btn-dark"/><br>
+    <% end %>
+  </div>
+</header>
+
