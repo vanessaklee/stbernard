@@ -79,18 +79,13 @@ The acceptance tests live in `test/stbernard_web/acceptance/`
   * [page_title/0][page_title]
     * gets the title of the current page
 
-#### Complex `region_test.exs` 
+#### Complex `form_test.exs`
 
-  * sets [Metadata][metadata] in Hound session 
-  * uses [change_session_to/2][change_session_to] to use multiple browser sessions for permutations
   * the `:xpath` strategy 
   * [click/1][click]
     * clicks on an element
   * [current_url/0][current_url]
     * gets url of the current page
-
-#### More Complex `form_test.exs` 
-  
   * uses [execute_script/2][execute_script] to select value from a select list
     * executes javascripts 
   * [fill_field/2][fill_field]
@@ -108,9 +103,15 @@ The acceptance tests live in `test/stbernard_web/acceptance/`
 [current_url]: https://hexdocs.pm/hound/Hound.Helpers.Navigation.html#current_url/0
 [execute_script]: https://hexdocs.pm/hound/Hound.Helpers.ScriptExecution.html#execute_script/2
 [fill_field]: https://hexdocs.pm/hound/Hound.Helpers.Element.html#fill_field/2
+[take_screenshot]: https://hexdocs.pm/hound/Hound.Helpers.Screenshot.html#take_screenshot/1
+
+#### TODO
+
+  * demonstrate [Metadata][metadata] in Hound session 
+  * demonstrate [change_session_to/2][change_session_to] to use multiple browser sessions for permutations
+
 [metadata]: https://hexdocs.pm/hound/Hound.Metadata.html
 [change_session_to]: https://hexdocs.pm/hound/Hound.Helpers.Session.html#change_session_to/2
-[take_screenshot]: https://hexdocs.pm/hound/Hound.Helpers.Screenshot.html#take_screenshot/1
 
 ## Go Fetch!
 
