@@ -111,7 +111,7 @@ The acceptance tests live in `test/stbernard_web/acceptance/`
   * demonstrate [Metadata][metadata] in Hound session 
   * demonstrate [change_session_to/2][change_session_to] to use multiple browser sessions for permutations
 
-[awesomeplete]: https://nico-amsterdam.github.io/awesomplete-util/phoenix.html
+[awesomplete]: https://nico-amsterdam.github.io/awesomplete-util/phoenix.html
 [metadata]: https://hexdocs.pm/hound/Hound.Metadata.html
 [change_session_to]: https://hexdocs.pm/hound/Hound.Helpers.Session.html#change_session_to/2
 
