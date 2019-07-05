@@ -32,17 +32,10 @@ Start Hound in `test/test_helpers.exs`. Add this above `ExUnit.start()`
 Application.ensure_all_started(:hound)
 ```
 
-In `config/dev.exs` add:
-
-```
-config :stbernard, region: System.get_env("REGION")
-```
-
 In `config/test.exs` add:
 
 ```
 config :hound, browser: "chrome"
-config :stbernard, region: System.get_env("REGION")
 ```
 
 . . . and set `server` to true: 
@@ -57,9 +50,7 @@ Start the Phoenix server
 
   * install dependencies with `mix deps.get`
   * install Node.js dependencies with `cd assets && npm install`
-  * start Phoenix endpoint with a REGION value from the list ["northeast", "midwest", "south", "west"]
-    * elixir: `REGION=midwest mix phx.server`
-    * interactive elixir: `REGION=midwest iex -S mix phx.server`
+  * start interactive elixir: `iex -S mix phx.server`
   * visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Run tests (in this demo app, Hound is used as a part of ExUnit tests) 
@@ -70,17 +61,15 @@ mix test
 
 ## Lab-ra-cadabra!
 
-The acceptance tests live in `test/stbernard_web/acceptance/` and use `test/support/acceptance_case.exs`, an `ExUnit.CaseTemplate`. 
+The acceptance tests live in `test/stbernard_web/acceptance/` 
 
 ```
 - test/
   - stbernard_web/
     - acceptance/
       - form_test.exs
-      - region_test.exs
+      - charge_test.exs
       - welcome_test.exs
-  - support/
-    - acceptance_case.ex
   - test_helper.exs
 ```
 

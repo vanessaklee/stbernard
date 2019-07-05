@@ -1,21 +1,49 @@
 defmodule StbernardWeb.PageController do
-  use StbernardWeb, :controller
+    use StbernardWeb, :controller
 
-  alias StbernardWeb.Payment
-  import Stbernard.Constants
+    alias StbernardWeb.Payment
+    alias Stbernard.Constants
+    alias StbernardWeb.ErrorHelpers
 
-  def index(conn, params) do
-    changeset = Payment.new(%{}) |> Payment.changeset()
-    years = DateTime.utc_now.year..DateTime.utc_now.year+25
-    this_month = DateTime.utc_now.month
+    @doc """
+    Simple payment form
+    """
+    def index(conn, params) do
+        changeset = Payment.new(%{}) |> Payment.changeset()
+        render_form(conn, changeset, params)
+    end
 
-    conn
-      |> assign(:changeset, changeset)
-      |> render("index.html", token: Plug.CSRFProtection.get_csrf_token(), cards: @cards, years: years, this_month: this_month, cardholders_full_name: params[:cardholders_full_name], postal_code: params[:postal_code], amount: params[:amount], changeset: changeset, conn: conn)
-  end
+    @doc """
+    Payment form with autocomplete country 
+    """
+    def index_ac(conn, params) do
+        changeset = Payment.new(%{}) |> Payment.changeset()
+        render_form(conn, changeset, params, "index_ac.html", Constants.countries)
+    end
 
-  def charge(conn, _params) do
-    render(conn, "result.html")
-  end
+    @doc """
+    Submission of payment form
+    """
+    def charge(conn, form_values) do
+        params = Map.get(form_values, "payment")
+        changeset = Payment.new(params) |> Payment.changeset(params)
 
+        case changeset.valid? do
+            true -> 
+                render_form(conn, changeset |> Map.put(:action, "success"), %{})
+            false -> 
+                error = Ecto.Changeset.traverse_errors(changeset, &ErrorHelpers.translate_error/1)
+                cs = changeset |> Map.put(:action, "error")
+                render_form(conn, cs, params)
+        end
+    end
+
+    @doc """
+    Render the form
+    """
+    def render_form(conn, changeset, params, template \\ "index.html", countries \\ []) do
+        conn
+           |> assign(:changeset, changeset)
+           |> render(template, token: Plug.CSRFProtection.get_csrf_token(), cards: Constants.cards, years: Constants.years, months: Constants.months, name: params["name"], postal: params["postal"], amount: params["amount"], title: Constants.title, countries: countries, success: Constants.success, failure: Constants.failure, changeset: changeset, conn: conn)
+    end
 end

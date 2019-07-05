@@ -20,15 +20,13 @@ h1 {
 
 label {
     color: #695A46 !important;
+    font-size: 2.5rem !important;
 }
 
-.masthead {
+.form {
     padding: 3rem;
     background: #ffffff;
-}
-
-header {
-    margin-left: 5rem !important;
+    margin-left: auto;
 }
 
 .btn-dark {
@@ -38,6 +36,23 @@ header {
 
 input[type='submit'] {
     border: 0.1rem solid #4C1C00;
+}
+
+.alert-failure {
+    color: #be7e3e;
+    background-color: #e6ccb3;
+    border-color: #4C1C00;
+}
+
+.alert-success {
+    color: #b30000;
+    background-color: #f3d9da;
+    border-color: #4C1C00;
+}
+
+.help-block {
+    font-size: large;
+    color: red !important;
 }
 
 @import "./phoenix.css";

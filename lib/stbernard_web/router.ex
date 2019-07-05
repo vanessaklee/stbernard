@@ -17,6 +17,7 @@ defmodule StbernardWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/ac", PageController, :index_ac
     
     post "/charge", PageController, :charge
   end

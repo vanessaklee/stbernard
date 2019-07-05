@@ -45,7 +45,8 @@ defmodule Stbernard.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:ex_doc, "~> 0.19", only: :dev},
       {:excoveralls, "~> 0.9.2", only: :test},
-      {:hound, "~> 1.0"}
+      {:hound, "~> 1.0"},
+      {:stream_data, "~> 0.1", only: :test}
     ]
   end
 end

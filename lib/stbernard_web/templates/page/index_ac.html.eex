@@ -1,16 +1,16 @@
-<%= form_for @changeset, StbernardWeb.Router.Helpers.page_path(@conn, :charge), [method: :post, id: "payment_form"], fn f -> %>
-
+<%= form_for @changeset, StbernardWeb.Router.Helpers.page_path(@conn, :charge), fn f -> %>
 <section class="container">
   <h1 id="welcome"><%= @title %></h1>
 </section>
+<%= @changeset.action %>
 
 <section class="results">
     <div class="container">
         <%= if @changeset.action == "error" do %>
-            <h1 id="alert" class="alert alert-failure"><%= @failure %></h1>
+            <h1 id="alert" class="alert alert-failure">Payment failed - details below</h1>
         <% end %>
         <%= if @changeset.action == "success" do %>
-            <h1 id="alert" class="alert alert-success"><%= @success %></h1>
+            <h1 id="alert" class="alert alert-success">Payment successful</h1>
         <% end %>
     </div>
 </section>
@@ -21,12 +21,16 @@
         <%= text_input f, :name, class: "form-control" %>
         <%= error_tag f, :name %>
 
-        <label for="postal">Postal Code</label>
-        <%= text_input f, :postal, class: "form-control" %>
+        <label for="credit_card_postal_code">Postal Code</label>
+        <%= text_input f, :postal, value: @postal, class: "form-control" %>
         <%= error_tag f, :postal %>
 
+        <label for="country">Country</label>
+        <%= select f, :country, @countries, class: "form-control" %>
+        <%= error_tag f, :country %>
+
         <label for="account">Card Number</label>
-        <%= text_input f, :account, class: "form-control" %>
+        <input id="account" value="" class="form-control" name="account" autocomplete="new-account" type="text"/>
         <%= error_tag f, :account %>
 
         <label for="exp_month">Exp Month</label>

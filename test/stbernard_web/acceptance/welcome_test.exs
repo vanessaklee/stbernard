@@ -5,10 +5,7 @@ defmodule StbernardWeb.WelcomeTest do
     use ExUnit.Case
     use Hound.Helpers
     import StbernardWeb.Router.Helpers
-    import Stbernard.Constants
-
-    # The default endpoint for testing
-    @endpoint StbernardWeb.Endpoint
+    alias Stbernard.Constants
   
     hound_session()
 
@@ -23,8 +20,8 @@ defmodule StbernardWeb.WelcomeTest do
             element = find_element(:id, "welcome")
             text = visible_text(element)
 
-            assert page_title() == "St. Bernard · the safe payment system"
-            assert text == "Payment Information"
+            assert page_title() =~ "St. Bernard"
+            assert text == Constants.title
         end
     end
 
