@@ -1,4 +1,3 @@
-```
 # St Bernard
 
 St Bernard is a simple series of webpages used to demonstrate the howling success of the Hound testing tool.
@@ -9,38 +8,36 @@ Whatever you call it, UI testing/End-to-End Testing/End-to-User Testing/Acceptan
 
 Create a simple Phoenix called St Bernard.
 
-```
-> mix phx.new stbernard --no-ecto
-```
+
+    $ mix phx.new stbernard --no-ecto
+
 
 Add Hound as a dependency in `mix.exs`.
 
-```
+```elixir
 {:hound, "~> 1.0"}
 ```
 
 Hound requires a webdriver for browser automation. We will use selenium. Install and run:
 
-```
-> brew install selenium-server-standalone
-> selenium-server
-```
+    $ brew install selenium-server-standalone
+    $ selenium-server
 
 Start Hound in `test/test_helpers.exs`. Add this above `ExUnit.start()`
 
-```
+```elixir
 Application.ensure_all_started(:hound)
 ```
 
 In `config/test.exs` add:
 
-```
+```elixir
 config :hound, browser: "chrome"
 ```
 
 . . . and set `server` to true: 
 
-```
+```elixir
 config :stbernard, StbernardWeb.Endpoint,
   http: [port: 4001],
   server: true
@@ -55,9 +52,7 @@ Start the Phoenix server
 
 Run tests (in this demo app, Hound is used as a part of ExUnit tests) 
 
-```
-mix test
-```
+    $ mix test
 
 ## Lab-ra-cadabra!
 
