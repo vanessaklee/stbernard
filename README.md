@@ -107,7 +107,7 @@ The acceptance tests live in `test/stbernard_web/acceptance/`
 
 #### TODO
 
-  * demonstrate how to select a value from an autocomplete input field ([Awesomplete][awesomplete]?)
+  * demonstrate how to select a value from an autocomplete input field with [Awesomplete][awesomplete]
   * demonstrate [Metadata][metadata] in Hound session 
   * demonstrate [change_session_to/2][change_session_to] to use multiple browser sessions for permutations
 
