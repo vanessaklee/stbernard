@@ -9,7 +9,7 @@ defmodule StbernardWeb.PageController do
     Simple payment form
     """
     def index(conn, params) do
-        changeset = Payment.new(%{}) |> Payment.changeset()
+        changeset = Ecto.Changeset.cast(Payment.new(%{}), params, [:account])
         render_form(conn, changeset, params)
     end
 

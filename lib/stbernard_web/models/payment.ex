@@ -11,7 +11,7 @@ defmodule StbernardWeb.Payment do
     Length
         - :name, Constants.name_length()
         - :postal, Constants.postal_length()
-        - :account, Constants.account_length()
+        - :account, Constants.account_min_length(),  max: Constants.account_max_length()
         - :cvv, min: Constants.cvv_min_length(), max: Constants.cvv_max_length()
     Expired
         - :exp_year
@@ -82,8 +82,8 @@ defmodule StbernardWeb.Payment do
             |> validate_required([:name, :postal, :account, :cvv, :amount], [message: Constants.blank()])
             |> validate_length(:name, min: 0, max: Constants.name_length())
             |> validate_length(:postal, min: 0, max: Constants.postal_length())
-            |> validate_length(:account, min: 0, max: Constants.account_length())
-            |> validate_length(:cvv, min: Constants.cvv_min_length(), max: Constants.cvv_max_length())
+            |> validate_account(:account)
+            |> validate_cvv(:cvv)
             |> validate_year(:exp_year)
             |> validate_year(:exp_month)
             |> validate_amount(:amount)
@@ -156,34 +156,39 @@ defmodule StbernardWeb.Payment do
     defp year(y) when is_integer(y), do: y
     defp year(y), do: String.to_integer(y)
 
-    @doc """
-    Deterimines if amount is greater than zero.
 
-    ## Parameters
-
-    - changeset 
-    - field String
-
-    ## Return
-
-    - boolean true or false 
-
-    ## Examples
-    """
     def validate_amount(changeset, _field) do
-        case amount(Ecto.Changeset.get_field(changeset, :amount)) > 0 do
+        case number(Ecto.Changeset.get_field(changeset, :amount)) > 0 do
             true -> changeset
             false -> Ecto.Changeset.add_error(changeset, :amount, Constants.invalid())
         end
     end
-    defp amount(a) when is_nil(a), do: 0
-    defp amount(a) when is_integer(a), do: a
-    defp amount(a) when is_float(a), do: Kernel.trunc(a)
-    defp amount(a) do
+
+    def validate_cvv(changeset, _field) do
+        len = String.length(Ecto.Changeset.get_field(changeset, :cvv))
+        case len >= Constants.cvv_min_length() and len <= Constants.cvv_max_length() do
+            true -> changeset
+            false -> Ecto.Changeset.add_error(changeset, :cvv, Constants.invalid())
+        end
+    end
+
+    def validate_account(changeset, _field) do
+        len = String.length(Ecto.Changeset.get_field(changeset, :account))
+        IO.inspect len
+        case len >= Constants.account_min_length() and len <= Constants.account_max_length() do
+            true -> changeset
+            false -> Ecto.Changeset.add_error(changeset, :account, Constants.invalid())
+        end
+    end
+
+    defp number(a) when is_nil(a), do: 0
+    defp number(a) when is_integer(a), do: a
+    defp number(a) when is_float(a), do: Kernel.trunc(a)
+    defp number(a) do
         case Integer.parse(a) do
             {w,l} when l == "" -> w
             _ -> 
-                {w,l} = Float.parse(a)
+                {w,_l} = Float.parse(a)
                 w
         end
     end

@@ -19,8 +19,9 @@ defmodule Stbernard.Constants do
 
     def name_length, do: 30
     def postal_length, do: 18
-    def account_length, do: 19
-    def cvv_min_length, do: 2
+    def account_min_length, do: 13
+    def account_max_length, do: 19
+    def cvv_min_length, do: 3
     def cvv_max_length, do: 4
 
     def cards do 

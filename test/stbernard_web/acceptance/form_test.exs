@@ -9,7 +9,7 @@ defmodule StbernardWeb.FormTest do
     Length
         - :name, Constants.name_length()
         - :postal, Constants.postal_length()
-        - :account, Constants.account_length()
+        - :account, Constants.account_min_length(),  max: Constants.account_max_length()
         - :cvv, min: Constants.cvv_min_length(), max: Constants.cvv_max_length()
     Expired
         - :exp_year
