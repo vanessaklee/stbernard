@@ -5,7 +5,7 @@ defmodule StbernardWeb.WelcomeTest do
     use ExUnit.Case
     use Hound.Helpers
     import StbernardWeb.Router.Helpers
-    alias Stbernard.Constants
+    import Stbernard.Constants
   
     hound_session()
 
@@ -21,8 +21,7 @@ defmodule StbernardWeb.WelcomeTest do
             text = visible_text(element)
 
             assert page_title() =~ "St. Bernard"
-            assert text == Constants.title
+            assert text == title()
         end
     end
-
 end

@@ -32,4 +32,5 @@ npm-debug.log
 # we ignore priv/static. You may want to comment
 # this depending on your deployment strategy.
 /priv/
+/test/stbernard_web/acceptance/screenshots/
 .DS_Store

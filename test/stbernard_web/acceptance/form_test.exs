@@ -4,13 +4,11 @@ defmodule StbernardWeb.FormTest do
     """
     use ExUnit.Case
     use Hound.Helpers
-
     import StbernardWeb.Router.Helpers
-    alias Stbernard.Constants
+    import Stbernard.Constants
   
     hound_session()
 
-    # globals
     @valid_names ["Marie Curie", "Jane Austen", "Willy Nelson"]
     @invalid_names ["", "Supercalifragilisticexpialidocious McAuthor"]
 
@@ -25,6 +23,9 @@ defmodule StbernardWeb.FormTest do
 
     @valid_amounts [1, 10.00, 1234, "42"]
     @invalid_amounts ["", -1, 0]
+
+    @years DateTime.utc_now.year..DateTime.utc_now.year+25
+    @months 1..12
 
     @doc """
     Valid inputs should yield success message
@@ -53,19 +54,19 @@ defmodule StbernardWeb.FormTest do
             cvv |> fill_field(Enum.random(@valid_cvvs))
             amount |> fill_field(Enum.random(@valid_amounts))
 
-            execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(Constants.years())}\"")
-            execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(Constants.months())}\"")
+            execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(@years)}\"")
+            execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(@months)}\"")
 
             find_within_element(form, :id, "payment_submit") |> click()
 
             # new page is loaded so it must be retrieved again
             submitted_form = find_element(:id, "payment_form")
 
-            take_screenshot("screenshots/form_success.png")
+            take_screenshot("test/stbernard_web/acceptance/screenshots/form_test_"<>DateTime.to_string(DateTime.utc_now)<>".png")
 
             alert = find_within_element(submitted_form, :id, "alert")
             assert element_displayed?({:id, "alert"})
-            assert inner_html(alert) == Constants.success()
+            assert inner_html(alert) == success()
         end
     end
 
@@ -79,7 +80,7 @@ defmodule StbernardWeb.FormTest do
 
             # retrieve form elements
             form = find_element(:id, "payment_form")
-            valid_form(form)
+            fill_in_valid_form(form)
             :timer.sleep(1000)
             
             # refill with invalid value
@@ -95,7 +96,7 @@ defmodule StbernardWeb.FormTest do
 
             # retrieve form elements
             form = find_element(:id, "payment_form")
-            valid_form(form)
+            fill_in_valid_form(form)
             :timer.sleep(1000)
             
             # refill with invalid value
@@ -111,7 +112,7 @@ defmodule StbernardWeb.FormTest do
 
             # retrieve form elements
             form = find_element(:id, "payment_form")
-            valid_form(form)
+            fill_in_valid_form(form)
             :timer.sleep(1000)
             
             # refill with invalid value
@@ -127,7 +128,7 @@ defmodule StbernardWeb.FormTest do
 
             # retrieve form elements
             form = find_element(:id, "payment_form")
-            valid_form(form)
+            fill_in_valid_form(form)
             :timer.sleep(1000)
             
             # refill with invalid value
@@ -143,7 +144,7 @@ defmodule StbernardWeb.FormTest do
 
             # retrieve form elements
             form = find_element(:id, "payment_form")
-            valid_form(form)
+            fill_in_valid_form(form)
             :timer.sleep(1000)
             
             # refill with invalid value
@@ -154,7 +155,7 @@ defmodule StbernardWeb.FormTest do
         end
     end
 
-    defp valid_form(form) do
+    defp fill_in_valid_form(form) do
         # ID
         name = find_within_element(form, :id, "payment_name")
         postal = find_within_element(form, :id, "payment_postal")

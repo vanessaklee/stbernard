@@ -4,9 +4,8 @@ defmodule StbernardWeb.FormTest do
     """
     use ExUnit.Case
     use Hound.Helpers
-
     import StbernardWeb.Router.Helpers
-    alias Stbernard.Constants
+    import Stbernard.Constants
   
     hound_session()
 
@@ -26,13 +25,13 @@ defmodule StbernardWeb.FormTest do
     @valid_amounts [1, 10.00, 1234, "42"]
     @invalid_amounts ["", -1, 0]
 
-    test "all permutations of good inputs result in success", _meta do
+    test "permutations of good inputs result in success", _meta do
       Hound.start_session()
       
       for account <- @valid_accounts do
-        for amounts <- @valid_amounts do
+        for amount <- @valid_amounts do
           for name <- @valid_names do
-            Hound.Helpers.Session.change_session_to(name<>Integer.parse(Enum.random(0..999))) 
+            Hound.Helpers.Session.change_session_to(name<>Integer.to_string(Enum.random(0..999))) 
 
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
@@ -40,7 +39,7 @@ defmodule StbernardWeb.FormTest do
             # retrieve form elements
             form = find_element(:id, "payment_form")
             valid_form(form)
-            :timer.sleep(1000)
+            :timer.sleep(500)
             
             # refill with invalid value
             find_within_element(form, :id, "payment_name") |> fill_field(name)
@@ -48,7 +47,7 @@ defmodule StbernardWeb.FormTest do
             find_within_element(form, :id, "payment_account") |> fill_field(account)
             find_within_element(form, :id, "payment_submit") |> click()
 
-            check_failure()
+            check_success()
             
             Hound.end_session
           end
@@ -74,15 +73,15 @@ defmodule StbernardWeb.FormTest do
         cvv |> fill_field(Enum.random(@valid_cvvs))
         amount |> fill_field(Enum.random(@valid_amounts))
 
-        execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(Constants.years())}\"")
-        execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(Constants.months())}\"")
+        execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(years())}\"")
+        execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(months())}\"")
     end
 
-    defp check_failure do
+    defp check_success do
         # new page is loaded so it must be retrieved again
         submitted_form = find_element(:id, "payment_form")
         alert = find_within_element(submitted_form, :id, "alert")
         assert element_displayed?({:id, "alert"})
-        assert inner_html(alert) == Constants.failure()
+        assert inner_html(alert) == success()
     end
 end

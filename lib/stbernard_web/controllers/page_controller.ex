@@ -3,7 +3,6 @@ defmodule StbernardWeb.PageController do
 
     alias StbernardWeb.Payment
     alias Stbernard.Constants
-    alias StbernardWeb.ErrorHelpers
 
     @doc """
     Simple payment form
@@ -32,7 +31,6 @@ defmodule StbernardWeb.PageController do
             true -> 
                 render_form(conn, changeset |> Map.put(:action, "success"), %{})
             false -> 
-                error = Ecto.Changeset.traverse_errors(changeset, &ErrorHelpers.translate_error/1)
                 cs = changeset |> Map.put(:action, "error")
                 render_form(conn, cs, params)
         end
