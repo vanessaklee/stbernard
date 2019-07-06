@@ -1,34 +1,14 @@
 defmodule StbernardWeb.FormTest do
     @moduledoc """
-    Tests for the form submission.
-
-    ## Errors to check
-
-    Cannot be blank - Constants.blank()
-        - [:name, :postal, :account, :cvv, :amount], Constants.blank()
-    Length
-        - :name, Constants.name_length()
-        - :postal, Constants.postal_length()
-        - :account, Constants.account_min_length(),  max: Constants.account_max_length()
-        - :cvv, min: Constants.cvv_min_length(), max: Constants.cvv_max_length()
-    Expired
-        - :exp_year
-        - :exp_month
-    Invalid
-        - :exp_month not a number, Constants.invalid()
-        - :amount not greater than 0, Constants.invalid()
+    Tests for the form for required, length, expiration, validity
     """
     use ExUnit.Case
     use Hound.Helpers
-
-    # Property-based testing generators
-    use ExUnitProperties
 
     import StbernardWeb.Router.Helpers
     alias Stbernard.Constants
   
     hound_session()
-    @moduletag timeout: 120000
 
     # globals
     @valid_names ["Marie Curie", "Jane Austen", "Willy Nelson"]
@@ -37,13 +17,13 @@ defmodule StbernardWeb.FormTest do
     @valid_postals ["75005", "GU34 1SD", "78704"]
     @invalid_postals ["", "1234561234 56 34 abc"]
 
-    @valid_accounts [378282246310005, 6011111111111117, 4111111111111111]
+    @valid_accounts [378282246310005, 4111111111111111]
     @invalid_accounts [0, "", -1, 60111111111111171234567890]
 
     @valid_cvvs ["123", "1234"]
     @invalid_cvvs ["", "1", "123456"]
 
-    @valid_amounts [1, 10.00, 1234]
+    @valid_amounts [1, 10.00, 1234, "42"]
     @invalid_amounts ["", -1, 0]
 
     @doc """
@@ -81,7 +61,7 @@ defmodule StbernardWeb.FormTest do
             # new page is loaded so it must be retrieved again
             submitted_form = find_element(:id, "payment_form")
 
-            # TODO: take screenshot
+            take_screenshot("screenshots/form_success.png")
 
             alert = find_within_element(submitted_form, :id, "alert")
             assert element_displayed?({:id, "alert"})
@@ -90,9 +70,9 @@ defmodule StbernardWeb.FormTest do
     end
 
     @doc """
-    Invalid name should yield failure message
+    Invalid inputs should yield failure message
     """
-    describe "invalid name" do
+    describe "invalid inputs" do
         test "invalid name in the form yields a failure message", _meta do
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
@@ -108,12 +88,7 @@ defmodule StbernardWeb.FormTest do
 
             check_failure()
         end
-    end
 
-    @doc """
-    Invalid postal should yield failure message
-    """
-    describe "invalid postal" do
         test "invalid postal in the form yields a failure message", _meta do
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
@@ -129,12 +104,7 @@ defmodule StbernardWeb.FormTest do
 
             check_failure()
         end
-    end
 
-    @doc """
-    Invalid account should yield failure message
-    """
-    describe "invalid account" do
         test "invalid account in the form yields a failure message", _meta do
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
@@ -150,12 +120,7 @@ defmodule StbernardWeb.FormTest do
 
             check_failure()
         end
-    end
 
-    @doc """
-    Invalid cvv should yield failure message
-    """
-    describe "invalid cvv" do
         test "invalid cvv in the form yields a failure message", _meta do
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
@@ -171,12 +136,7 @@ defmodule StbernardWeb.FormTest do
 
             check_failure()
         end
-    end
 
-    @doc """
-    Invalid amount should yield failure message
-    """
-    describe "invalid amount" do
         test "invalid amount in the form yields a failure message", _meta do
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
@@ -223,3 +183,5 @@ defmodule StbernardWeb.FormTest do
         assert inner_html(alert) == Constants.failure()
     end
 end
+
+

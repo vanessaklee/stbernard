@@ -174,7 +174,6 @@ defmodule StbernardWeb.Payment do
 
     def validate_account(changeset, _field) do
         len = String.length(Ecto.Changeset.get_field(changeset, :account))
-        IO.inspect len
         case len >= Constants.account_min_length() and len <= Constants.account_max_length() do
             true -> changeset
             false -> Ecto.Changeset.add_error(changeset, :account, Constants.invalid())

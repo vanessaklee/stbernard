@@ -1,4 +1,3 @@
-```
 # St Bernard
 
 St Bernard is a simple series of webpages used to demonstrate the howling success of the Hound testing tool.
@@ -9,38 +8,36 @@ Whatever you call it, UI testing/End-to-End Testing/End-to-User Testing/Acceptan
 
 Create a simple Phoenix called St Bernard.
 
-```
-> mix phx.new stbernard --no-ecto
-```
+
+    $ mix phx.new stbernard --no-ecto
+
 
 Add Hound as a dependency in `mix.exs`.
 
-```
+```elixir
 {:hound, "~> 1.0"}
 ```
 
 Hound requires a webdriver for browser automation. We will use selenium. Install and run:
 
-```
-> brew install selenium-server-standalone
-> selenium-server
-```
+    $ brew install selenium-server-standalone
+    $ selenium-server
 
 Start Hound in `test/test_helpers.exs`. Add this above `ExUnit.start()`
 
-```
+```elixir
 Application.ensure_all_started(:hound)
 ```
 
 In `config/test.exs` add:
 
-```
+```elixir
 config :hound, browser: "chrome"
 ```
 
 . . . and set `server` to true: 
 
-```
+```elixir
 config :stbernard, StbernardWeb.Endpoint,
   http: [port: 4001],
   server: true
@@ -55,9 +52,7 @@ Start the Phoenix server
 
 Run tests (in this demo app, Hound is used as a part of ExUnit tests) 
 
-```
-mix test
-```
+    $ mix test
 
 ## Lab-ra-cadabra!
 
@@ -84,18 +79,13 @@ The acceptance tests live in `test/stbernard_web/acceptance/`
   * [page_title/0][page_title]
     * gets the title of the current page
 
-#### Complex `region_test.exs` 
+#### Complex `form_test.exs`
 
-  * sets [Metadata][metadata] in Hound session 
-  * uses [change_session_to/2][change_session_to] to use multiple browser sessions for permutations
   * the `:xpath` strategy 
   * [click/1][click]
     * clicks on an element
   * [current_url/0][current_url]
     * gets url of the current page
-
-#### More Complex `form_test.exs` 
-  
   * uses [execute_script/2][execute_script] to select value from a select list
     * executes javascripts 
   * [fill_field/2][fill_field]
@@ -113,9 +103,17 @@ The acceptance tests live in `test/stbernard_web/acceptance/`
 [current_url]: https://hexdocs.pm/hound/Hound.Helpers.Navigation.html#current_url/0
 [execute_script]: https://hexdocs.pm/hound/Hound.Helpers.ScriptExecution.html#execute_script/2
 [fill_field]: https://hexdocs.pm/hound/Hound.Helpers.Element.html#fill_field/2
+[take_screenshot]: https://hexdocs.pm/hound/Hound.Helpers.Screenshot.html#take_screenshot/1
+
+#### TODO
+
+  * demonstrate how to select a value from an autocomplete input field with [Awesomplete][awesomplete]
+  * demonstrate [Metadata][metadata] in Hound session 
+  * demonstrate [change_session_to/2][change_session_to] to use multiple browser sessions for permutations
+
+[awesomplete]: https://nico-amsterdam.github.io/awesomplete-util/phoenix.html
 [metadata]: https://hexdocs.pm/hound/Hound.Metadata.html
 [change_session_to]: https://hexdocs.pm/hound/Hound.Helpers.Session.html#change_session_to/2
-[take_screenshot]: https://hexdocs.pm/hound/Hound.Helpers.Screenshot.html#take_screenshot/1
 
 ## Go Fetch!
 
