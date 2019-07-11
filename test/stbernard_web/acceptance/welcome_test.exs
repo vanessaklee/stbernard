@@ -14,14 +14,17 @@ defmodule StbernardWeb.WelcomeTest do
     """
     describe "landing" do
         test "landing page loads correctly", _meta do
+            # point browser to the page
             url = page_url(StbernardWeb.Endpoint, :index)
             navigate_to(url)
 
+            # page title should be correct
+            assert page_title() =~ "St. Bernard"
+
+            # welcome message should be visible 
             element = find_element(:id, "welcome")
             text = visible_text(element)
-
-            assert page_title() =~ "St. Bernard"
-            assert text == title()
+            assert text == Constants.welcome_message
         end
     end
 end

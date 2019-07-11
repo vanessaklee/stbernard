@@ -42,6 +42,6 @@ defmodule StbernardWeb.PageController do
     def render_form(conn, changeset, params, template \\ "index.html", countries \\ []) do
         conn
            |> assign(:changeset, changeset)
-           |> render(template, token: Plug.CSRFProtection.get_csrf_token(), cards: Constants.cards, years: Constants.years, months: Constants.months, name: params["name"], postal: params["postal"], amount: params["amount"], title: Constants.title, countries: countries, success: Constants.success, failure: Constants.failure, changeset: changeset, conn: conn)
+           |> render(template, token: Plug.CSRFProtection.get_csrf_token(), cards: Constants.cards, years: Constants.years, months: Constants.months, name: params["name"], postal: params["postal"], amount: params["amount"], title: Constants.welcome_message, countries: countries, success: Constants.success, failure: Constants.failure, changeset: changeset, conn: conn)
     end
 end

@@ -15,7 +15,7 @@ defmodule Stbernard.Constants do
 
     def blank, do: "Cannot be empty"
 
-    def title, do: "St. Bernard · the safe payment system"
+    def welcome_message, do: "St. Bernard · the safe payment system"
 
     def name_length, do: 30
     def postal_length, do: 18

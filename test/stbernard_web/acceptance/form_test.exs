@@ -37,25 +37,16 @@ defmodule StbernardWeb.FormTest do
 
             # retrieve form elements
             form = find_element(:id, "payment_form")
-
             # ID
-            name = find_within_element(form, :id, "payment_name")
-            postal = find_within_element(form, :id, "payment_postal")
-            account = find_within_element(form, :id, "payment_account")
-
-            # XPath
-            cvv = find_element(:xpath, ~s|//*[@id="payment_cvv"]|)
-            amount = find_element(:xpath, ~s|//*[@id="payment_amount"]|)
-            
-            # populate the form fields
-            name |> fill_field(Enum.random(@valid_names))
-            postal |> fill_field(Enum.random(@valid_postals))
-            account |> fill_field(Enum.random(@valid_accounts))
-            cvv |> fill_field(Enum.random(@valid_cvvs))
-            amount |> fill_field(Enum.random(@valid_amounts))
-
-            execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(@years)}\"")
-            execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(@months)}\"")
+            find_within_element(form, :id, "payment_name") |> fill_field(Enum.random(@valid_names))
+            find_within_element(form, :id, "payment_postal") |> fill_field(Enum.random(@valid_postals))
+            find_within_element(form, :id, "payment_account") |> fill_field(Enum.random(@valid_accounts))
+            # xpath
+            find_element(:xpath, ~s|//*[@id="payment_cvv"]|) |> fill_field(Enum.random(@valid_cvvs))
+            find_element(:xpath, ~s|//*[@id="payment_amount"]|) |> fill_field(Enum.random(@valid_amounts))
+            # js
+            execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(years())}\"")
+            execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(months())}\"")
 
             find_within_element(form, :id, "payment_submit") |> click()
 
@@ -66,7 +57,7 @@ defmodule StbernardWeb.FormTest do
 
             alert = find_within_element(submitted_form, :id, "alert")
             assert element_displayed?({:id, "alert"})
-            assert inner_html(alert) == success()
+            assert inner_html(alert) == Constants.success()
         end
     end
 

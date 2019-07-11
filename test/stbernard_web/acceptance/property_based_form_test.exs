@@ -67,12 +67,14 @@ defmodule StbernardWeb.PropertyBasedFormTest do
 
     @doc """
     User property-based testing to test that the cvv succeeds 
+
+    Define the property as simply & specfically as possible
     """
-    property "cvv succeeds if it is not null and not more than cvv length min and max" do
+    property "cvv succeeds cvv >= ccv min length & cvv <= cvv max length" do
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
 
-        check all generated <- StreamData.integer() do
+        check all generated <- StreamData.integer(), max_run: 25 do # default is max_runs: 100 
             min = Constants.cvv_min_length 
             max = Constants.cvv_max_length
 
@@ -83,10 +85,10 @@ defmodule StbernardWeb.PropertyBasedFormTest do
 
             submitted_form = find_element(:id, "payment_form")
             alert = find_within_element(submitted_form, :id, "alert")
-            assert element_displayed?({:id, "alert"})
 
-            case String.length(Integer.to_string(generated)) do
-                a when a >= min and a <= max -> assert inner_html(alert) == Constants.success()
+            # don't replicate system method uses Kernel & parse; use Kernel & digits here
+            case length(Integer.digits(generated)) do
+                cvv when is_integer(cvv) and cvv >= min and cvv <= max -> assert inner_html(alert) == Constants.success()
                 _ -> assert inner_html(alert) == Constants.failure()
             end
         end

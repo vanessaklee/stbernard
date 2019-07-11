@@ -157,6 +157,7 @@ defmodule StbernardWeb.Payment do
     defp year(y), do: String.to_integer(y)
 
 
+
     def validate_amount(changeset, _field) do
         case number(Ecto.Changeset.get_field(changeset, :amount)) > 0 do
             true -> changeset
@@ -164,13 +165,26 @@ defmodule StbernardWeb.Payment do
         end
     end
 
+
+    @doc """
+    Validate cvv2
+    """
     def validate_cvv(changeset, _field) do
-        len = String.length(Ecto.Changeset.get_field(changeset, :cvv))
-        case len >= Constants.cvv_min_length() and len <= Constants.cvv_max_length() do
+        cvv = number(Ecto.Changeset.get_field(changeset, :cvv))
+        case is_valid_cvv?(cvv) do
             true -> changeset
             false -> Ecto.Changeset.add_error(changeset, :cvv, Constants.invalid())
         end
     end
+    
+    def is_valid_cvv?(cvv) when is_integer(cvv) do
+        min = Constants.cvv_min_length()
+        max = Constants.cvv_max_length()
+        len = length(Integer.to_charlist(cvv))
+
+        len >= min and len <= max 
+    end
+    def is_valid_cvv?(_), do: false
 
     def validate_account(changeset, _field) do
         len = String.length(Ecto.Changeset.get_field(changeset, :account))
@@ -180,15 +194,19 @@ defmodule StbernardWeb.Payment do
         end
     end
 
+    @doc """
+    We only deal with positive numbers here
+    """
     defp number(a) when is_nil(a), do: 0
-    defp number(a) when is_integer(a), do: a
-    defp number(a) when is_float(a), do: Kernel.trunc(a)
+    defp number(a) when a == "", do: 0
+    defp number(a) when is_integer(a), do: abs(a)
+    defp number(a) when is_float(a), do: abs(trunc(a))
     defp number(a) do
         case Integer.parse(a) do
-            {w,l} when l == "" -> w
+            {w,""} -> abs(w)
             _ -> 
                 {w,_l} = Float.parse(a)
-                w
+                abs(w)
         end
     end
 end
