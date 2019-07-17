@@ -182,7 +182,7 @@ defmodule StbernardWeb.Payment do
         max = Constants.cvv_max_length()
         len = length(Integer.to_charlist(cvv))
 
-        len >= min and len <= max 
+        cvv > 0 && (len >= min and len <= max)
     end
     def is_valid_cvv?(_), do: false
 
@@ -197,11 +197,12 @@ defmodule StbernardWeb.Payment do
     @doc """
     We only deal with positive numbers here
     """
-    defp number(a) when is_nil(a), do: 0
-    defp number(a) when a == "", do: 0
-    defp number(a) when is_integer(a), do: abs(a)
-    defp number(a) when is_float(a), do: abs(trunc(a))
-    defp number(a) do
+    def number(a) when is_nil(a), do: 0
+    def number(a) when a == "", do: 0
+    def number(a) when a < 0, do: 0
+    def number(a) when is_integer(a), do: a
+    def number(a) when is_float(a), do: trunc(a)
+    def number(a) do
         case Integer.parse(a) do
             {w,""} -> abs(w)
             _ -> 

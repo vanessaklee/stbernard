@@ -74,7 +74,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
 
-        check all generated <- StreamData.integer(), max_run: 25 do # default is max_runs: 100 
+        check all generated <- StreamData.integer(), max_runs: 25 do # default is max_runs: 100 
             min = Constants.cvv_min_length 
             max = Constants.cvv_max_length
 
