@@ -13,6 +13,8 @@ defmodule Stbernard.Constants do
 
     def invalid, do: "Invalid"
 
+    def illegal, do: "Illegal"
+
     def blank, do: "Cannot be empty"
 
     def welcome_message, do: "St. Bernard · the safe payment system"

@@ -82,6 +82,7 @@ defmodule StbernardWeb.Payment do
             |> validate_required([:name, :postal, :account, :cvv, :amount], [message: Constants.blank()])
             |> validate_length(:name, min: 0, max: Constants.name_length())
             |> validate_length(:postal, min: 0, max: Constants.postal_length())
+            |> validate_string(:name)
             |> validate_account(:account)
             |> validate_cvv(:cvv)
             |> validate_year(:exp_year)
@@ -191,6 +192,14 @@ defmodule StbernardWeb.Payment do
         case len >= Constants.account_min_length() and len <= Constants.account_max_length() do
             true -> changeset
             false -> Ecto.Changeset.add_error(changeset, :account, Constants.invalid())
+        end
+    end
+
+    def validate_string(changeset, field) do
+        string = Ecto.Changeset.get_field(changeset, field)
+        case String.valid?(string) do
+            true -> changeset
+            false -> Ecto.Changeset.add_error(changeset, field, Constants.illegal())
         end
     end
 

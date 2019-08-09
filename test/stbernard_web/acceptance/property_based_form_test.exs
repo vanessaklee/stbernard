@@ -66,6 +66,31 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     end
 
     @doc """
+    User property-based testing to test that the name is valid if it is a valid string
+    """
+    property "name is valid if it is a valid string" do
+        data = "./test/blns.txt"
+            |> File.stream!
+            |> Stream.map(&String.strip/1)
+        check all gen_name <- StreamData.member_of(data) do
+            IO.inspect gen_name
+            form = find_element(:id, "payment_form")
+            fill_in_valid_form(form)
+            find_within_element(form, :id, "payment_name") |> fill_field(gen_name)
+            find_within_element(form, :id, "payment_submit") |> click()
+
+            submitted_form = find_element(:id, "payment_form")
+            alert = find_within_element(submitted_form, :id, "alert")
+            assert element_displayed?({:id, "alert"})
+
+            case String.length(gen_name) <= 50 && String.length(gen_name) > 0 && String.valid?(gen_name) do
+                true -> assert inner_html(alert) == Constants.success()
+                _ -> assert inner_html(alert) == Constants.failure()
+            end
+        end
+    end
+
+    @doc """
     User property-based testing to test that the cvv succeeds 
 
     Define the property as simply & specfically as possible
