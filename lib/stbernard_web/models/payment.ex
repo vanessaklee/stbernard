@@ -9,9 +9,9 @@ defmodule StbernardWeb.Payment do
     Cannot be blank - Constants.blank()
         - [:name, :postal, :account, :cvv, :amount], Constants.blank()
     Length
-        - :name, Constants.name_length()
+        - :name, min: Constants.name_min_length(), max: Constants.name_max_length()
         - :postal, Constants.postal_length()
-        - :account, Constants.account_min_length(),  max: Constants.account_max_length()
+        - :account, min: Constants.account_min_length(),  max: Constants.account_max_length()
         - :cvv, min: Constants.cvv_min_length(), max: Constants.cvv_max_length()
     Expired
         - :exp_year
@@ -80,7 +80,7 @@ defmodule StbernardWeb.Payment do
         payment
             |> cast(params, [:name, :postal, :account, :cvv, :exp_year, :exp_month, :amount, :error])
             |> validate_required([:name, :postal, :account, :cvv, :amount], [message: Constants.blank()])
-            |> validate_length(:name, min: 0, max: Constants.name_length())
+            |> validate_length(:name, min: Constants.name_min_length(), max: Constants.name_max_length())
             |> validate_length(:postal, min: 0, max: Constants.postal_length())
             |> validate_string(:name)
             |> validate_account(:account)

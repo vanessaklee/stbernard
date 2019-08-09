@@ -19,7 +19,8 @@ defmodule Stbernard.Constants do
 
     def welcome_message, do: "St. Bernard · the safe payment system"
 
-    def name_length, do: 30
+    def name_min_length, do: 1
+    def name_max_length, do: 30
     def postal_length, do: 18
     def account_min_length, do: 13
     def account_max_length, do: 19
