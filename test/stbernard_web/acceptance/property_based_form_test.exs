@@ -69,12 +69,23 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     User property-based testing to test that the name is valid if it is a valid string
     """
     property "name is valid if it is a valid string" do
+        # Hound.start_session(
+        #     additional_capabilities: %{
+        #         javascriptEnabled: true,
+        #         chromeOptions: %{
+        #             "args" => [
+        #                 "--user-agent=#{ Hound.Browser.user_agent(:chrome) }",
+        #                 "--headless",
+        #                 "--disable-gpu"
+        #             ]
+        #         }
+        #     }
+        # )
+
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
 
-        data = "./test/blns.txt"
-            |> File.stream!
-            |> Stream.map(&String.trim/1)
+        data = "./test/blns.txt" |> File.stream!
         check all gen_name <- StreamData.member_of(data) do
             form = find_element(:id, "payment_form")
             fill_in_valid_form(form)
