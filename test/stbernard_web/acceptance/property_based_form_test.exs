@@ -102,27 +102,65 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     Define the property as simply & specfically as possible
     """
     property "cvv succeeds cvv >= ccv min length & cvv <= cvv max length" do
+        require Integer
+
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
 
-        check all generated <- StreamData.integer(), max_runs: 25 do # default is max_runs: 100 
-            min = Constants.cvv_min_length 
-            max = Constants.cvv_max_length
+        good_cvv_generator =
+            StreamData.bind(StreamData.list_of(StreamData.integer(100..9999), min_length: 25), fn list ->
+                StreamData.bind(StreamData.member_of(list), fn elem ->
+                    StreamData.constant({true, elem})
+                end)
+          end)
 
+        # IO.inspect Enum.take(good_cvv_generator, 25)
+
+        bad_cvv_generator = 
+            StreamData.bind(StreamData.list_of(StreamData.integer(-9..999999), min_length: 350), fn list ->
+                new_list = Enum.filter(list, fn x -> x < 100 || x >9999 end)
+                StreamData.bind(StreamData.member_of(new_list), fn elem ->
+                    StreamData.constant({false, elem})
+                end)
+          end)
+
+
+        # IO.inspect Enum.take(bad_cvv_generator, 50)
+
+        check all {good, value} <- StreamData.one_of([good_cvv_generator, bad_cvv_generator]), max_runs: 99 do # default is max_runs: 100 
             form = find_element(:id, "payment_form")
             fill_in_valid_form(form)
-            find_within_element(form, :id, "payment_cvv") |> fill_field(generated)
+            find_within_element(form, :id, "payment_cvv") |> fill_field(value)
             find_within_element(form, :id, "payment_submit") |> click()
 
             submitted_form = find_element(:id, "payment_form")
             alert = find_within_element(submitted_form, :id, "alert")
 
-            # don't replicate system method uses Kernel & parse; use Kernel & digits here
-            case length(Integer.digits(generated)) do
-                cvv when is_integer(cvv) and cvv >= min and cvv <= max -> assert inner_html(alert) == Constants.success()
-                _ -> assert inner_html(alert) == Constants.failure()
+            case good do
+                true -> assert inner_html(alert) == Constants.success()
+                false -> assert inner_html(alert) == Constants.failure()
             end
         end
+
+        # REPLACED BY ABOVE USE OF BINDINGS
+        # check all generated <- StreamData.integer(), max_runs: 25 do # default is max_runs: 100 
+        #     min = Constants.cvv_min_length 
+        #     max = Constants.cvv_max_length
+
+        #     form = find_element(:id, "payment_form")
+        #     fill_in_valid_form(form)
+        #     find_within_element(form, :id, "payment_cvv") |> fill_field(generated)
+        #     find_within_element(form, :id, "payment_submit") |> click()
+
+        #     submitted_form = find_element(:id, "payment_form")
+        #     alert = find_within_element(submitted_form, :id, "alert")
+
+        #     # don't replicate system method uses Kernel & parse; use Kernel & digits here
+        #     case length(Integer.digits(generated)) do
+        #         cvv when is_integer(cvv) and cvv >= min and cvv <= max -> assert inner_html(alert) == Constants.success()
+        #         _ -> assert inner_html(alert) == Constants.failure()
+        #     end
+        # end
     end
 
     @doc """
