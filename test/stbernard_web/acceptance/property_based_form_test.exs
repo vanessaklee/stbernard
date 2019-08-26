@@ -70,7 +70,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     """
     property "name is valid if it is a valid string" do
         # Hound.start_session(
-        #     additional_capabilities: %{
+        #     driver: %{
         #         javascriptEnabled: true,
         #         chromeOptions: %{
         #             "args" => [
