@@ -75,8 +75,8 @@ defmodule StbernardWeb.PropertyBasedFormTest do
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
         
-        data = "./test/blns.txt" |> File.stream! |> Stream.map( &(String.replace(&1, "\n", "")) )  |> Stream.map( &(String.trim(&1)) ) 
-        check all gen_name <- StreamData.member_of(data) do
+        data = "./test/showpony_blns.txt" |> File.stream! |> Stream.map( &(String.replace(&1, "\n", "")) )  |> Stream.map( &(String.trim(&1)) ) 
+        check all gen_name <- StreamData.member_of(data), max_runs: 60 do
 
             form = find_element(:id, "payment_form")
             fill_in_valid_form(form)
@@ -125,7 +125,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
         good_cvv_generator =
             StreamData.bind(StreamData.list_of(StreamData.integer(100..9999), min_length: 25), fn list ->
                 StreamData.bind(StreamData.member_of(list), fn elem ->
-                    StreamData.constant({true, elem})
+                    StreamData.constant({:good, elem})
                 end)
           end)
 
@@ -135,25 +135,25 @@ defmodule StbernardWeb.PropertyBasedFormTest do
             StreamData.bind(StreamData.list_of(StreamData.integer(-9..999999), min_length: 350), fn list ->
                 new_list = Enum.filter(list, fn x -> x < 100 || x >9999 end)
                 StreamData.bind(StreamData.member_of(new_list), fn elem ->
-                    StreamData.constant({false, elem})
+                    StreamData.constant({:bad, elem})
                 end)
           end)
 
 
         # IO.inspect Enum.take(bad_cvv_generator, 50)
 
-        check all {good, value} <- StreamData.one_of([good_cvv_generator, bad_cvv_generator]), max_runs: 99 do # default is max_runs: 100 
+        check all {good_or_bad, elem} <- StreamData.one_of([good_cvv_generator, bad_cvv_generator]), max_runs: 30 do # default is max_runs: 100 
             form = find_element(:id, "payment_form")
             fill_in_valid_form(form)
-            find_within_element(form, :id, "payment_cvv") |> fill_field(value)
+            find_within_element(form, :id, "payment_cvv") |> fill_field(elem)
             find_within_element(form, :id, "payment_submit") |> click()
 
             submitted_form = find_element(:id, "payment_form")
             alert = find_within_element(submitted_form, :id, "alert")
 
-            case good do
-                true -> assert inner_html(alert) == Constants.success()
-                false -> assert inner_html(alert) == Constants.failure()
+            case good_or_bad do
+                :good -> assert inner_html(alert) == Constants.success()
+                :bad -> assert inner_html(alert) == Constants.failure()
             end
         end
         Hound.end_session
