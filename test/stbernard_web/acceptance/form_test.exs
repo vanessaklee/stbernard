@@ -5,7 +5,6 @@ defmodule StbernardWeb.FormTest do
     use ExUnit.Case
     use Hound.Helpers
     import StbernardWeb.Router.Helpers
-    import Stbernard.Constants
   
     hound_session()
 
@@ -27,6 +26,9 @@ defmodule StbernardWeb.FormTest do
     @years DateTime.utc_now.year..DateTime.utc_now.year+25
     @months 1..12
 
+    @success "Payment Successful"
+    @failure "Payment failed - details below"
+
     @doc """
     Valid inputs should yield success message
     """
@@ -45,8 +47,8 @@ defmodule StbernardWeb.FormTest do
             find_element(:xpath, ~s|//*[@id="payment_cvv"]|) |> fill_field(Enum.random(@valid_cvvs))
             find_element(:xpath, ~s|//*[@id="payment_amount"]|) |> fill_field(Enum.random(@valid_amounts))
             # js
-            execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(years())}\"")
-            execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(months())}\"")
+            execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(@years)}\"")
+            execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(@months)}\"")
 
             find_within_element(form, :id, "payment_submit") |> click()
 
@@ -57,7 +59,7 @@ defmodule StbernardWeb.FormTest do
 
             alert = find_within_element(submitted_form, :id, "alert")
             assert element_displayed?({:id, "alert"})
-            assert inner_html(alert) == Constants.success()
+            assert inner_html(alert) == @success
         end
     end
 
@@ -172,7 +174,7 @@ defmodule StbernardWeb.FormTest do
         submitted_form = find_element(:id, "payment_form")
         alert = find_within_element(submitted_form, :id, "alert")
         assert element_displayed?({:id, "alert"})
-        assert inner_html(alert) == Constants.failure()
+        assert inner_html(alert) == @failure
     end
 end
 

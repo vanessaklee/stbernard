@@ -79,8 +79,8 @@ defmodule StbernardWeb.Payment do
     def changeset(%StbernardWeb.Payment{} = payment \\ %StbernardWeb.Payment{}, params \\ %{}) do
         payment
             |> cast(params, [:name, :postal, :account, :cvv, :exp_year, :exp_month, :amount, :error])
-            |> validate_required([:name, :postal, :account, :cvv, :amount], [message: Constants.blank()])
             |> validate_length(:name, min: Constants.name_min_length(), max: Constants.name_max_length())
+            |> validate_required([:name, :postal, :account, :cvv, :amount], [message: Constants.blank()])
             |> validate_length(:postal, min: 0, max: Constants.postal_length())
             |> validate_string(:name)
             |> validate_account(:account)
@@ -157,8 +157,6 @@ defmodule StbernardWeb.Payment do
     defp year(y) when is_integer(y), do: y
     defp year(y), do: String.to_integer(y)
 
-
-
     def validate_amount(changeset, _field) do
         case number(Ecto.Changeset.get_field(changeset, :amount)) > 0 do
             true -> changeset
@@ -195,11 +193,36 @@ defmodule StbernardWeb.Payment do
         end
     end
 
-    def validate_string(changeset, field) do
-        string = Ecto.Changeset.get_field(changeset, field)
-        case String.valid?(string) do
+    def validate_string(changeset, field), do: valid_string(Ecto.Changeset.get_field(changeset, field), changeset, field)
+
+    def valid_string(string, changeset, field) when is_nil(string) do 
+        Ecto.Changeset.add_error(changeset, field, Constants.illegal())
+    end
+    def valid_string(string, changeset, field) do
+        valid_letters = 
+            string
+                |> String.trim() 
+                |> String.downcase()
+                |> String.graphemes()  
+                |> Enum.all?(&valid_name_char?/1)
+
+        case String.valid?(string) && valid_letters && string not in Constants.bad_strings do
             true -> changeset
             false -> Ecto.Changeset.add_error(changeset, field, Constants.illegal())
+        end
+    end
+
+    @doc """
+    Valid name chars are
+    - a letter between a - z
+    - a letter between A - Z
+    - an allowed special character such as -, ', or " " (hyphen, apostrophe, space)
+    """
+    def valid_name_char?(c) when c == " ", do: true
+    def valid_name_char?(c) do
+        case c do   
+            <<c::utf8>> when c in ?a..?z -> true
+            _ -> false    
         end
     end
 

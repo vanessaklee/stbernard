@@ -26,8 +26,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
 
     import StbernardWeb.Router.Helpers
     alias Stbernard.Constants
-  
-    hound_session()
+
     @moduletag timeout: 120000
 
     # globals
@@ -45,6 +44,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     User property-based testing to test that the amount succeeds if it is greater than 0, fails if not
     """
     property "amount succeeds if it is greater than 0 fails if not" do
+        Hound.start_session
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
 
@@ -63,48 +63,52 @@ defmodule StbernardWeb.PropertyBasedFormTest do
                 _ -> assert inner_html(alert) == Constants.failure()
             end
         end
+        Hound.end_session
     end
 
     @doc """
     User property-based testing to test that the name is valid if it is a valid string
     """
     property "name is valid if it is a valid string" do
-        # Hound.start_session(
-        #     driver: %{
-        #         javascriptEnabled: true,
-        #         chromeOptions: %{
-        #             "args" => [
-        #                 "--user-agent=#{ Hound.Browser.user_agent(:chrome) }",
-        #                 "--headless",
-        #                 "--disable-gpu"
-        #             ]
-        #         }
-        #     }
-        # )
+        Hound.start_session(browser: "chrome_headless")
 
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
-
-        data = "./test/blns.txt" |> File.stream!
+        
+        data = "./test/blns.txt" |> File.stream! |> Stream.map( &(String.replace(&1, "\n", "")) )  |> Stream.map( &(String.trim(&1)) ) 
         check all gen_name <- StreamData.member_of(data) do
+
             form = find_element(:id, "payment_form")
             fill_in_valid_form(form)
-            find_within_element(form, :id, "payment_name") |> fill_field(gen_name)
-            find_within_element(form, :id, "payment_submit") |> click()
+            try do
+                find_within_element(form, :id, "payment_name") |> fill_field(gen_name)
+            rescue e -> IO.puts("An ExUnitProperties.Error occurred: " <> e.message)
+            end
+            find_element(:id, "payment_submit") |> click()
 
             submitted_form = find_element(:id, "payment_form")
             alert = find_within_element(submitted_form, :id, "alert")
             assert element_displayed?({:id, "alert"})
 
-            validity = String.length(gen_name) <= Constants.name_max_length() && 
-                       String.length(gen_name) >= Constants.name_min_length() && 
-                       String.valid?(gen_name) 
+            valid_letters = 
+                case String.valid?(gen_name) && gen_name not in Constants.bad_strings do
+                    true -> gen_name
+                            |> IO.inspect
+                            |> StbernardWeb.PropertyBasedFormTest.prep_string()
+                            |> String.graphemes()  
+                            |> Enum.all?(&StbernardWeb.PropertyBasedFormTest.all_lower_case?/1)
+                    false -> false
+                end
 
-            case validity do
+            valid = valid_letters && String.valid?(gen_name) && 
+                String.length(gen_name) <= Constants.name_max_length() && String.length(gen_name) >= Constants.name_min_length()  
+
+            case valid do
                 true -> assert inner_html(alert) == Constants.success()
                 _ -> assert inner_html(alert) == Constants.failure()
             end
         end
+        Hound.end_session
     end
 
     @doc """
@@ -114,7 +118,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     """
     property "cvv succeeds cvv >= ccv min length & cvv <= cvv max length" do
         require Integer
-
+        Hound.start_session
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
 
@@ -152,6 +156,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
                 false -> assert inner_html(alert) == Constants.failure()
             end
         end
+        Hound.end_session
 
         # REPLACED BY ABOVE USE OF BINDINGS
         # check all generated <- StreamData.integer(), max_runs: 25 do # default is max_runs: 100 
@@ -180,6 +185,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     property "account succeeds if it is not null and not more than account length min and max" do
         url = page_url(StbernardWeb.Endpoint, :index)
         navigate_to(url)
+        Hound.start_session
 
         check all generated <- StreamData.integer() do
             min = Constants.account_min_length 
@@ -200,6 +206,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
                 _ -> assert inner_html(alert) == Constants.failure()
             end
         end
+        Hound.end_session
     end
 
     defp fill_in_valid_form(form) do
@@ -222,5 +229,10 @@ defmodule StbernardWeb.PropertyBasedFormTest do
         execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(Constants.years())}\"")
         execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(Constants.months())}\"")
     end
+
+    def all_lower_case?(char) when char == " ", do: true
+    def all_lower_case?(char), do: String.match?(char, ~r/^[a-z]$/)
+    def prep_string(string) when is_nil(string), do: ""
+    def prep_string(string), do: string |> String.trim() |> String.downcase()
 
 end
