@@ -1,5 +1,11 @@
 use Mix.Config
 
+config :stbernard, Stbernard.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "stbernard_test",
+  hostname: "localhost"
+
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
 # when generating URLs.

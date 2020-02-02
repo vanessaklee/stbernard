@@ -56,7 +56,7 @@ Run tests (in this demo app, Hound is used as a part of ExUnit tests)
 
 ## Lab-ra-cadabra!
 
-The acceptance tests live in `test/stbernard_web/acceptance/` 
+The acceptance tests live in `test/stbernard_web/integration/` 
 
 ```
 - test/

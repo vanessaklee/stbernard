@@ -7,6 +7,9 @@
 # General application configuration
 use Mix.Config
 
+config :stbernard,
+  ecto_repos: [Stbernard.Repo]
+
 # Configures the endpoint
 config :stbernard, StbernardWeb.Endpoint,
   url: [host: "localhost"],
@@ -21,8 +24,6 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
-
-config :hound, driver: "selenium", browser: "chrome"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

@@ -1,9 +1,13 @@
 defmodule StbernardWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :stbernard
 
-  socket "/socket", StbernardWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  # socket "/socket", StbernardWeb.UserSocket,
+  #   websocket: true,
+  #   longpoll: false
+
+  if Application.get_env(:stbernard, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox
+  end
 
   # Serve at "/" the static files from "priv/static" directory.
   #

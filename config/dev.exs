@@ -1,5 +1,11 @@
 use Mix.Config
 
+config :stbernard, Stbernard.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "stbernard_test",
+  hostname: "localhost"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

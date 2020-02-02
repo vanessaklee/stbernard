@@ -8,6 +8,7 @@ defmodule Stbernard.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      Stbernard.Repo,
       # Start the endpoint when the application starts
       StbernardWeb.Endpoint
       # Starts a worker by calling: Stbernard.Worker.start_link(arg)

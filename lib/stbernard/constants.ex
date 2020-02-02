@@ -27,7 +27,7 @@ defmodule Stbernard.Constants do
     def cvv_min_length, do: 3
     def cvv_max_length, do: 4
 
-    def cards do 
+    def cards do
         # @cards ["": "", "Visa": "VISA", "MasterCard": "MASTERCARD", "Amex": "AMEX", "Diners": "DINERS", "Discover": "DISCOVER"]
         ["": "", "Visa": "VISA", "MasterCard": "MASTERCARD", "Delta Debit": "DELTA", "Electron Debit": "UKE", "MasterCard Debit": "MC", "Visa Debit": "VISA"]
     end
@@ -37,7 +37,22 @@ defmodule Stbernard.Constants do
     end
 
     def bad_strings do
-        ["undefined", "undef", "null", "NULL", "(null)", "nil", "NIL", "true", "false", "True", "False", "TRUE", "FALSE", "None", "hasOwnProperty", "then", "\\", "\\\\", "CON", "evaluate", "PRN", "NaN", "INF"] 
+        ["", "1", "undefined", "undef", "null", "NULL", "(null)", "nil", "NIL", "true", "false", "True", "False", "TRUE", "FALSE", "None", "hasOwnProperty", "then", "\\", "\\\\", "CON", "evaluate", "PRN", "NaN", "INF"]
     end
+
+    def valid_names, do: ["Marie Curie", "Jane Austen", "Willy Nelson"]
+    def invalid_names, do: ["", "Supercalifragilisticexpialidocious McMannus"]
+
+    def valid_postals, do: ["75005", "GU34 1SD", "78704"]
+    def invalid_postals, do: ["", "1234561234 56 34 abc"]
+
+    def valid_accounts, do: [378282246310005, 4111111111111111]
+    def invalid_accounts, do: [0, "", -1, 60111111111111171234567890]
+
+    def valid_cvvs, do: ["123", "1234"]
+    def invalid_cvvs, do: ["", "1", "123456"]
+
+    def valid_amounts, do: [1, 10.00, 1234, "42"]
+    def invalid_amounts, do: ["", "one dollar", 0]
 end
 

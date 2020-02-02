@@ -13,7 +13,7 @@ defmodule StbernardWeb.PageController do
     end
 
     @doc """
-    Payment form with autocomplete country 
+    Payment form with autocomplete country
     """
     def index_ac(conn, params) do
         changeset = Payment.new(%{}) |> Payment.changeset()
@@ -28,11 +28,10 @@ defmodule StbernardWeb.PageController do
         changeset = Payment.new(params) |> Payment.changeset(params)
 
         case changeset.valid? do
-            true -> 
+            true ->
                 render_form(conn, changeset |> Map.put(:action, "success"), %{})
-            false -> 
-                cs = changeset |> Map.put(:action, "error")
-                render_form(conn, cs, params)
+            false ->
+                render_form(conn, changeset |> Map.put(:action, "error"), params)
         end
     end
 
