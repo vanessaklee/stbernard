@@ -33,4 +33,5 @@ npm-debug.log
 # this depending on your deployment strategy.
 /priv/
 /test/stbernard_web/integration/screenshots/
+.elixir_ls/
 .DS_Store
