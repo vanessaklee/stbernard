@@ -16,36 +16,49 @@
 </section>
 
 <section>
-    <div class="container form">
+    <div class="container">
+    <div class="form">
         <%= label f, :name, class: "control-label" %>
         <%= text_input f, :name, class: "form-control" %>
         <%= error_tag f, :name %>
-
-        <label for="postal">Postal Code</label>
-        <%= text_input f, :postal, class: "form-control" %>
-        <%= error_tag f, :postal %>
 
         <label for="account">Card Number</label>
         <%= text_input f, :account, class: "form-control" %>
         <%= error_tag f, :account %>
 
-        <label for="exp_month">Exp Month</label>
-        <%= select f, :exp_month, @months, class: "form-control" %>
-        <%= error_tag f, :exp_month %>
-
-        <label for="exp_year">Exp Year</label>
-        <%= select f, :exp_year, @years, class: "form-control" %>
-        <%= error_tag f, :exp_year %>
-
-        <label for="cvv">CVV</label>
-        <%= text_input f, :cvv, class: "form-control" %>
-        <%= error_tag f, :cvv %>
-
-        <label for="amount">Amount</label>
-        <%= text_input f, :amount, class: "form-control" %>
-        <%= error_tag f, :amount %>
-
-        <%= submit "Pay", id: "payment_submit", class: "btn btn-xl btn-dark" %>
+        <div class="row">
+          <div class="col-sm">
+            <label for="postal">Postal Code</label>
+            <%= text_input f, :postal, class: "form-control" %>
+            <%= error_tag f, :postal %>
+          </div>
+          <div class="col-sm">
+            <label for="exp_month">Exp Month</label>
+            <%= select f, :exp_month, @months, class: "form-control" %>
+            <%= error_tag f, :exp_month %>
+          </div>
+          <div class="col-sm">
+            <label for="exp_year">Exp Year</label>
+            <%= select f, :exp_year, @years, class: "form-control" %>
+            <%= error_tag f, :exp_year %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <label for="cvv">CVV</label>
+            <%= text_input f, :cvv, class: "form-control" %>
+            <%= error_tag f, :cvv %>
+          </div>
+          <div class="col-sm">
+            <label for="amount">Amount</label>
+            <%= text_input f, :amount, class: "form-control" %>
+            <%= error_tag f, :amount %>
+          </div>
+          <div class="col-xs submit">
+            <%= submit "Pay", id: "payment_submit", class: "button btn-xl btn-dark" %>
+          </div>
+        </div> 
+    </div>
     </div>
 </section>
 <% end %>

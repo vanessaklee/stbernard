@@ -5,4 +5,4 @@
                         ssl_verify_fun_encodings,ssl_verify_hostname,
                         ssl_verify_pk,ssl_verify_string,ssl_verify_util]},
               {registered,[]},
-              {vsn,"1.1.4"}]}.
+              {vsn,"1.1.5"}]}.

@@ -15,7 +15,7 @@ defmodule StbernardWeb.FormTest do
       test "valid inputs in the form yield a success message", _meta do
         for c <- 0..10 do
           Hound.start_session
-          IO.inspect "Run test: #{c}x"
+          IO.puts "Run test: #{c}x"
           url = page_url(StbernardWeb.Endpoint, :index)
           navigate_to(url)
 

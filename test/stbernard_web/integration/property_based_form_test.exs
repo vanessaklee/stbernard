@@ -24,12 +24,12 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     # Property-based testing generators
     use ExUnitProperties
 
-    alias StbernardWeb.Names
+    alias StbernardWeb.BLNS
     alias StbernardWeb.Generators
     alias StbernardWeb.Hound, as: HH
     alias Stbernard.Constants, as: C
 
-    @moduletag timeout: 120000
+    @moduletag timeout: 120_000
     @max_runs 10
     @headless true
 
@@ -55,7 +55,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
         time: 15,
         warmup: 1,
         memory_time: 15,
-        formatters: [{Benchee.Formatters.Console, extended_statistics: true},{Benchee.Formatters.HTML, file: "benchee_output/property_amount.html", auto_open: true}]
+        formatters: [{Benchee.Formatters.Console, extended_statistics: true}, {Benchee.Formatters.HTML, file: "benchee_output/property_amount.html", auto_open: true}]
       )
     end
 
@@ -65,13 +65,13 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     """
     property "name is valid if it is a valid string" do
       HH.start(:headless)
-      data = "./test/showpony_blns.txt" |> File.stream! |> Stream.map( &(String.replace(&1, "\n", "")) )  |> Stream.map( &(String.trim(&1)) )
+      data = "./test/showpony_blns.txt" |> File.stream! |> Stream.map(&(String.replace(&1, "\n", "")))  |> Stream.map(&(String.trim(&1)))
       check all gen_name <- StreamData.member_of(data), max_runs: @max_runs do
         HH.swap_single_field("payment_name", gen_name)
         alert = HH.fetch_alert()
         assert element_displayed?(alert)
 
-        case Names.valid_name?(gen_name) do
+        case BLNS.valid_name?(gen_name) do
             true -> assert inner_html(alert) == C.success()
             _ -> assert inner_html(alert) == C.failure()
         end

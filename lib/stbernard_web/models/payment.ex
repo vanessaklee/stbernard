@@ -158,7 +158,7 @@ defmodule StbernardWeb.Payment do
   defp year(y), do: String.to_integer(y)
 
   def validate_amount(changeset, _field) do
-      case number(Ecto.Changeset.get_field(changeset, :amount)) > 0 do
+      case MakeValid.number(Ecto.Changeset.get_field(changeset, :amount)) > 0 do
           true -> changeset
           false -> Ecto.Changeset.add_error(changeset, :amount, C.invalid())
       end
@@ -169,7 +169,7 @@ defmodule StbernardWeb.Payment do
   Validate cvv2
   """
   def validate_cvv(changeset, _field) do
-      cvv = number(Ecto.Changeset.get_field(changeset, :cvv))
+      cvv = MakeValid.number(Ecto.Changeset.get_field(changeset, :cvv))
       case is_valid_cvv?(cvv) do
           true -> changeset
           false -> Ecto.Changeset.add_error(changeset, :cvv, C.invalid())
@@ -230,25 +230,6 @@ defmodule StbernardWeb.Payment do
       case c do
           <<c::utf8>> when c in ?a..?z -> true
           _ -> false
-      end
-  end
-
-  @doc """
-  We only deal with positive numbers here
-  """
-  def number(a) when is_nil(a), do: 0
-  def number(a) when a == "", do: 0
-  def number(a) when a < 0, do: 0
-  def number(a) when is_integer(a), do: a
-  def number(a) when is_float(a), do: trunc(a)
-  def number(a) do
-      case Integer.parse(a) do
-          {w,""} -> if w > 0, do: abs(w), else: w
-          _ ->
-              case Float.parse(a) do
-                {w,_l} -> if w > 0, do: abs(w), else: w
-                _ -> 0
-              end
       end
   end
 end

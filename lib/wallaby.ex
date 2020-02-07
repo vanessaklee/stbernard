@@ -1,4 +1,7 @@
 defmodule StbernardWeb.Wallaby do
+  @moduledoc """
+  Wallaby tests
+  """
   use Wallaby.DSL
   import Wallaby.Query
   import Wallaby.Element

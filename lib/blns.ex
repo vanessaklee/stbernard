@@ -1,9 +1,9 @@
-defmodule StbernardWeb.Names do
-  alias Stbernard.Constants, as: C
-
-  @doc """
+defmodule StbernardWeb.BLNS do
+  @moduledoc """
   Functions to handle the big list of naughty strings
   """
+  alias Stbernard.Constants, as: C
+
   def all_lower_case?(char) when char == " ", do: true
   def all_lower_case?(char), do: String.match?(char, ~r/^[a-z]$/)
   def prep_string(string) when is_nil(string), do: ""

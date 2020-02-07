@@ -23,15 +23,31 @@ label {
     font-size: 2.5rem !important;
 }
 
+select {
+  height: 3.8rem !important;
+}
+
+h1#welcome {
+  font-size: 3.5rem !important;
+}
+
+.form-control {
+  font-size: 1.6rem !important;
+}
+
 .form {
-    padding: 3rem;
+    padding: 2.2rem;
     background: #ffffff;
     margin-left: auto;
+    border: 1px solid transparent;
+    border-radius: .25rem;
 }
 
 .btn-dark {
     background: #000 !important;
     font-size: 2rem !important;
+    margin-top: 41px;
+    margin-right: 2px;
 }
 
 input[type='submit'] {
@@ -53,6 +69,11 @@ input[type='submit'] {
 .help-block {
     font-size: large;
     color: red !important;
+    margin: 0 0 0 !important;
+}
+
+.results {
+  min-height: 55px;
 }
 
 @import "./phoenix.css";

@@ -21,4 +21,4 @@
                         'Elixir.Phoenix.HTML.Safe.Tuple',
                         'Elixir.Phoenix.HTML.Tag']},
               {registered,[]},
-              {vsn,"2.13.3"}]}.
+              {vsn,"2.13.4"}]}.

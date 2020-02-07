@@ -1,4 +1,7 @@
 defmodule StbernardWeb.Hound do
+  @moduledoc """
+  Hound tests
+  """
   use Hound.Helpers
   import StbernardWeb.Router.Helpers
   alias Stbernard.Constants, as: C
@@ -63,6 +66,6 @@ defmodule StbernardWeb.Hound do
   Take a screenshot
   """
   def ss(name) do
-    take_screenshot("test/stbernard_web/integration/screenshots/#{name}"<>DateTime.to_string(DateTime.utc_now)<>".png")
+    take_screenshot("test/stbernard_web/integration/screenshots/#{name}" <> DateTime.to_string(DateTime.utc_now) <> ".png")
   end
 end

@@ -10,7 +10,7 @@ defmodule StbernardWeb.PropertyBased.AmountTest do
   alias StbernardWeb.Wallaby, as: WH
   alias Stbernard.Constants, as: C
 
-  @moduletag timeout: 500000
+  @moduletag timeout: 500_000
   @max_runs 3
   @headless :headless
 
