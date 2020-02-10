@@ -31,7 +31,6 @@ defmodule StbernardWeb.PropertyBasedFormTest do
 
     @moduletag timeout: 120_000
     @max_runs 10
-    @headless true
 
     @doc """
     User property-based testing to test that the amount succeeds if it is greater than 0, fails if not
@@ -39,7 +38,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     property "amount succeeds if it is greater than 0 fails if not" do
       Benchee.run(%{
         "hound-property-amount" => fn ->
-            HH.start(@headless)
+            HH.start()
             check all gen_amt <- StreamData.integer(), max_runs: @max_runs do
               HH.swap_single_field("payment_amount", gen_amt)
               alert = HH.fetch_alert()
@@ -64,7 +63,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     User property-based testing to test that the name is valid if it is a valid string
     """
     property "name is valid if it is a valid string" do
-      HH.start(:headless)
+      HH.start()
       data = "./test/showpony_blns.txt" |> File.stream! |> Stream.map(&(String.replace(&1, "\n", "")))  |> Stream.map(&(String.trim(&1)))
       check all gen_name <- StreamData.member_of(data), max_runs: @max_runs do
         HH.swap_single_field("payment_name", gen_name)
@@ -86,7 +85,7 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     """
     property "cvv succeeds cvv >= ccv min length & cvv <= cvv max length" do
         require Integer
-        HH.start(:headless)
+        HH.start()
 
         good_cvv_generator = Generators.cvv_generator(:good)
         bad_cvv_generator = Generators.cvv_generator(:bad)
@@ -107,8 +106,8 @@ defmodule StbernardWeb.PropertyBasedFormTest do
     @doc """
     User property-based testing to test that the account succeeds
     """
-    property "account succeeds if it is not null and not more than account length min and max" do
-      HH.start(:headless)
+    property "account succeeds if it is not null and not less/more than account length min and max" do
+      HH.start()
 
       check all generated <- StreamData.integer() do
         min = C.account_min_length

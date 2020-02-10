@@ -6,13 +6,13 @@ defmodule StbernardWeb.Hound do
   import StbernardWeb.Router.Helpers
   alias Stbernard.Constants, as: C
 
-  def start(browser \\ nil) do
-    start_sess(browser)
+  def start() do
+    start_sess()
     fill_in_valid_form()
   end
 
-  def start_sess(:headless), do:  Hound.start_session(browser: "chrome_headless")
-  def start_sess(_), do:  Hound.start_session()
+  # def start_sess("headless"), do:  Hound.start_session(browser: "chrome_headless")
+  def start_sess(), do:  Hound.start_session()
 
   def start_new_sess(sess_name) do
     change_session_to(sess_name)
@@ -55,7 +55,6 @@ defmodule StbernardWeb.Hound do
       nil
     end
     find_element(:id, "payment_submit") |> click()
-    :timer.sleep(500)
   end
 
   def assert_alert(alert), do: element_displayed?(alert)

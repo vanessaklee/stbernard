@@ -45,16 +45,20 @@ defmodule Stbernard.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_live_view, "~> 0.5.1"},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:sobelow, ">= 0.0.0", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.9.2", only: :test},
       {:floki, ">= 0.0.0", only: :test},
       {:httpoison, "~> 1.6"},
       {:stream_data, "~> 0.1", only: [:dev, :test]},
       {:benchee, "~> 1.0", only: [:test, :dev]},
       {:benchee_html, "~> 1.0", only: [:test, :dev]},
+      {:benchee_markdown, "~> 0.1", only: [:test, :dev]},
       {:ex_unit_notifier, "~> 0.1", only: :test},
+      {:ex_check, ">= 0.0.0", only: [:test, :dev], runtime: false},
       {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev, :test]]},
-      {:hound, "~> 1.0", only: [:dev, :test]},
-      {:ex_doc, "~> 0.19", only: :dev},
-      {:excoveralls, "~> 0.9.2", only: :test}
+      {:hound, "~> 1.0", only: [:dev, :test]}
     ]
   end
 

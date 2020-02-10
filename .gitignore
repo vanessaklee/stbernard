@@ -43,4 +43,3 @@ npm-debug.log
 /priv/
 /test/stbernard_web/integration/screenshots/
 .DS_Store
-benchee_output/*

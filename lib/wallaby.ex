@@ -39,6 +39,5 @@ defmodule StbernardWeb.Wallaby do
     session
     |> fill_in(Query.text_field(field), with: new_value)
     |> Browser.click(Query.button("payment_submit"))
-    :timer.sleep(500)
   end
 end

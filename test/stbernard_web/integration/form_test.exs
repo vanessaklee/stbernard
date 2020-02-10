@@ -58,7 +58,7 @@ defmodule StbernardWeb.FormTest do
         # retrieve form elements
         form = find_element(:id, "payment_form")
         fill_in_valid_form(form)
-        :timer.sleep(1000)
+        # :timer.sleep(1000)
 
         # refill with invalid value
         find_within_element(form, :id, "payment_name") |> fill_field(Enum.random(C.invalid_names()))
