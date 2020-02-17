@@ -3,7 +3,6 @@ defmodule StbernardWeb.Hound do
   Hound tests
   """
   use Hound.Helpers
-  import StbernardWeb.Router.Helpers
   alias Stbernard.Constants, as: C
 
   def start() do
@@ -14,6 +13,11 @@ defmodule StbernardWeb.Hound do
   # def start_sess("headless"), do:  Hound.start_session(browser: "chrome_headless")
   def start_sess(), do:  Hound.start_session()
 
+  def start_sess_fill_in_valid_form() do
+    Hound.start_session()
+    fill_in_valid_form()
+  end
+
   def start_new_sess(sess_name) do
     change_session_to(sess_name)
     fill_in_valid_form()
@@ -23,24 +27,12 @@ defmodule StbernardWeb.Hound do
   def end_sess(), do: Hound.end_session
 
   def fill_in_valid_form() do
-    navigate_to(page_url(StbernardWeb.Endpoint, :index))
-    form = find_element(:id, "payment_form")
-    # ID
-    name = find_within_element(form, :id, "payment_name")
-    postal = find_within_element(form, :id, "payment_postal")
-    account = find_within_element(form, :id, "payment_account")
-
-    # XPath
-    cvv = find_element(:xpath, ~s|//*[@id="payment_cvv"]|)
-    amount = find_element(:xpath, ~s|//*[@id="payment_amount"]|)
-
-    # populate the form fields
-    name |> fill_field(Enum.random(C.valid_names()))
-    postal |> fill_field(Enum.random(C.valid_postals()))
-    account |> fill_field(Enum.random(C.valid_accounts()))
-    cvv |> fill_field(Enum.random(C.valid_cvvs()))
-    amount |> fill_field(Enum.random(C.valid_amounts()))
-
+    navigate_to("/")
+    find_element(:id, "payment_name") |> fill_field(Enum.random(C.valid_names()))
+    find_element(:id, "payment_postal") |> fill_field(Enum.random(C.valid_postals()))
+    find_element(:id, "payment_account") |> fill_field(Enum.random(C.valid_accounts()))
+    find_element(:id, "payment_cvv") |> fill_field(Enum.random(C.valid_cvvs()))
+    find_element(:id, "payment_amount") |> fill_field(Enum.random(C.valid_amounts()))
     execute_script("document.getElementById(\"payment_exp_year\").value = \"#{Enum.random(C.years())}\"")
     execute_script("document.getElementById(\"payment_exp_month\").value = \"#{Enum.random(C.months())}\"")
   end

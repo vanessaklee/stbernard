@@ -18,7 +18,7 @@ defmodule StbernardWeb.Router do
 
     get "/", PageController, :index
     get "/ac", PageController, :index_ac
-    
+
     post "/charge", PageController, :charge
   end
 end

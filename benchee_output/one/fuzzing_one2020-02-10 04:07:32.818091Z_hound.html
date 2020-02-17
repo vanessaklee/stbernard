@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Hound Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Hound.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Hound</td>
+        
+        
+          <td>0.67</td>
+          <td>1.50 s</td>
+          <td>±7.12%</td>
+          <td>1.50 s</td>
+          <td>none</td>
+          <td>1.19 s</td>
+          <td>1.82 s</td>
+        
+        <td>134</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          <a name="memory" href="#memory">Hound Memory</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual memory usage distribution for Hound.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Hound</td>
+        
+        
+          <td>0.91 MB</td>
+          <td>±0.17%</td>
+          <td>0.91 MB</td>
+          <td>0.91 MB, 0.91 MB, 0.91 MB, 0.91 MB, 0.91 MB</td>
+          <td>0.91 MB</td>
+          <td>0.92 MB</td>
+        
+        <td>164</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        
+          <section class="benchee-plot-container">
+            <div id="memory-histogram" class="plot"></div>
+          </section>
+          <section class="benchee-plot-container">
+            <div id="raw-memory" class="plot"></div>
+          </section>
+        
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Hound","job_name":"Hound","input_name":"__no_input","run_time_data":{"statistics":{"absolute_difference":null,"average":1497048564.1791046,"ips":0.6679810020380619,"maximum":1.8196049e9,"median":1.5042784e9,"minimum":1.1884179e9,"mode":null,"percentiles":{"50":1.5042784e9,"99":1783880050.0000005},"relative_less":null,"relative_more":null,"sample_size":134,"std_dev":106598670.0828991,"std_dev_ips":0.047564179387156305,"std_dev_ratio":0.0712058864578997},"samples":[1.7175339e9,1.6717769e9,1.4569189e9,1.5678449e9,1.4950669e9,1.4994639e9,1.4684889e9,1.5947389e9,1.5187959e9,1.5012699e9,1.4924179e9,1.5106259e9,1.5161369e9,1.5026109e9,1.5671389e9,1.4994459e9,1.5451789e9,1.5199519e9,1.6104989e9,1.5249969e9,1.5475889e9,1.4945209e9,1.6090139e9,1.5440099e9,1.6135909e9,1.5022199e9,1.5769539e9,1.5890029e9,1.4669389e9,1.5895769e9,1.5993749e9,1.5877869e9,1.5449789e9,1.5796809e9,1.6210469e9,1.4306479e9,1.6045329e9,1.4984679e9,1.4953059e9,1.5053089e9,1.5630289e9,1.5039849e9,1.6374879e9,1.3009159e9,1.3327579e9,1.2454449e9,1.2155559e9,1.4490929e9,1.5673969e9,1.4995759e9,1.4621529e9,1.4887159e9,1.4614389e9,1.5182789e9,1.4714079e9,1.4916179e9,1.4820859e9,1.6543939e9,1.4648089e9,1.5020629e9,1.4816159e9,1.5147539e9,1.4874149e9,1.4798289e9,1.5007889e9,1.4652439e9,1.4993669e9,1.4715289e9,1.5285249e9,1.4389379e9,1.5515839e9,1.4786749e9,1.5156619e9,1.8196049e9,1.5485949e9,1.5373219e9,1.5127789e9,1.7065079e9,1.6463809e9,1.4510369e9,1.2458889e9,1.3541129e9,1.1884179e9,1.2149489e9,1.5064619e9,1.2766529e9,1.2161329e9,1.2164069e9,1.2835379e9,1.4301679e9,1.5686849e9,1.4930019e9,1.5873479e9,1.5219029e9,1.5801729e9,1.4997959e9,1.5965059e9,1.5473849e9,1.5046419e9,1.4842709e9,1.5590699e9,1.5104569e9,1.4903099e9,1.5153379e9,1.5222729e9,1.6298969e9,1.4843579e9,1.5721289e9,1.4743549e9,1.5014849e9,1.5045719e9,1.4980009e9,1.5152129e9,1.5720999e9,1.2180559e9,1.2477159e9,1.2864909e9,1.3249519e9,1.4865829e9,1.5506079e9,1.4946369e9,1.5167409e9,1.4501159e9,1.5864679e9,1.5163279e9,1.4632089e9,1.4824599e9,1.5544969e9,1.5302149e9,1.4495289e9,1.5367509e9,1.5200469e9,1.5089049e9,1.4843959e9]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":957951.9512195121,"ips":null,"maximum":963896,"median":957620.0,"minimum":952472,"mode":[957208,956728,957080,957256,957264],"percentiles":{"50":957620.0,"99":963225.2},"relative_less":null,"relative_more":null,"sample_size":164,"std_dev":1673.8168417397856,"std_dev_ips":null,"std_dev_ratio":0.0017472868441981333},"samples":[957336,958560,957264,957352,955232,957184,956552,958968,958000,959176,959128,957264,956672,959304,959032,956240,955328,957800,960928,958832,955528,957912,957008,957208,955048,957080,957272,957152,957208,959656,957336,956728,956776,960416,957256,956536,956624,958824,956328,957024,957144,957408,958144,957704,958184,959184,955832,957264,957808,956728,960056,960528,956680,957464,962864,960712,959008,958736,956376,957696,957080,956768,960608,960528,955088,960056,956896,956656,959544,958216,960176,956752,957184,957312,960272,960552,956080,959584,956904,957256,952984,960024,956728,957056,959088,959440,959136,956536,956656,959120,958696,960272,956272,957208,956272,957320,956760,958264,956000,957272,958912,958064,958432,957384,956408,956704,959696,958144,958112,958072,957504,957240,955760,957056,959376,956032,957080,959464,957152,957408,956360,958216,957256,957544,956520,956776,958704,955784,959368,960080,963896,962048,956160,958976,957864,952472,958672,957840,957768,958584,957216,955888,957000,959896,958792,957488,955744,960120,959584,959880,960368,958568,957888,959416,960792,958072,960024,958480,958328,955880,959448,957880,960840,960432]},"tag":null};
+
+      var inputHeadline = ""
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+        if (scenario.memory_usage_data.statistics.std_dev !== 0) {
+          drawMemoryHistogram(scenario, inputHeadline);
+          drawRawMemoryChart(scenario, inputHeadline);
+        };
+      
+    </script>
+  </body>
+</html>

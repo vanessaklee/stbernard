@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Wallaby Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Wallaby.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Wallaby</td>
+        
+        
+          <td>0.54</td>
+          <td>1.84 s</td>
+          <td>±18.89%</td>
+          <td>1.80 s</td>
+          <td>none</td>
+          <td>1.18 s</td>
+          <td>3.04 s</td>
+        
+        <td>110</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          <a name="memory" href="#memory">Wallaby Memory</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual memory usage distribution for Wallaby.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Wallaby</td>
+        
+        
+          <td>2.99 MB</td>
+          <td>±0.26%</td>
+          <td>2.99 MB</td>
+          <td>2.99 MB, 2.99 MB, 2.98 MB</td>
+          <td>2.97 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>121</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        
+          <section class="benchee-plot-container">
+            <div id="memory-histogram" class="plot"></div>
+          </section>
+          <section class="benchee-plot-container">
+            <div id="raw-memory" class="plot"></div>
+          </section>
+        
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Wallaby","job_name":"Wallaby","input_name":"__no_input","run_time_data":{"statistics":{"absolute_difference":272084996.16477275,"average":1837259472.7272727,"ips":0.5442889340587128,"maximum":3.04071e9,"median":1.797967e9,"minimum":1.181249e9,"mode":null,"percentiles":{"50":1.797967e9,"99":3025146760.0},"relative_less":0.8519071474641069,"relative_more":1.1738368470985656,"sample_size":110,"std_dev":347013963.3969673,"std_dev_ips":0.10280304063990078,"std_dev_ratio":0.1888758602408245},"samples":[1.55462e9,1.518252e9,1.507288e9,1.52093e9,1.519238e9,1.676362e9,1.537145e9,1.538072e9,1.511173e9,1.73228e9,1.813343e9,1.256253e9,1.184315e9,1.285123e9,1.247003e9,1.253559e9,1.181249e9,1.300162e9,1.236358e9,1.281323e9,1.399871e9,1.237923e9,1.758061e9,1.755595e9,1.750109e9,1.745805e9,1.600266e9,1.717647e9,1.668769e9,1.660296e9,1.590997e9,1.761309e9,1.683823e9,1.665403e9,1.638648e9,1.628321e9,1.63841e9,1.796261e9,1.680931e9,1.725209e9,2.011366e9,1.848856e9,1.786541e9,1.689125e9,1.511193e9,1.447015e9,1.370151e9,1.926644e9,1.640618e9,1.594253e9,1.719466e9,1.747452e9,1.648248e9,1.681635e9,1.771546e9,1.630595e9,1.818531e9,1.681038e9,1.632827e9,1.768075e9,1.848825e9,2.022192e9,1.833131e9,1.799673e9,1.831567e9,1.83467e9,1.916875e9,2.117322e9,2.019806e9,3.04071e9,2.775785e9,1.861905e9,2.121761e9,2.207316e9,2.026783e9,2.047639e9,2.036009e9,1.964084e9,2.117619e9,1.988325e9,2.210996e9,2.099969e9,2.117485e9,2.007355e9,2.059086e9,2.159267e9,2.10637e9,2.899226e9,2.062742e9,2.743231e9,2.348809e9,2.240341e9,1.95115e9,2.07465e9,2.162104e9,2.073821e9,2.134575e9,2.113182e9,2.240237e9,2.091091e9,2.071385e9,2.039378e9,2.219735e9,1.983163e9,2.038905e9,2.087082e9,2.232967e9,2.155924e9,2.106222e9,2.17322e9]},"memory_usage_data":{"statistics":{"absolute_difference":2173839.4180996865,"average":3131497.0578512396,"ips":null,"maximum":3147328,"median":3131160.0,"minimum":3118200,"mode":[3131768,3131160,3121584],"percentiles":{"50":3131160.0,"99":3147152.0},"relative_less":0.3058146381937447,"relative_more":3.2699546558868895,"sample_size":121,"std_dev":8119.694571736797,"std_dev_ips":null,"std_dev_ratio":0.0025929114483372187},"samples":[3145840,3144368,3142328,3126504,3135864,3128448,3126432,3142208,3144248,3121584,3130512,3139296,3122752,3124480,3122464,3138016,3120880,3133584,3136928,3139888,3121424,3139352,3136184,3128992,3122888,3119480,3121336,3122360,3121432,3139856,3131160,3132840,3131768,3124344,3120568,3121648,3128120,3123328,3122880,3140536,3128144,3126632,3124872,3131144,3142248,3134528,3120360,3119128,3137920,3133104,3121872,3128384,3127016,3142704,3143408,3127240,3131816,3144328,3118680,3140824,3136472,3137088,3137808,3127432,3124992,3126720,3137048,3130504,3118200,3119216,3144768,3127304,3132856,3131992,3133248,3121760,3128568,3141736,3134256,3147328,3136952,3141928,3143472,3136808,3140464,3144808,3133920,3127952,3142256,3118664,3143040,3143192,3131768,3129264,3130416,3142200,3130792,3140784,3120680,3120344,3132760,3132088,3131160,3146528,3125424,3128592,3138160,3135760,3125608,3124352,3131952,3121104,3140736,3123360,3122560,3128280,3124720,3131944,3139592,3121584,3124408]},"tag":null};
+
+      var inputHeadline = ""
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+        if (scenario.memory_usage_data.statistics.std_dev !== 0) {
+          drawMemoryHistogram(scenario, inputHeadline);
+          drawRawMemoryChart(scenario, inputHeadline);
+        };
+      
+    </script>
+  </body>
+</html>

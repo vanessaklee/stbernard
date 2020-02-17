@@ -27,6 +27,7 @@ defmodule StbernardWeb.PropertyBased.BenchmarkTest do
     ]
     Benchee.run(
       test_manager(metadata, tests, nil),
+      save: [path: "benchee_output/all/allfuzzy.benchee", tag: DateTime.to_string(DateTime.utc_now)],
       time: 200,
       warmup: 1,
       memory_time: 250,
@@ -39,13 +40,15 @@ defmodule StbernardWeb.PropertyBased.BenchmarkTest do
   end
 
   @tag onefuzzy: true
+  @tag amount: true
   property "One field (amount) shall succeed", %{metadata: metadata} do
     tests = [%{field: "payment_amount", streamdata: integers(), assert: &assert_amount/2}]
     Benchee.run(
       test_manager(metadata, tests, nil),
-      time: 20,
+      save: [path: "benchee_output/one/one.benchee", tag: DateTime.to_string(DateTime.utc_now)],
+      time: 200,
       warmup: 1,
-      memory_time: 25,
+      memory_time: 250,
       formatters: [
         {Console, extended_statistics: true},
         {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
@@ -53,57 +56,64 @@ defmodule StbernardWeb.PropertyBased.BenchmarkTest do
       ]
     )
   end
-  # @tag onefuzzy: true
-  # property "One field (account) shall succeed", %{metadata: metadata} do
-  #   tests = [%{field: "payment_account", streamdata: integers(), assert: &assert_account/2}]
-  #   Benchee.run(
-  #     test_manager(metadata, tests, nil),
-  #     time: 200,
-  #     warmup: 1,
-  #     memory_time: 250,
-  #     formatters: [
-  #       {Console, extended_statistics: true},
-  #       {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
-  #       {Markdown, file: "benchee_output/md/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
-  #     ]
-  #   )
-  # end
-  # @tag onefuzzy: true
-  # property "One field (cvv) shall succeed", %{metadata: metadata} do
-  #   tests = [%{field: "payment_cvv", streamdata: cvvs(), assert: &assert_cvv/2}]
-  #   Benchee.run(
-  #     test_manager(metadata, tests, nil),
-  #     time: 200,
-  #     warmup: 1,
-  #     memory_time: 250,
-  #     formatters: [
-  #       {Console, extended_statistics: true},
-  #       {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
-  #       {Markdown, file: "benchee_output/md/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
-  #     ]
-  #   )
-  # end
-  # @tag onefuzzy: true
-  # property "One field (name) shall succeed", %{metadata: metadata} do
-  #   tests = [%{field: "payment_name", streamdata: strings(), assert: &assert_name/2}]
-  #   Benchee.run(
-  #     test_manager(metadata, tests, nil),
-  #     time: 200,
-  #     warmup: 1,
-  #     memory_time: 250,
-  #     formatters: [
-  #       {Console, extended_statistics: true},
-  #       {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
-  #       {Markdown, file: "benchee_output/md/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
-  #     ]
-  #   )
-  # end
+  @tag onefuzzy: true
+  @tag account: true
+  property "One field (account) shall succeed", %{metadata: metadata} do
+    tests = [%{field: "payment_account", streamdata: integers(), assert: &assert_account/2}]
+    Benchee.run(
+      test_manager(metadata, tests, nil),
+      save: [path: "benchee_output/one/one.benchee", tag: DateTime.to_string(DateTime.utc_now)],
+      time: 200,
+      warmup: 1,
+      memory_time: 250,
+      formatters: [
+        {Console, extended_statistics: true},
+        {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
+        {Markdown, file: "benchee_output/md/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
+      ]
+    )
+  end
+  @tag onefuzzy: true
+  @tag cvv: true
+  property "One field (cvv) shall succeed", %{metadata: metadata} do
+    tests = [%{field: "payment_cvv", streamdata: cvvs(), assert: &assert_cvv/2}]
+    Benchee.run(
+      test_manager(metadata, tests, nil),
+      save: [path: "benchee_output/one/one.benchee", tag: DateTime.to_string(DateTime.utc_now)],
+      time: 200,
+      warmup: 1,
+      memory_time: 250,
+      formatters: [
+        {Console, extended_statistics: true},
+        {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
+        {Markdown, file: "benchee_output/md/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
+      ]
+    )
+  end
+  @tag onefuzzy: true
+  @tag name: true
+  property "One field (name) shall succeed", %{metadata: metadata} do
+    tests = [%{field: "payment_name", streamdata: strings(), assert: &assert_name/2}]
+    Benchee.run(
+      test_manager(metadata, tests, nil),
+      save: [path: "benchee_output/one/one.benchee", tag: DateTime.to_string(DateTime.utc_now)],
+      time: 200,
+      warmup: 1,
+      memory_time: 250,
+      formatters: [
+        {Console, extended_statistics: true},
+        {HTML, file: "benchee_output/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
+        {Markdown, file: "benchee_output/md/fuzzing_one" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
+      ]
+    )
+  end
 
   @tag hound: true
   property "Hound only: One field shall succeed", %{metadata: metadata} do
     tests = [%{field: "payment_amount", streamdata: integers(), assert: &assert_amount/2}]
     Benchee.run(
       test_manager(metadata, tests, :hound),
+      save: [path: "benchee_output/hound.benchee", tag: DateTime.to_string(DateTime.utc_now)],
       time: 10,
       warmup: 1,
       memory_time: 20,
@@ -119,6 +129,7 @@ defmodule StbernardWeb.PropertyBased.BenchmarkTest do
     tests = [%{field: "payment_amount", streamdata: integers(), assert: &assert_amount/2}]
     Benchee.run(
       test_manager(metadata, tests, :wallaby),
+      save: [path: "benchee_output/wallaby.benchee", tag: DateTime.to_string(DateTime.utc_now)],
       time: 10,
       warmup: 1,
       memory_time: 20,

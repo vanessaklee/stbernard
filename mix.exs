@@ -44,21 +44,19 @@ defmodule Stbernard.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_live_view, "~> 0.5.1"},
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.1.0", only: [:dev, :test, :systemtest], runtime: false},
       {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:sobelow, ">= 0.0.0", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.9.2", only: :test},
-      {:floki, ">= 0.0.0", only: :test},
+      {:excoveralls, "~> 0.9.2", only: [:test, :systemtest]},
+      {:ex_unit_notifier, "~> 0.1", only: [:test, :systemtest]},
+      {:floki, ">= 0.0.0", only: [:test, :systemtest]},
       {:httpoison, "~> 1.6"},
-      {:stream_data, "~> 0.1", only: [:dev, :test]},
-      {:benchee, "~> 1.0", only: [:test, :dev]},
-      {:benchee_html, "~> 1.0", only: [:test, :dev]},
-      {:benchee_markdown, "~> 0.1", only: [:test, :dev]},
-      {:ex_unit_notifier, "~> 0.1", only: :test},
-      {:ex_check, ">= 0.0.0", only: [:test, :dev], runtime: false},
-      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev, :test]]},
-      {:hound, "~> 1.0", only: [:dev, :test]}
+      {:stream_data, "~> 0.1", only: [:dev, :test, :systemtest]},
+      {:benchee, "~> 1.0", only: [:test, :systemtest, :dev]},
+      {:benchee_html, "~> 1.0", only: [:test, :systemtest, :dev]},
+      {:benchee_markdown, "~> 0.1", only: [:test, :systemtest, :dev]},
+      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev, :test, :systemtest]]},
+      {:hound, "~> 1.0", only: [:dev, :test, :systemtest]}
     ]
   end
 
@@ -72,7 +70,9 @@ defmodule Stbernard.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"],
+      "cypress.open": ["cmd ./cypress-open.sh"],
+      "cypress.run": ["cmd ./cypress-run.sh"]
     ]
   end
 end
