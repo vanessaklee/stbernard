@@ -3,7 +3,7 @@ echo "===STARTING PHX SERVER==="
 echo "===IF STARTING CYPRESS FAILS==="
 echo "===RUN npm install cypress --save-dev ==="
 echo "===IN THE assets/ FOLDER==="
-MIX_ENV=systemtest mix phx.server &
+MIX_ENV=test mix phx.server &
 pid=$! # Store server pid
 ./assets/node_modules/.bin/cypress open
 result=$?

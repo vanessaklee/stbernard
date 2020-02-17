@@ -18,13 +18,12 @@ config :stbernard, :sql_sandbox, true
 
 config :wallaby,
   driver: Wallaby.Experimental.Chrome,
-  chrome: [headless: true],
+  chrome: [headless: false],
   max_wait_time: 5_000,
   creenshot_on_failure: true
 
 config :hound,
   driver: "chrome_driver",
-  browser: "chrome_headless",
   retry_time: 5_000,
   retries: 10
 

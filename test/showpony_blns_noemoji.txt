@@ -1,0 +1,119 @@
+undefined
+undef
+null
+NULL
+(null)
+nil
+NIL
+true
+false
+True
+False
+TRUE
+FALSE
+None
+hasOwnProperty
+then
+1,000.00
+1'000'000.00
+1.000,00
+1 000,00
+,./;'[]\-=
+<>?:"{}|_+
+!@#$%^&*()`~
+
+⅛⅜⅝⅞
+ЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя
+٠١٢٣٤٥٦٧٨٩
+⁰⁴⁵
+'
+"
+'"'
+<foo val=“bar” />
+田中さんにあげて下さい
+和製漢語
+Ⱥ
+Ⱦ
+ヽ༼ຈل͜ຈ༽ﾉ ヽ༼ຈل͜ຈ༽ﾉ
+(｡◕ ∀ ◕｡)
+｀ｨ(´∀｀∩
+__ﾛ(,_,*)
+・(￣∀￣)・:*:
+ﾟ･✿ヾ╲(｡◕‿◕｡)╱✿･ﾟ
+,。・:*:・゜’( ☻ ω ☻ )。・:*:・゜’
+(╯°□°）╯︵ ┻━┻)
+(ﾉಥ益ಥ）ﾉ﻿ ┻━┻
+┬─┬ノ( º _ ºノ)
+( ͡° ͜ʖ ͡°)
+¯\_(ツ)_/¯
+１２３
+١٢٣
+ثم نفس سقطستار وتنصيب كان. أهّل ايطاليا، بريطانيا-فرنسا قد أخذ. سليمان، إتفاقية بين ما, يذكر الحدود أي بعد, معاملة بولندا، الإطلاق عل إيو.
+הָיְתָהtestالصفحات التّحول
+مُنَاقَشَةُ سُبُلِ اِسْتِخْدَامِ اللُّغَةِ فِي النُّظُمِ الْقَائِمَةِ وَفِيم يَخُصَّ التَّطْبِيقَاتُ الْحاسُوبِيَّةُ، 
+test‪
+http://www.eeemo.net)
+ɹodɯǝʇ poɯsnᴉǝ op pǝs 'ʇᴉlǝ ƃuᴉɔsᴉdᴉpɐ ɹnʇǝʇɔǝsuoɔ 'ʇǝɯɐ ʇᴉs ɹolop ɯnsdᴉ ɯǝɹo˥
+00˙Ɩ$-
+Ｔｈｅ ｑｕｉｃｋ ｂｒｏｗｎ ｆｏｘ ｊｕｍｐｓ ｏｖｅｒ ｔｈｅ ｌａｚｙ ｄｏｇ
+⒯⒣⒠ ⒬⒰⒤⒞⒦ ⒝⒭⒪⒲⒩ ⒡⒪⒳ ⒥⒰⒨⒫⒮ ⒪⒱⒠⒭ ⒯⒣⒠ ⒧⒜⒵⒴ ⒟⒪⒢
+<script>alert(123)</script>
+&lt;script&gt;alert(&#39;123&#39;);&lt;/script&gt;
+<img src=x onerror=alert(123) />
+><script>alert(123);</script x=
+" autofocus onkeyup="javascript:alert(123)
+<script\x20type="text/javascript">javascript:alert(1);</script>
+ABC<div style="x:\x0Bexpression(javascript:alert(1)">DEF
+perl -e 'print "<IMG SRC=java\0script:alert(\"XSS\")>";' > out
+<SCRIPT SRC=//ha.ckers.org/.j>
+<IMG SRC="javascript:alert('XSS')"
+<iframe src=http://ha.ckers.org/scriptlet.html <
+\";alert('XSS');//
+<u oncopy=alert()> Copy me</u>
+<i onwheel=alert(1)> Scroll over me </i>
+<plaintext>
+http://a/%%30%30
+</textarea><script>alert(123)</script>
+1'; DROP TABLE users-- 1
+' OR 1=1 -- 1
+' OR '1'='1
+%
+_
+
+-
+--
+--version
+--help
+$USER
+/dev/null; touch /tmp/blns.fail ; echo
+`touch /tmp/blns.fail`
+$(touch /tmp/blns.fail)
+@{[system "touch /tmp/blns.fail"]}
+eval("puts 'hello world'")
+System("ls -al /")
+`ls -al /`
+Kernel.exec("ls -al /")
+Kernel.exit(1)
+%x('ls -al /')
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [ <!ELEMENT foo ANY ><!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
+$HOME
+$ENV{'HOME'}
+File:///
+../../../../../../../../../../../etc/passwd%00
+() { 0; }; touch /tmp/blns.shellshock1.fail;
+<<< %s(un='%s') = %u
++++ATH0
+CON
+PRN
+LPT1
+LPT2
+LPT3
+COM2
+COM3
+COM4
+DCC SEND STARTKEYLOGGER 0 0 0
+http://www.cum.qc.ca/
+Craig Cockburn, Software Specialist
+Linda Callahan
+Dr. Herman I. Libshitz
+But now...[20Cfor my greatest trick...[8m

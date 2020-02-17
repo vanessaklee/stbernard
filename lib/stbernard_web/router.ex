@@ -9,8 +9,24 @@ defmodule StbernardWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :cypress do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :put_secure_browser_headers
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/cypress", StbernardWeb do
+    pipe_through :cypress
+
+    get "/", PageController, :index
+    get "/ac", PageController, :index_ac
+
+    post "/charge", PageController, :charge
   end
 
   scope "/", StbernardWeb do

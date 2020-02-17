@@ -10,11 +10,11 @@ config :stbernard, Stbernard.Repo,
   pool_size: 10
 
 # We don't run a server during test, but we need it for systemtest!
-config :stbernard, StbernardWeb.Endpoint,
+config :stbernard, StbernardWebWeb.Endpoint,
   http: [port: 5000],
   server: true
 
-  config :wallaby,
+config :wallaby,
   driver: Wallaby.Experimental.Chrome,
   chrome: [headless: true],
   max_wait_time: 5_000,

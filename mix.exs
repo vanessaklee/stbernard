@@ -26,6 +26,7 @@ defmodule Stbernard.MixProject do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:headlesstest), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -44,19 +45,19 @@ defmodule Stbernard.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_live_view, "~> 0.5.1"},
-      {:credo, "~> 1.1.0", only: [:dev, :test, :systemtest], runtime: false},
+      {:credo, "~> 1.1.0", only: [:dev, :test, :systemtest, :headlesstest], runtime: false},
       {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.9.2", only: [:test, :systemtest]},
-      {:ex_unit_notifier, "~> 0.1", only: [:test, :systemtest]},
-      {:floki, ">= 0.0.0", only: [:test, :systemtest]},
+      {:excoveralls, "~> 0.9.2", only: [:test, :systemtest, :headlesstest]},
+      {:ex_unit_notifier, "~> 0.1", only: [:test, :systemtest, :headlesstest]},
+      {:floki, ">= 0.0.0", only: [:test, :systemtest, :headlesstest]},
       {:httpoison, "~> 1.6"},
-      {:stream_data, "~> 0.1", only: [:dev, :test, :systemtest]},
-      {:benchee, "~> 1.0", only: [:test, :systemtest, :dev]},
-      {:benchee_html, "~> 1.0", only: [:test, :systemtest, :dev]},
-      {:benchee_markdown, "~> 0.1", only: [:test, :systemtest, :dev]},
-      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev, :test, :systemtest]]},
-      {:hound, "~> 1.0", only: [:dev, :test, :systemtest]}
+      {:stream_data, "~> 0.1", only: [:dev, :test, :systemtest, :headlesstest]},
+      {:benchee, "~> 1.0", only: [:test, :systemtest, :headlesstest, :dev]},
+      {:benchee_html, "~> 1.0", only: [:test, :systemtest, :headlesstest, :dev]},
+      {:benchee_markdown, "~> 0.1", only: [:test, :systemtest, :headlesstest, :dev]},
+      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev, :test, :systemtest, :headlesstest]]},
+      {:hound, "~> 1.0", only: [:dev, :test, :systemtest, :headlesstest]}
     ]
   end
 
