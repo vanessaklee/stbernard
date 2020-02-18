@@ -51,7 +51,7 @@ Benchmark suite executing with the following configuration:
 
 
 ```diff
-- __Input: Click button__
+- INPUT: CLICK BUTTON
 ```
 
 Run Time
@@ -96,7 +96,11 @@ Comparison
   <tr>
     <td style="white-space: nowrap">Wallaby</td>
     <td style="white-space: nowrap; text-align: right">3.21 M</td>
-    <td style="white-space: nowrap; text-align: right">1.17x</td>
+    <td style="white-space: nowrap; text-align: right">
+    ```diff 
+    ! 1.17x
+    ```
+    </td>
   </tr>
 </table>
 
