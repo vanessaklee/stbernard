@@ -97,8 +97,8 @@ Comparison
     <td style="white-space: nowrap">Wallaby</td>
     <td style="white-space: nowrap; text-align: right">3.21 M</td>
     <td style="white-space: nowrap; text-align: right">
-    ```diff 
-    ! 1.17x
+    ```diff
+    - 1/17x
     ```
     </td>
   </tr>
