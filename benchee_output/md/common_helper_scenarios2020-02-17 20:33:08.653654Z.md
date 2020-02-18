@@ -50,7 +50,7 @@ Benchmark suite executing with the following configuration:
 
 
 
-```
+```diff
 - __Input: Click button__
 ```
 
