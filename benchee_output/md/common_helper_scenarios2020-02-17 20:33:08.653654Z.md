@@ -50,7 +50,9 @@ Benchmark suite executing with the following configuration:
 
 
 
-__Input: Click button__
+```
+- __Input: Click button__
+```
 
 Run Time
 <table style="width: 1%">
