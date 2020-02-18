@@ -96,11 +96,7 @@ Comparison
   <tr>
     <td style="white-space: nowrap">Wallaby</td>
     <td style="white-space: nowrap; text-align: right">3.21 M</td>
-    <td style="white-space: nowrap; text-align: right">
-    ```diff
-    - 1/17x
-    ```
-    </td>
+    <td style="white-space: nowrap; text-align: right">1.17x</td>
   </tr>
 </table>
 
@@ -108,7 +104,9 @@ Comparison
 <hr/>
 
 
-__Input: DOM element displayed__
+```diff
+- INPUT: DOM ELEMENT DISPLAYED
+```
 
 Run Time
 <table style="width: 1%">
@@ -160,7 +158,9 @@ Comparison
 <hr/>
 
 
-__Input: Fill-in input__
+```diff
+- INPUT: FILL-IN INPUT
+```
 
 Run Time
 <table style="width: 1%">
@@ -212,7 +212,9 @@ Comparison
 <hr/>
 
 
-__Input: Find DOM element__
+```diff
+- INPUT: FIND DOM ELEMENT
+```
 
 Run Time
 <table style="width: 1%">
@@ -264,7 +266,9 @@ Comparison
 <hr/>
 
 
-__Input: Navigate to a page__
+```diff
+- INPUT: NAVIGATE TO A PAGE
+```
 
 Run Time
 <table style="width: 1%">
@@ -316,7 +320,9 @@ Comparison
 <hr/>
 
 
-__Input: Visible text__
+```diff
+- INPUT: VISIBLE TEXT
+```
 
 Run Time
 <table style="width: 1%">
