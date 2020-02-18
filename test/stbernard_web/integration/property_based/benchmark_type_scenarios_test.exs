@@ -44,13 +44,13 @@ defmodule StbernardWeb.PropertyBased.BenchmarkTypeScenariosTest do
         "float" => floats()
       },
       save: [path: "benchee_output/all/datatypes.benchee", tag: DateTime.to_string(DateTime.utc_now)],
-      time: 100,
+      time: 5,
       before_scenario: fn(inputs) ->
         Hound.start_session()
         navigate_to("/")
         session = WH.start_sess(metadata)
         session |> WH.start
-        {Enum.take(inputs, 25), session}
+        {Enum.take(inputs, 2), session}
       end,
       after_scenario: fn(_return) ->
         Hound.end_session
