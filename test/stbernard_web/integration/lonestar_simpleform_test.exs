@@ -14,8 +14,7 @@ defmodule StbernardWeb.LonestarSimpleformTest do
   """
   @tag lonestar2: true
   describe "landing" do
-    test "landing page loads correctly", _meta do
-
+    test "Form filled with valid data succeeds", _meta do
       # HOUND
       Hound.start_session()
       navigate_to(page_url(StbernardWeb.Endpoint, :index))
@@ -32,7 +31,6 @@ defmodule StbernardWeb.LonestarSimpleformTest do
 
       # WALLABY
       {:ok, session} = Wallaby.start_session()
-      Wallaby.Browser.visit(session, "/")
       session
       |> visit("/")
       |> fill_in(Query.text_field("payment_name"), with: Enum.random(C.valid_names()))

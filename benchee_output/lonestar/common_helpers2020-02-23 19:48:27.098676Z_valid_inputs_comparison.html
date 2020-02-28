@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Valid inputs
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          Run Time Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="Comparisons of the different benchmarking jobs. For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better. The Box Plot shows a distribution of run times with the median and outliers."
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_navigate__hound_.html">Navigate (hound)</a></td>
+        
+        
+          <td>67.29</td>
+          <td>14.86 ms</td>
+          <td>±40.65%</td>
+          <td>14.05 ms</td>
+          <td>14.35 ms, 14.45 ms, 15.48 ms, 13.52 ms, 12.57 ms, 14.12 ms, 13.51 ms, 13.69 ms, 12.87 ms, 13.76 ms, 15.67 ms, 13.38 ms, 12.59 ms</td>
+          <td>11.70 ms</td>
+          <td>109.30 ms</td>
+        
+        <td>337</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_navigate__wallaby_.html">Navigate (wallaby)</a></td>
+        
+        
+          <td>61.33</td>
+          <td>16.30 ms</td>
+          <td>±28.19%</td>
+          <td>15.70 ms</td>
+          <td>14.78 ms, 16.63 ms, 15.17 ms, 15.07 ms, 15.77 ms, 15.12 ms, 15.03 ms, 14.79 ms, 16.56 ms</td>
+          <td>13.05 ms</td>
+          <td>83.98 ms</td>
+        
+        <td>307</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_select_option__hound_.html">Select option (hound)</a></td>
+        
+        
+          <td>55.85</td>
+          <td>17.91 ms</td>
+          <td>±17.60%</td>
+          <td>17.20 ms</td>
+          <td>16.50 ms, 17.49 ms, 16.81 ms, 17.04 ms, 17.85 ms, 17.53 ms, 16.18 ms, 17.16 ms</td>
+          <td>15.13 ms</td>
+          <td>38.31 ms</td>
+        
+        <td>280</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_find_element__hound_.html">Find element (hound)</a></td>
+        
+        
+          <td>51.59</td>
+          <td>19.38 ms</td>
+          <td>±17.30%</td>
+          <td>18.63 ms</td>
+          <td>17.97 ms, 17.59 ms</td>
+          <td>16.19 ms</td>
+          <td>39.30 ms</td>
+        
+        <td>258</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_element_displayed__hound_.html">Element displayed (hound)</a></td>
+        
+        
+          <td>37.93</td>
+          <td>26.36 ms</td>
+          <td>±15.94%</td>
+          <td>25.59 ms</td>
+          <td>24.64 ms</td>
+          <td>23.26 ms</td>
+          <td>61.68 ms</td>
+        
+        <td>190</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_visible_text__hound_.html">Visible text (hound)</a></td>
+        
+        
+          <td>34.22</td>
+          <td>29.22 ms</td>
+          <td>±26.15%</td>
+          <td>28.54 ms</td>
+          <td>29.22 ms, 29.69 ms, 29.05 ms, 25.89 ms</td>
+          <td>25.35 ms</td>
+          <td>117.81 ms</td>
+        
+        <td>172</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_element_displayed__wallaby_.html">Element displayed (wallaby)</a></td>
+        
+        
+          <td>33.99</td>
+          <td>29.42 ms</td>
+          <td>±14.43%</td>
+          <td>28.74 ms</td>
+          <td>28.68 ms</td>
+          <td>26.68 ms</td>
+          <td>66.01 ms</td>
+        
+        <td>171</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_find_element__wallaby_.html">Find element (wallaby)</a></td>
+        
+        
+          <td>33.55</td>
+          <td>29.81 ms</td>
+          <td>±13.82%</td>
+          <td>29.37 ms</td>
+          <td>29.25 ms</td>
+          <td>26.84 ms</td>
+          <td>63.52 ms</td>
+        
+        <td>168</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_visible_text__wallaby_.html">Visible text (wallaby)</a></td>
+        
+        
+          <td>26.03</td>
+          <td>38.41 ms</td>
+          <td>±12.96%</td>
+          <td>37.43 ms</td>
+          <td>none</td>
+          <td>34.98 ms</td>
+          <td>71.68 ms</td>
+        
+        <td>131</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_button_click__hound_.html">Button click (hound)</a></td>
+        
+        
+          <td>17.96</td>
+          <td>55.67 ms</td>
+          <td>±19.33%</td>
+          <td>52.38 ms</td>
+          <td>53.70 ms</td>
+          <td>48.99 ms</td>
+          <td>112.80 ms</td>
+        
+        <td>90</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_fill_in_element__hound_.html">Fill-in element (hound)</a></td>
+        
+        
+          <td>13.17</td>
+          <td>75.93 ms</td>
+          <td>±8.86%</td>
+          <td>75.07 ms</td>
+          <td>none</td>
+          <td>66.30 ms</td>
+          <td>102.48 ms</td>
+        
+        <td>66</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_fill_in_element__wallaby_.html">Fill-in element (wallaby)</a></td>
+        
+        
+          <td>13.13</td>
+          <td>76.14 ms</td>
+          <td>±9.69%</td>
+          <td>74.97 ms</td>
+          <td>none</td>
+          <td>68.56 ms</td>
+          <td>111.82 ms</td>
+        
+        <td>66</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_button_click__wallaby_.html">Button click (wallaby)</a></td>
+        
+        
+          <td>12.73</td>
+          <td>78.55 ms</td>
+          <td>±14.21%</td>
+          <td>81.91 ms</td>
+          <td>none</td>
+          <td>61.43 ms</td>
+          <td>113.37 ms</td>
+        
+        <td>64</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="common_helpers2020-02-23 19:48:27.098676Z_valid_inputs_select_option__wallaby_.html">Select option (wallaby)</a></td>
+        
+        
+          <td>8.43</td>
+          <td>118.64 ms</td>
+          <td>±10.29%</td>
+          <td>115.27 ms</td>
+          <td>none</td>
+          <td>110.67 ms</td>
+          <td>171.31 ms</td>
+        
+        <td>43</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="ips-comparison" class=" plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-time-box-plot" class=" plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenarios     = [{"name":"Navigate (hound)","job_name":"Navigate (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":null,"average":14860498.516320474,"ips":67.29249351236464,"maximum":1.09295e8,"median":1.4054e7,"minimum":1.1702e7,"mode":[1.4349e7,1.4451e7,1.5478e7,1.3518e7,1.257e7,1.4122e7,1.3506e7,1.3685e7,1.2868e7,1.3756e7,1.5669e7,1.3385e7,1.2587e7],"percentiles":{"50":1.4054e7,"99":35957820.00000002},"relative_less":null,"relative_more":null,"sample_size":337,"std_dev":6040628.696941511,"std_dev_ips":27.35365620158137,"std_dev_ratio":0.4064889673995403},"samples":[1.4014e7,1.4571e7,1.2952e7,1.4224e7,1.3622e7,1.5451e7,1.3692e7,1.3385e7,1.3444e7,1.4349e7,1.334e7,1.369e7,1.3924e7,1.4122e7,1.3115e7,1.2681e7,1.3932e7,1.4991e7,1.3589e7,1.4096e7,3.7843e7,1.4143e7,1.4975e7,1.4809e7,1.5667e7,1.4978e7,1.5669e7,1.3073e7,1.375e7,1.524e7,1.4676e7,1.3237e7,1.4558e7,1.3842e7,1.4028e7,1.4158e7,1.4792e7,1.4148e7,1.3548e7,1.3674e7,1.3518e7,1.4207e7,1.4554e7,1.3535e7,1.3277e7,1.4257e7,1.3234e7,1.437e7,1.496e7,1.4232e7,1.377e7,1.504e7,1.567e7,1.5211e7,1.3667e7,1.4428e7,1.4195e7,1.5953e7,1.3561e7,1.5912e7,1.3756e7,1.3006e7,1.4351e7,1.5959e7,1.3956e7,1.5035e7,1.411e7,1.5039e7,1.5363e7,1.5441e7,1.3555e7,1.4581e7,1.4799e7,1.4451e7,1.395e7,1.5421e7,1.5669e7,1.5691e7,1.3689e7,1.4693e7,1.4729e7,1.5088e7,1.4118e7,1.4449e7,1.5306e7,1.5594e7,1.5478e7,1.3685e7,1.4483e7,1.459e7,1.4458e7,1.4708e7,1.4133e7,1.6147e7,1.5083e7,1.5499e7,1.4404e7,1.9337e7,1.4303e7,1.4544e7,1.5253e7,1.5066e7,1.5452e7,1.535e7,1.4704e7,1.4486e7,1.6125e7,1.5812e7,3.1812e7,1.697e7,1.09295e8,1.3364e7,1.4412e7,1.6292e7,1.4485e7,1.4967e7,1.278e7,1.4098e7,1.5086e7,1.3598e7,1.3474e7,1.4093e7,1.4638e7,1.2877e7,1.4054e7,1.3477e7,1.3758e7,1.5192e7,1.4719e7,1.4775e7,1.2908e7,1.4328e7,1.3993e7,1.2937e7,1.3604e7,1.2445e7,1.4082e7,1.323e7,1.5215e7,1.4753e7,1.4315e7,1.8966e7,3.2882e7,1.2348e7,1.3409e7,1.4066e7,1.2563e7,1.3882e7,1.448e7,1.2865e7,1.2868e7,1.3786e7,1.5206e7,1.3791e7,1.7157e7,1.2734e7,1.3616e7,1.4136e7,1.3653e7,1.6396e7,1.4258e7,1.4736e7,1.4768e7,1.2799e7,1.3685e7,1.3026e7,1.5227e7,1.2803e7,1.4905e7,1.3385e7,1.3484e7,1.4402e7,1.3245e7,1.439e7,1.5478e7,1.8714e7,2.824e7,1.2964e7,1.3562e7,1.2573e7,1.2041e7,1.2901e7,1.3554e7,1.2868e7,1.344e7,1.2572e7,1.3392e7,1.3373e7,1.2677e7,1.7074e7,1.4751e7,1.34e7,1.3388e7,1.3985e7,1.3807e7,1.3824e7,1.4756e7,1.4746e7,1.3126e7,1.3726e7,1.3627e7,1.2919e7,1.2081e7,1.4119e7,1.3506e7,1.3871e7,1.2938e7,1.1844e7,1.371e7,1.3877e7,1.8669e7,2.9028e7,1.257e7,1.33e7,1.2311e7,1.5608e7,1.3439e7,1.2769e7,1.3973e7,1.47e7,1.3756e7,1.3909e7,1.4049e7,1.3141e7,1.4397e7,1.4386e7,1.2587e7,1.3996e7,1.3243e7,1.3819e7,1.4248e7,1.5076e7,1.4789e7,1.3019e7,1.4323e7,1.343e7,1.4296e7,1.4868e7,1.4834e7,1.3118e7,1.4349e7,1.4774e7,1.3181e7,1.1702e7,1.3991e7,2.0387e7,2.5203e7,1.3978e7,1.5304e7,1.42e7,1.6193e7,1.4234e7,1.2729e7,1.4338e7,1.3715e7,1.337e7,1.3911e7,1.2672e7,1.3716e7,1.3134e7,1.257e7,1.2498e7,1.3067e7,1.3518e7,1.268e7,1.3413e7,1.2932e7,1.3642e7,1.3257e7,1.254e7,1.1963e7,1.3891e7,1.3506e7,1.3861e7,1.285e7,1.2025e7,1.3894e7,1.4772e7,1.3828e7,1.6433e7,2.8633e7,1.4419e7,1.2587e7,1.3254e7,1.3449e7,1.4855e7,1.4846e7,1.2367e7,1.3964e7,1.5263e7,1.4295e7,1.2863e7,1.3478e7,1.259e7,1.472e7,1.4766e7,1.3838e7,1.2431e7,1.3633e7,1.2621e7,1.317e7,1.3742e7,1.5564e7,1.4313e7,1.341e7,1.3591e7,1.3683e7,1.4101e7,1.3023e7,1.4405e7,1.2879e7,1.3694e7,1.435e7,4.4554e7,1.646e7,1.4451e7,1.3119e7,1.37e7,1.4696e7,1.5202e7,1.3556e7,1.3607e7,1.3712e7,1.4594e7,1.3618e7,1.3412e7,1.2633e7,1.2065e7,1.4341e7,1.5424e7,1.4749e7,1.4698e7,1.4122e7,1.7013e7,1.6517e7,1.8609e7,1.4658e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Navigate (wallaby)","job_name":"Navigate (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":1444465.6530606337,"average":16304964.169381108,"ips":61.3310148744692,"maximum":8.398e7,"median":1.57e7,"minimum":1.3049e7,"mode":[1.4777e7,1.6625e7,1.5168e7,1.5068e7,1.577e7,1.5119e7,1.5033e7,1.4794e7,1.6563e7],"percentiles":{"50":1.57e7,"99":28323120.000000004},"relative_less":0.9114094555464785,"relative_more":1.0972016955874162,"sample_size":307,"std_dev":4596063.442981897,"std_dev_ips":17.2880622402635,"std_dev_ratio":0.28188123538552684},"samples":[1.6581e7,1.5473e7,1.4473e7,1.7402e7,1.6104e7,1.6775e7,1.6578e7,1.624e7,1.7167e7,1.5856e7,1.6585e7,1.6897e7,1.6356e7,1.6281e7,1.7765e7,1.6978e7,1.6847e7,1.5067e7,1.7357e7,1.6144e7,1.601e7,1.6533e7,1.6835e7,1.709e7,1.7006e7,1.7341e7,1.6722e7,1.6366e7,1.6837e7,1.6811e7,1.6611e7,1.6625e7,1.6526e7,1.6946e7,1.6706e7,1.5119e7,1.8656e7,1.6625e7,1.5309e7,1.8274e7,1.626e7,1.6842e7,1.667e7,1.6883e7,1.6963e7,1.7355e7,1.691e7,1.6734e7,1.4984e7,1.5054e7,1.6235e7,1.6867e7,1.6698e7,1.7249e7,1.6861e7,1.7114e7,1.7513e7,1.559e7,1.5592e7,1.6359e7,1.7261e7,1.6851e7,1.6765e7,1.7549e7,1.5458e7,1.851e7,1.6355e7,1.543e7,1.8303e7,1.6917e7,1.7616e7,1.6599e7,1.5803e7,1.5755e7,1.6836e7,1.6297e7,1.7079e7,1.514e7,1.615e7,1.6563e7,1.6458e7,3.5144e7,2.2771e7,8.398e7,1.3829e7,1.5168e7,1.4212e7,1.5363e7,1.5604e7,1.5553e7,1.577e7,1.5666e7,1.4676e7,1.5033e7,1.4259e7,1.586e7,1.4577e7,1.3854e7,1.4791e7,1.4337e7,1.5947e7,1.4461e7,1.428e7,1.5526e7,1.5052e7,1.5413e7,1.4076e7,1.5119e7,1.5825e7,1.6183e7,1.5964e7,1.5713e7,1.725e7,2.6374e7,2.835e7,1.3608e7,1.5148e7,1.5751e7,1.5544e7,1.4214e7,1.3316e7,1.4083e7,1.3795e7,1.5239e7,1.5741e7,1.577e7,1.5237e7,1.4413e7,1.5033e7,1.4294e7,1.503e7,1.4572e7,1.4479e7,1.5368e7,1.5565e7,1.6985e7,1.5645e7,1.4651e7,1.4836e7,1.4271e7,1.5068e7,1.5757e7,2.1189e7,2.591e7,1.3564e7,1.3958e7,1.6201e7,1.5654e7,1.4128e7,1.38e7,1.6432e7,1.5669e7,1.5059e7,1.4089e7,1.5877e7,1.6465e7,1.6602e7,1.5765e7,1.6343e7,1.628e7,1.6129e7,1.4761e7,1.4779e7,1.5251e7,1.4777e7,1.5503e7,1.7421e7,1.5821e7,1.6261e7,1.5198e7,1.5886e7,1.608e7,1.4007e7,2.2764e7,2.6339e7,1.5971e7,1.587e7,1.5876e7,1.5613e7,1.5158e7,1.6017e7,1.4649e7,1.3771e7,1.603e7,1.5206e7,1.5945e7,1.3768e7,1.5601e7,1.5925e7,1.6187e7,1.6563e7,1.6085e7,1.4809e7,1.5068e7,1.5003e7,1.6387e7,1.459e7,1.734e7,1.5043e7,1.4952e7,1.4528e7,1.5471e7,2.3e7,2.3772e7,1.5721e7,1.5954e7,1.4289e7,1.4996e7,1.4401e7,1.4991e7,1.5376e7,1.3049e7,1.4861e7,1.6111e7,1.4797e7,1.5726e7,1.5517e7,1.4471e7,1.5325e7,1.5522e7,1.4794e7,1.3871e7,1.5697e7,1.5606e7,1.6051e7,1.5036e7,1.5227e7,1.4766e7,1.3732e7,1.4777e7,1.6856e7,1.4194e7,1.4117e7,2.3325e7,2.5112e7,1.6022e7,1.5391e7,1.5982e7,1.57e7,1.5261e7,1.3808e7,1.529e7,1.4374e7,1.3416e7,1.5111e7,1.5878e7,1.5707e7,1.463e7,1.4949e7,1.563e7,1.4429e7,1.6165e7,1.45e7,1.5194e7,1.3952e7,1.5124e7,1.6433e7,1.6212e7,1.4451e7,1.6569e7,1.5197e7,1.6039e7,2.1256e7,2.8014e7,1.3975e7,1.5631e7,1.5367e7,1.6769e7,1.5742e7,1.3957e7,1.5625e7,1.5431e7,1.5891e7,1.5863e7,1.4849e7,1.4868e7,1.5531e7,1.3541e7,1.4857e7,1.42e7,1.5423e7,1.6242e7,1.5989e7,1.5744e7,1.6628e7,1.5984e7,1.5026e7,1.5801e7,1.4919e7,1.5605e7,1.4096e7,1.4794e7,2.0874e7,2.6593e7,1.3921e7,1.4592e7,1.5168e7,1.4198e7,1.3264e7,1.6107e7,1.6159e7,1.4916e7,1.3897e7,1.4786e7,1.5874e7,1.5558e7,1.4562e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Select option (hound)","job_name":"Select option (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":3044997.9122509547,"average":17905496.42857143,"ips":55.84877269330108,"maximum":3.8315e7,"median":1.71975e7,"minimum":1.5128e7,"mode":[1.6497e7,1.7491e7,1.6813e7,1.7041e7,1.7854e7,1.7529e7,1.618e7,1.7163e7],"percentiles":{"50":1.71975e7,"99":36830160.0},"relative_less":0.8299406037471201,"relative_more":1.2049055022553112,"sample_size":280,"std_dev":3151166.447282946,"std_dev_ips":9.828757294449582,"std_dev_ratio":0.17598877863306236},"samples":[1.8124e7,1.7529e7,1.8214e7,1.5778e7,1.6759e7,1.5754e7,1.5293e7,1.7525e7,1.7745e7,1.6072e7,1.6265e7,1.6717e7,1.7426e7,1.766e7,1.5931e7,3.6723e7,1.8509e7,1.7735e7,1.7119e7,1.6702e7,1.7667e7,1.6274e7,1.71e7,2.1044e7,1.643e7,1.6158e7,1.637e7,1.729e7,1.601e7,1.5986e7,1.6548e7,1.6578e7,1.6474e7,1.6035e7,1.6413e7,1.6848e7,1.6983e7,1.7041e7,1.694e7,1.6502e7,1.6255e7,1.7196e7,1.7787e7,1.6879e7,1.6798e7,1.6179e7,1.7421e7,1.8296e7,1.7794e7,2.5721e7,2.8559e7,1.7222e7,1.9816e7,1.8485e7,1.7405e7,1.654e7,1.6415e7,1.6667e7,1.6229e7,1.8655e7,1.7504e7,1.7041e7,1.8334e7,1.8262e7,1.8122e7,1.7401e7,1.5853e7,1.5866e7,1.7273e7,1.7372e7,1.6813e7,1.5943e7,1.6554e7,1.704e7,1.7817e7,1.691e7,1.7833e7,1.6891e7,1.6497e7,1.6318e7,1.7674e7,2.1357e7,1.7854e7,1.7131e7,3.5674e7,1.7192e7,1.8018e7,1.8098e7,1.7327e7,1.7769e7,1.5183e7,1.5674e7,1.6311e7,1.6829e7,1.7491e7,1.7291e7,1.7748e7,1.8471e7,1.6499e7,1.6508e7,1.6593e7,1.7434e7,1.6541e7,1.6843e7,1.6225e7,1.6981e7,1.6335e7,1.7026e7,1.7163e7,2.1933e7,1.7464e7,1.7175e7,1.7172e7,1.7481e7,1.7077e7,1.683e7,1.7123e7,1.7163e7,1.7309e7,1.8094e7,2.6397e7,2.9771e7,1.6718e7,1.9049e7,1.7529e7,1.7737e7,1.7174e7,1.618e7,1.7059e7,1.6556e7,1.8066e7,1.6361e7,1.5936e7,1.6893e7,1.6025e7,1.6513e7,1.837e7,1.7084e7,1.6228e7,1.6085e7,1.6408e7,1.6347e7,1.7093e7,1.6709e7,1.7199e7,1.661e7,1.699e7,1.7491e7,1.6497e7,1.6888e7,1.5782e7,1.6876e7,1.76e7,1.626e7,1.6617e7,1.7788e7,1.7686e7,2.7737e7,2.8609e7,1.6343e7,1.6493e7,1.542e7,1.5128e7,1.7144e7,1.7437e7,1.7189e7,1.7314e7,1.7114e7,1.6096e7,1.5938e7,1.7343e7,1.6737e7,1.7552e7,1.6213e7,1.6515e7,1.6187e7,1.672e7,1.5948e7,1.5486e7,1.793e7,1.618e7,1.6463e7,1.7104e7,1.684e7,1.6091e7,1.6227e7,1.6083e7,1.7294e7,1.7854e7,1.758e7,1.5875e7,3.8315e7,1.8197e7,1.8211e7,1.8069e7,1.7011e7,1.6742e7,1.6231e7,1.7914e7,1.6995e7,1.674e7,1.776e7,1.8245e7,1.7819e7,1.7728e7,1.6369e7,1.6292e7,1.663e7,1.7106e7,1.6122e7,1.636e7,1.6813e7,1.8153e7,1.56e7,1.6101e7,1.8033e7,1.6285e7,1.6414e7,1.529e7,1.634e7,1.6929e7,1.7987e7,1.9316e7,1.7074e7,2.0642e7,1.7424e7,1.7482e7,3.7287e7,1.8626e7,1.836e7,1.8883e7,1.6611e7,1.7495e7,1.9967e7,1.9111e7,1.8479e7,1.7668e7,1.8909e7,1.8798e7,1.8941e7,1.7061e7,1.7915e7,2.0059e7,1.8354e7,1.7806e7,1.7822e7,1.9132e7,1.8813e7,1.915e7,1.7982e7,2.0401e7,1.9473e7,1.8107e7,1.7898e7,1.7984e7,1.8823e7,1.9413e7,1.7279e7,1.8037e7,2.0914e7,1.9052e7,1.8065e7,1.7792e7,2.913e7,3.0264e7,1.8187e7,1.7758e7,1.7939e7,1.7651e7,1.8595e7,1.889e7,1.8309e7,1.9309e7,1.7315e7,1.7219e7,2.1377e7,1.8231e7,1.7616e7,1.7928e7,1.7564e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Find element (hound)","job_name":"Find element (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":4522296.057322938,"average":19382794.573643412,"ips":51.59214767512384,"maximum":3.93e7,"median":1.8634e7,"minimum":1.6191e7,"mode":[1.7974e7,1.7593e7],"percentiles":{"50":1.8634e7,"99":38696550.000000015},"relative_less":0.7666850339799647,"relative_more":1.304316578098396,"sample_size":258,"std_dev":3353852.9246414606,"std_dev_ips":8.927117021816688,"std_dev_ratio":0.17303247536874825},"samples":[1.8666e7,1.7909e7,1.7884e7,1.8736e7,2.0474e7,1.8441e7,1.8632e7,1.6723e7,1.8094e7,2.0121e7,2.0615e7,1.7449e7,1.7219e7,1.838e7,1.8645e7,1.8964e7,1.7651e7,1.7941e7,1.9962e7,1.9865e7,1.7902e7,1.922e7,1.8979e7,2.008e7,3.851e7,1.8745e7,1.9157e7,2.164e7,1.7785e7,1.949e7,1.9182e7,1.9523e7,3.4501e7,1.9535e7,1.8838e7,1.7277e7,1.7593e7,1.7501e7,1.7019e7,2.1092e7,1.9507e7,1.9401e7,2.2843e7,2.3933e7,2.3695e7,1.9742e7,2.4077e7,2.2133e7,2.3269e7,2.2366e7,2.5129e7,2.2738e7,1.9014e7,1.9135e7,2.1033e7,2.4455e7,2.2415e7,1.9159e7,1.8723e7,2.1069e7,1.9315e7,1.8609e7,1.9298e7,1.949e7,1.8045e7,3.7789e7,1.9304e7,1.7649e7,1.7705e7,1.7812e7,2.0615e7,1.7593e7,1.8992e7,2.0672e7,1.861e7,1.9179e7,1.915e7,1.9e7,1.7502e7,1.8308e7,1.7801e7,2.0271e7,1.8343e7,1.7988e7,1.8427e7,1.8782e7,2.0132e7,1.7874e7,1.7876e7,2.0399e7,1.8608e7,1.8516e7,1.8424e7,1.9644e7,1.9456e7,1.7922e7,2.1123e7,1.8791e7,3.5223e7,1.9576e7,1.9246e7,1.734e7,1.8434e7,1.7276e7,2.0017e7,1.8699e7,1.7974e7,1.9178e7,1.9193e7,1.9642e7,1.7702e7,1.9552e7,1.896e7,1.8959e7,1.932e7,1.96e7,1.9224e7,1.7589e7,1.8245e7,2.0328e7,1.8026e7,1.8057e7,1.8592e7,1.8033e7,1.9417e7,1.8705e7,1.8233e7,2.0844e7,1.8996e7,1.8945e7,2.028e7,2.0342e7,1.9451e7,1.9141e7,2.0173e7,2.8857e7,2.7828e7,1.7337e7,1.6809e7,1.6862e7,1.7773e7,1.9868e7,1.7222e7,1.8393e7,1.941e7,1.8709e7,1.8579e7,1.9151e7,1.7593e7,2.0632e7,1.9116e7,1.8209e7,1.7734e7,1.9394e7,1.9108e7,1.9345e7,1.7268e7,1.9724e7,1.778e7,1.8292e7,1.8443e7,1.863e7,1.921e7,1.9622e7,1.7238e7,2.0382e7,1.7651e7,1.794e7,1.8339e7,1.772e7,1.8994e7,2.0411e7,1.7974e7,3.8965e7,1.8429e7,1.8048e7,1.7839e7,1.8872e7,1.9101e7,1.8638e7,1.7586e7,1.8174e7,1.8524e7,1.7674e7,1.6191e7,1.7357e7,1.739e7,1.8088e7,1.8636e7,1.7754e7,1.8106e7,1.8995e7,1.8349e7,1.8292e7,1.8078e7,1.8614e7,1.7324e7,1.6702e7,1.8571e7,1.7179e7,1.7264e7,1.8246e7,1.8157e7,1.8951e7,1.8967e7,1.7026e7,2.0907e7,1.7683e7,1.6893e7,1.7582e7,1.8313e7,1.8505e7,2.7863e7,2.8997e7,1.6872e7,1.7052e7,1.7575e7,1.7768e7,1.873e7,1.8801e7,1.7098e7,1.6853e7,1.7715e7,1.8258e7,1.8872e7,1.9137e7,1.8327e7,1.6711e7,1.7448e7,1.791e7,2.0901e7,1.8607e7,1.7926e7,1.8288e7,1.9494e7,1.9456e7,1.7871e7,1.9497e7,1.7332e7,1.7144e7,1.7408e7,1.8008e7,1.7261e7,1.7102e7,1.7608e7,1.7192e7,1.8465e7,1.9847e7,1.7974e7,1.7252e7,2.0434e7,3.93e7,1.8689e7,2.0788e7,1.7513e7,1.738e7,1.735e7,1.9868e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Element displayed (hound)","job_name":"Element displayed (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":11503075.167890053,"average":26363573.684210528,"ips":37.931124663835405,"maximum":6.1681e7,"median":2.5588e7,"minimum":2.3263e7,"mode":2.4635e7,"percentiles":{"50":2.5588e7,"99":58722590.00000001},"relative_less":0.563675421789293,"relative_more":1.7740706111074842,"sample_size":190,"std_dev":4201799.043058296,"std_dev_ips":6.045423326280025,"std_dev_ratio":0.15937896331462853},"samples":[2.5407e7,2.7871e7,2.4947e7,2.4724e7,2.5614e7,2.651e7,2.4335e7,2.4975e7,2.3485e7,2.4794e7,2.5734e7,2.5718e7,2.4797e7,2.5321e7,2.4156e7,2.5793e7,2.4121e7,2.6884e7,2.4806e7,2.5106e7,2.466e7,2.7029e7,3.5521e7,3.8236e7,2.4392e7,2.5874e7,2.5896e7,2.5509e7,2.6638e7,2.5567e7,2.4241e7,2.4406e7,2.4583e7,2.5267e7,2.7069e7,2.5156e7,2.4628e7,2.5054e7,2.4635e7,2.5162e7,2.603e7,2.521e7,2.4639e7,2.5276e7,2.5319e7,2.6597e7,2.5532e7,2.7232e7,2.6939e7,2.697e7,2.8357e7,2.5639e7,2.8721e7,3.1266e7,2.7049e7,2.5908e7,2.5657e7,2.6038e7,2.8287e7,2.5974e7,2.6464e7,2.5208e7,2.5585e7,2.6008e7,3.0629e7,2.6571e7,2.6453e7,2.5755e7,2.4854e7,2.5897e7,2.635e7,3.4856e7,4.6141e7,2.6537e7,2.6267e7,2.5383e7,2.8059e7,2.6531e7,2.4564e7,2.4423e7,2.6103e7,2.4103e7,2.8418e7,2.6536e7,2.653e7,2.6365e7,2.5625e7,2.6627e7,2.5396e7,2.5385e7,2.4719e7,2.515e7,2.5255e7,2.5447e7,2.4985e7,2.6931e7,2.7146e7,2.475e7,2.445e7,2.5009e7,2.4222e7,2.7794e7,2.4253e7,2.5218e7,2.5695e7,2.5546e7,2.3263e7,2.5118e7,2.48e7,2.4457e7,2.5124e7,2.3976e7,2.4054e7,2.9014e7,2.6234e7,2.6827e7,2.748e7,2.6332e7,2.7087e7,2.6041e7,2.7255e7,2.6898e7,2.4577e7,2.6114e7,2.5403e7,2.4964e7,2.5582e7,5.843e7,2.6338e7,2.4585e7,2.4765e7,2.4452e7,2.5591e7,2.4219e7,2.6393e7,2.6555e7,2.5047e7,2.4635e7,2.5723e7,2.5981e7,2.4355e7,2.5522e7,2.5111e7,2.4588e7,2.4821e7,2.4953e7,2.5007e7,2.4905e7,2.8449e7,2.693e7,2.6446e7,2.6766e7,2.4904e7,2.9621e7,2.6053e7,2.6116e7,2.6665e7,2.6666e7,2.7286e7,2.5736e7,2.7023e7,2.7212e7,2.6301e7,2.5694e7,2.3941e7,2.5138e7,2.3926e7,2.5504e7,2.5311e7,2.825e7,2.568e7,2.4041e7,2.5676e7,2.6641e7,2.648e7,2.4977e7,2.6344e7,2.45e7,6.1681e7,2.556e7,2.6288e7,2.46e7,2.403e7,2.4047e7,2.4412e7,2.6208e7,2.3436e7,2.5121e7,2.5516e7,2.3873e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Visible text (hound)","job_name":"Visible text (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":14358803.80926092,"average":29219302.325581394,"ips":34.22395199095851,"maximum":1.17814e8,"median":2.854e7,"minimum":2.5347e7,"mode":[2.9217e7,2.9691e7,2.9045e7,2.5893e7],"percentiles":{"50":2.854e7,"99":81548330.0000005},"relative_less":0.5085849877842621,"relative_more":1.9662397121800073,"sample_size":172,"std_dev":7641738.466164471,"std_dev_ips":8.950606947398082,"std_dev_ratio":0.26153049039347376},"samples":[2.6491e7,2.633e7,2.5928e7,2.784e7,2.8488e7,2.7274e7,2.9829e7,2.7448e7,2.7481e7,2.7928e7,2.6915e7,2.7134e7,2.6801e7,2.594e7,2.6112e7,2.5893e7,2.5621e7,2.6402e7,3.4124e7,3.1859e7,3.1866e7,3.2079e7,3.3879e7,3.5313e7,6.8135e7,3.0725e7,3.1616e7,2.8665e7,2.8208e7,2.7259e7,2.7064e7,2.697e7,2.7081e7,2.6375e7,2.6625e7,2.5681e7,2.6515e7,2.5347e7,2.6237e7,2.7979e7,2.7256e7,2.6884e7,2.63e7,2.8178e7,2.6395e7,2.6001e7,2.6821e7,2.9691e7,2.6217e7,2.6339e7,2.5515e7,2.6008e7,2.5893e7,2.9339e7,2.7565e7,2.8549e7,2.8909e7,2.8599e7,2.9095e7,2.8093e7,3.1797e7,2.8834e7,2.739e7,2.7608e7,2.8696e7,2.8024e7,2.8281e7,2.9032e7,2.9217e7,2.8155e7,2.8777e7,2.9586e7,2.904e7,2.8871e7,2.8791e7,2.8797e7,2.7853e7,3.0363e7,2.8831e7,2.725e7,2.8348e7,2.8578e7,2.9676e7,2.9045e7,2.8589e7,2.8465e7,2.8814e7,3.0923e7,2.84e7,2.9311e7,2.9049e7,2.7025e7,2.7743e7,3.4197e7,1.17814e8,2.9123e7,2.7176e7,2.7844e7,2.8121e7,2.5609e7,2.5906e7,2.6452e7,2.7375e7,2.7614e7,2.5887e7,2.7199e7,2.7551e7,2.6754e7,2.7909e7,2.9082e7,2.7688e7,2.6552e7,2.8293e7,2.9393e7,2.8531e7,2.8092e7,2.6553e7,2.7879e7,2.6803e7,2.825e7,3.1023e7,2.8498e7,2.9045e7,2.7647e7,2.7716e7,2.8643e7,2.8876e7,2.9506e7,2.8417e7,2.8769e7,2.9239e7,3.2845e7,2.9691e7,2.9217e7,3.0172e7,3.0748e7,2.8075e7,2.9122e7,2.9376e7,2.9481e7,2.8612e7,2.8594e7,2.9629e7,2.9444e7,2.9223e7,2.9078e7,2.9241e7,2.8903e7,2.8702e7,2.9036e7,3.2322e7,2.9817e7,3.0536e7,2.8879e7,2.9316e7,2.9438e7,2.9324e7,2.8312e7,2.8994e7,2.9073e7,2.9496e7,2.8886e7,2.9222e7,2.8767e7,2.8406e7,2.9016e7,3.0173e7,3.2616e7,2.9344e7,2.8165e7,2.7677e7,2.9463e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Element displayed (wallaby)","job_name":"Element displayed (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":14557489.787773091,"average":29417988.304093566,"ips":33.99280704251447,"maximum":6.6012e7,"median":2.8744e7,"minimum":2.668e7,"mode":2.8679e7,"percentiles":{"50":2.8744e7,"99":61046880.00000001},"relative_less":0.5051500586208544,"relative_more":1.9796097871000353,"sample_size":171,"std_dev":4243668.378389709,"std_dev_ips":4.903605197196589,"std_dev_ratio":0.14425420033902164},"samples":[2.9683e7,3.0346e7,2.8998e7,2.7942e7,2.708e7,2.774e7,3.0494e7,2.8398e7,2.706e7,2.7922e7,2.7951e7,2.756e7,2.7272e7,2.8385e7,2.8553e7,2.8906e7,2.8248e7,2.686e7,2.8763e7,3.0233e7,2.8826e7,2.8319e7,5.2737e7,2.8204e7,2.9133e7,2.9132e7,2.9633e7,2.8979e7,3.0039e7,2.8461e7,2.7489e7,3.0493e7,2.7722e7,2.9029e7,2.8866e7,3.0184e7,2.8771e7,2.678e7,2.8209e7,2.8475e7,2.7763e7,2.8086e7,2.8018e7,2.8551e7,2.762e7,2.7553e7,2.84e7,2.889e7,3.0955e7,2.9705e7,3.0274e7,2.9511e7,2.8744e7,3.084e7,3.0071e7,3.0241e7,3.0475e7,3.0018e7,2.9608e7,3.0123e7,3.0638e7,2.9868e7,3.0109e7,3.083e7,3.2733e7,3.1057e7,5.9116e7,2.9797e7,2.9342e7,2.9215e7,2.7953e7,2.7775e7,2.8712e7,2.79e7,2.7704e7,2.7968e7,2.7519e7,2.7684e7,2.8679e7,2.8737e7,2.8524e7,2.8266e7,2.9057e7,2.7724e7,2.7252e7,2.8787e7,3.0962e7,2.8275e7,2.7886e7,2.8933e7,2.7751e7,2.7642e7,3.0095e7,2.8031e7,2.8618e7,2.7721e7,2.9554e7,2.993e7,2.8313e7,2.9219e7,2.7228e7,2.8508e7,2.9277e7,3.0304e7,3.0704e7,2.877e7,2.8367e7,2.8164e7,2.8997e7,3.2246e7,2.8717e7,2.8271e7,2.7931e7,2.9185e7,2.8535e7,2.85e7,3.1192e7,2.9905e7,2.8379e7,2.8291e7,6.6012e7,2.9792e7,2.8882e7,2.7846e7,2.7369e7,2.9211e7,2.7309e7,2.7526e7,2.7544e7,2.7572e7,2.668e7,2.7409e7,2.78e7,2.9045e7,2.8034e7,2.7151e7,2.7416e7,3.0438e7,2.9172e7,2.8069e7,2.7919e7,2.7082e7,2.7441e7,2.8679e7,2.6847e7,2.8093e7,2.8098e7,2.9981e7,2.8932e7,2.8755e7,3.0178e7,2.8957e7,2.7918e7,2.8497e7,2.9197e7,3.1054e7,3.03e7,2.9274e7,3.0157e7,2.8124e7,2.9306e7,2.8154e7,2.9152e7,3.1629e7,3.1324e7,3.0771e7,3.0678e7,3.064e7,3.0557e7,2.9631e7,3.2206e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Find element (wallaby)","job_name":"Find element (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":14948686.007489048,"average":29809184.523809522,"ips":33.54670770014755,"maximum":6.3518e7,"median":2.9373e7,"minimum":2.6837e7,"mode":2.9255e7,"percentiles":{"50":2.9373e7,"99":61846820.00000001},"relative_less":0.49852080000547927,"relative_more":2.005934356177333,"sample_size":168,"std_dev":4120525.159309379,"std_dev_ips":4.637163186401393,"std_dev_ratio":0.13823005309045563},"samples":[2.756e7,2.7975e7,3.1505e7,2.9554e7,3.0742e7,2.8686e7,2.934e7,2.9515e7,2.9572e7,2.7311e7,2.7498e7,2.8941e7,2.6908e7,2.8223e7,2.805e7,2.967e7,4.8651e7,2.8527e7,2.8127e7,2.8569e7,2.7667e7,2.7369e7,2.7548e7,2.8271e7,2.6837e7,2.7553e7,2.8117e7,2.7675e7,2.8466e7,2.7598e7,2.741e7,3.2538e7,3.0354e7,2.9622e7,3.0315e7,2.819e7,2.872e7,2.9406e7,3.0273e7,3.1156e7,3.0677e7,3.0081e7,3.0485e7,2.7384e7,3.2999e7,3.0944e7,2.9879e7,2.9543e7,2.9462e7,2.7826e7,2.9321e7,2.981e7,2.8951e7,3.0386e7,2.8807e7,2.8767e7,2.8533e7,2.9784e7,3.342e7,2.7686e7,2.8991e7,2.8256e7,6.1096e7,3.0579e7,2.8e7,2.7773e7,2.7349e7,2.7539e7,2.753e7,2.8967e7,2.7302e7,2.7398e7,2.7353e7,2.7948e7,2.8101e7,3.0014e7,3.0984e7,3.0235e7,3.0972e7,2.9072e7,2.78e7,2.7849e7,3.0297e7,3.0834e7,3.0042e7,2.8046e7,2.7936e7,2.8596e7,2.8152e7,2.7051e7,2.8439e7,2.9255e7,3.1346e7,2.918e7,2.7784e7,2.9591e7,2.7998e7,2.8576e7,2.9469e7,2.7922e7,2.8222e7,2.8109e7,2.8484e7,2.7751e7,2.7388e7,3.2072e7,2.9931e7,2.8201e7,2.8157e7,2.9455e7,3.0784e7,3.4768e7,3.0982e7,3.1337e7,2.9467e7,2.785e7,6.3518e7,2.993e7,3.0779e7,2.9857e7,2.996e7,2.9202e7,2.989e7,2.8747e7,3.039e7,3.0277e7,3.0172e7,2.9979e7,2.9067e7,2.8965e7,2.8515e7,2.9915e7,3.0509e7,2.8302e7,3.0618e7,2.9825e7,2.9901e7,2.9255e7,2.9845e7,2.853e7,2.9891e7,2.9632e7,2.9109e7,2.8867e7,3.0025e7,3.2478e7,2.9691e7,3.1454e7,3.1275e7,3.0881e7,3.2074e7,3.0451e7,2.962e7,3.0922e7,3.0454e7,3.0027e7,2.9889e7,2.9714e7,3.0898e7,3.1229e7,3.0421e7,2.9458e7,3.0399e7,2.9331e7,2.7666e7,2.8624e7,2.9653e7,2.8528e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Visible text (wallaby)","job_name":"Visible text (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":23554165.60581693,"average":38414664.122137405,"ips":26.031725718609763,"maximum":7.1681e7,"median":3.7427e7,"minimum":3.4981e7,"mode":null,"percentiles":{"50":3.7427e7,"99":70210280.00000003},"relative_less":0.38684442141866193,"relative_more":2.5850185362185982,"sample_size":131,"std_dev":4979199.794546365,"std_dev_ips":3.3741584447459463,"std_dev_ratio":0.12961716334978904},"samples":[3.7e7,3.4981e7,3.5251e7,3.619e7,3.8705e7,3.5583e7,3.6545e7,3.8785e7,3.8219e7,3.7637e7,3.5205e7,3.5996e7,3.6524e7,3.6608e7,3.6725e7,4.0285e7,3.5854e7,3.6192e7,3.9587e7,3.6581e7,3.912e7,3.7113e7,3.6713e7,3.6014e7,3.739e7,3.8184e7,6.5388e7,3.516e7,3.861e7,3.5268e7,3.684e7,3.9554e7,3.5705e7,3.6457e7,3.8597e7,3.8777e7,3.8899e7,3.6311e7,3.6612e7,3.6304e7,3.6158e7,3.6074e7,3.5815e7,3.7797e7,3.8393e7,3.6103e7,3.712e7,3.5574e7,3.5952e7,3.6437e7,3.5565e7,3.6224e7,3.9135e7,3.8507e7,3.642e7,3.5546e7,3.6419e7,3.658e7,3.7524e7,3.903e7,4.071e7,4.2655e7,3.956e7,7.1681e7,3.8646e7,4.5873e7,4.0157e7,4.272e7,4.8009e7,3.8425e7,3.9861e7,3.7593e7,3.8034e7,3.6016e7,3.6277e7,3.5689e7,3.5434e7,3.5769e7,4.0471e7,3.8241e7,3.8426e7,3.7069e7,4.0069e7,3.8254e7,3.9542e7,3.9051e7,3.9617e7,3.9515e7,3.8213e7,3.731e7,3.9707e7,3.7514e7,3.8204e7,3.8388e7,3.5729e7,3.7787e7,3.7427e7,3.7014e7,3.6564e7,3.6425e7,3.6397e7,3.6429e7,3.7719e7,3.6761e7,3.8399e7,6.7085e7,3.8453e7,3.6292e7,3.6757e7,3.6314e7,3.8549e7,3.6273e7,3.6816e7,3.5305e7,3.5654e7,3.5743e7,3.6027e7,3.8747e7,3.6889e7,3.7261e7,3.9777e7,3.9165e7,4.0351e7,3.9317e7,3.9073e7,3.8637e7,3.8517e7,3.9164e7,3.9168e7,3.9211e7,4.0583e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Button click (hound)","job_name":"Button click (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":40812201.483679526,"average":5.56727e7,"ips":17.962125063091964,"maximum":1.12799e8,"median":5.2382e7,"minimum":4.8995e7,"mode":5.3703e7,"percentiles":{"50":5.2382e7,"99":1.12799e8},"relative_less":0.26692613285004096,"relative_more":3.7463548035658234,"sample_size":90,"std_dev":10760660.022622772,"std_dev_ips":3.4717971481132444,"std_dev_ratio":0.19328432108776422},"samples":[5.2297e7,5.1099e7,4.9183e7,5.0657e7,4.8995e7,5.0211e7,4.9085e7,4.9576e7,5.1909e7,4.9761e7,5.1787e7,5.4913e7,5.1795e7,4.9451e7,5.8643e7,8.3258e7,5.3074e7,5.4521e7,5.0949e7,5.1512e7,5.0883e7,5.2209e7,5.39e7,5.3439e7,5.3703e7,4.9745e7,5.0698e7,5.1352e7,5.161e7,5.3605e7,5.1887e7,5.1693e7,5.6682e7,5.4221e7,5.5805e7,5.7231e7,6.1929e7,9.9717e7,5.4984e7,5.0591e7,5.0186e7,5.2344e7,5.1219e7,5.1087e7,5.1936e7,5.211e7,5.735e7,5.3759e7,5.3041e7,5.22e7,5.2506e7,7.4937e7,5.4782e7,5.6023e7,5.6197e7,5.4008e7,5.5904e7,7.4673e7,5.9391e7,1.04071e8,5.4136e7,5.3166e7,5.9942e7,5.0707e7,5.1851e7,5.0871e7,5.46e7,5.5514e7,5.4777e7,5.2223e7,5.2083e7,5.0984e7,6.1729e7,5.242e7,5.3099e7,5.8147e7,5.3703e7,5.1725e7,5.3183e7,5.5951e7,5.2302e7,5.9676e7,1.12799e8,5.1068e7,5.0076e7,5.0066e7,5.0229e7,5.6874e7,4.9446e7,5.0912e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Fill-in element (hound)","job_name":"Fill-in element (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":61074334.817012854,"average":75934833.33333333,"ips":13.169186736873066,"maximum":1.02479e8,"median":7.50675e7,"minimum":6.6299e7,"mode":null,"percentiles":{"50":7.50675e7,"99":1.02479e8},"relative_less":0.19570067996444945,"relative_more":5.109844279445824,"sample_size":66,"std_dev":6727602.758746029,"std_dev_ips":1.1667511882525876,"std_dev_ratio":0.08859705702142885},"samples":[8.1397e7,7.9737e7,7.8631e7,7.5089e7,8.3894e7,1.0163e8,7.7441e7,7.6924e7,8.0436e7,7.9747e7,7.727e7,6.7093e7,6.8866e7,7.3809e7,7.5046e7,7.7434e7,7.6353e7,7.2515e7,7.1318e7,7.0894e7,7.8184e7,7.8328e7,7.5095e7,7.152e7,7.5481e7,7.4167e7,7.724e7,7.2978e7,7.2292e7,7.0591e7,7.0919e7,7.4354e7,9.7888e7,8.0653e7,7.7102e7,7.5359e7,7.4226e7,7.2442e7,7.108e7,7.4516e7,7.3264e7,7.7515e7,7.4495e7,7.4696e7,7.4145e7,7.7603e7,8.273e7,8.1515e7,7.9438e7,7.011e7,7.7782e7,6.7894e7,6.831e7,7.9038e7,7.5871e7,7.3348e7,6.6299e7,7.2154e7,7.104e7,6.9397e7,7.5453e7,7.6757e7,6.8983e7,7.2104e7,1.02479e8,6.934e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Fill-in element (wallaby)","job_name":"Fill-in element (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":61281819.66549771,"average":76142318.18181819,"ips":13.133301216442176,"maximum":1.11824e8,"median":7.49725e7,"minimum":6.8565e7,"mode":null,"percentiles":{"50":7.49725e7,"99":1.11824e8},"relative_less":0.19516740324132884,"relative_more":5.123806452266405,"sample_size":66,"std_dev":7380671.577029561,"std_dev_ips":1.2730448102367966,"std_dev_ratio":0.09693258300076252},"samples":[9.86e7,7.4957e7,6.8565e7,6.8656e7,8.2798e7,7.4988e7,6.9493e7,6.9949e7,7.0678e7,7.4463e7,7.044e7,7.1519e7,7.0072e7,7.4598e7,7.4352e7,6.9305e7,6.8638e7,7.3096e7,8.1525e7,6.9548e7,6.9684e7,7.5086e7,7.8289e7,6.8634e7,9.3516e7,7.5485e7,7.4454e7,7.8283e7,7.5851e7,7.4932e7,7.77e7,7.5144e7,7.4087e7,7.7923e7,7.611e7,7.1921e7,7.1331e7,7.6148e7,7.9435e7,6.9701e7,7.0672e7,7.2642e7,6.9713e7,7.0318e7,7.0676e7,7.4473e7,8.0494e7,8.0566e7,7.2535e7,6.9418e7,7.732e7,9.1744e7,8.3815e7,7.7047e7,8.1058e7,1.11824e8,7.7298e7,7.8552e7,7.3849e7,8.3872e7,7.7473e7,7.857e7,7.6711e7,7.7681e7,8.1522e7,7.5596e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Button click (wallaby)","job_name":"Button click (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":63691563.983679526,"average":78552062.5,"ips":12.730410484129553,"maximum":1.13372e8,"median":8.19085e7,"minimum":6.143e7,"mode":null,"percentiles":{"50":8.19085e7,"99":1.13372e8},"relative_less":0.18918024611155784,"relative_more":5.285964156164113,"sample_size":64,"std_dev":11165071.492140254,"std_dev_ips":1.8094489012252006,"std_dev_ratio":0.1421359431795983},"samples":[8.6744e7,7.8563e7,6.8981e7,6.7196e7,6.4757e7,8.7554e7,6.3191e7,6.5978e7,7.039e7,8.4378e7,8.4321e7,8.6618e7,9.2337e7,8.3556e7,6.5153e7,7.0451e7,8.1313e7,6.3151e7,6.9175e7,6.4779e7,8.8523e7,6.4709e7,8.2878e7,6.4519e7,8.8624e7,8.5348e7,8.3046e7,1.10269e8,6.1546e7,6.143e7,7.8111e7,8.334e7,9.0498e7,7.7096e7,8.8512e7,8.3513e7,8.1894e7,7.9813e7,6.4527e7,6.9124e7,6.3045e7,6.2947e7,7.7986e7,8.3245e7,8.4946e7,8.2769e7,1.13372e8,8.4555e7,8.4656e7,8.1981e7,8.5328e7,7.6975e7,8.8996e7,8.1514e7,8.4755e7,6.6786e7,8.2729e7,8.0732e7,6.1737e7,6.8959e7,8.8841e7,8.1923e7,8.2772e7,8.9877e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Select option (wallaby)","job_name":"Select option (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":103781757.29763302,"average":118642255.81395349,"ips":8.428700155264497,"maximum":1.71305e8,"median":1.15265e8,"minimum":1.10665e8,"mode":null,"percentiles":{"50":1.15265e8,"99":1.71305e8},"relative_less":0.12525468615181823,"relative_more":7.983733229652772,"sample_size":43,"std_dev":12204304.566701481,"std_dev_ips":0.8670302422229728,"std_dev_ratio":0.102866423796252},"samples":[1.13704e8,1.15559e8,1.46885e8,1.10735e8,1.15265e8,1.12506e8,1.24839e8,1.12606e8,1.1728e8,1.18168e8,1.13913e8,1.17262e8,1.17617e8,1.16109e8,1.14384e8,1.17714e8,1.18311e8,1.10691e8,1.14122e8,1.17157e8,1.10665e8,1.12115e8,1.12292e8,1.26342e8,1.60294e8,1.21825e8,1.12725e8,1.15228e8,1.12743e8,1.15452e8,1.11436e8,1.14579e8,1.22525e8,1.12661e8,1.12809e8,1.16574e8,1.21987e8,1.12091e8,1.11659e8,1.18838e8,1.14809e8,1.15836e8,1.71305e8]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null}];
+      var inputHeadline = " (Valid inputs)";
+
+      
+        drawIpsComparisonChart(scenarios, inputHeadline);
+        drawRunTimeComparisonBoxPlot(scenarios, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

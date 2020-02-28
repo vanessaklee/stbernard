@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Valid inputs
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Elem display (W) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Elem display (W).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Elem display (W)</td>
+        
+        
+          <td>26.22</td>
+          <td>38.13 ms</td>
+          <td>±19.85%</td>
+          <td>36.60 ms</td>
+          <td>37.05 ms</td>
+          <td>34.47 ms</td>
+          <td>103.31 ms</td>
+        
+        <td>211</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Elem display (W)","job_name":"Elem display (W)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":22290585.80656938,"average":38134497.630331755,"ips":26.222975576964494,"maximum":1.0331e8,"median":3.6604e7,"minimum":3.447e7,"mode":3.7052e7,"percentiles":{"50":3.6604e7,"99":89910279.99999993},"relative_less":0.41547451279809977,"relative_more":2.4068865097531287,"sample_size":211,"std_dev":7571027.030019115,"std_dev_ips":5.206174703683964,"std_dev_ratio":0.19853485690072928},"samples":[3.6458e7,3.7176e7,3.7521e7,3.7248e7,3.7675e7,3.6461e7,6.4064e7,3.6535e7,3.6442e7,3.5827e7,3.4895e7,3.6148e7,3.6648e7,3.6049e7,3.6604e7,3.5259e7,3.6709e7,3.8878e7,3.7431e7,3.5991e7,3.6162e7,3.5303e7,3.5887e7,3.7631e7,3.5398e7,3.6102e7,3.6624e7,3.5463e7,3.5548e7,3.5592e7,3.577e7,3.7201e7,3.5464e7,3.7131e7,3.5456e7,3.5457e7,3.6444e7,3.7416e7,3.6749e7,3.6092e7,3.6275e7,3.62e7,3.7932e7,6.2315e7,3.8364e7,3.6863e7,3.6776e7,3.6944e7,3.6488e7,3.6936e7,3.8977e7,3.5333e7,3.6724e7,3.6935e7,3.5669e7,3.6123e7,3.7345e7,3.6853e7,3.5981e7,3.6048e7,3.6919e7,3.5635e7,3.5523e7,3.7052e7,3.6321e7,3.5687e7,3.5992e7,3.7357e7,3.6326e7,3.5764e7,3.7255e7,4.1398e7,3.5423e7,3.5741e7,3.6264e7,3.7021e7,3.6279e7,3.7862e7,3.7559e7,3.7051e7,3.5852e7,3.8078e7,3.8209e7,3.8629e7,4.2796e7,3.7166e7,3.8879e7,3.6353e7,3.8381e7,7.5928e7,3.8751e7,3.6305e7,3.6067e7,3.8786e7,3.4901e7,3.7095e7,3.9569e7,4.4678e7,3.8422e7,3.6093e7,3.5835e7,4.074e7,3.7778e7,3.7447e7,3.7052e7,3.601e7,3.7487e7,3.7989e7,3.6257e7,3.5108e7,3.6376e7,3.8095e7,3.447e7,3.5761e7,3.6545e7,3.6073e7,3.6363e7,3.5026e7,3.5717e7,3.7711e7,3.5766e7,3.6851e7,3.8029e7,3.7439e7,3.5982e7,3.5832e7,3.6354e7,3.692e7,3.8591e7,3.5827e7,3.7708e7,3.9722e7,3.9684e7,3.7325e7,4.6099e7,7.6045e7,3.6546e7,3.7477e7,3.8178e7,3.6418e7,3.8756e7,3.5736e7,3.601e7,3.9739e7,3.6504e7,3.7152e7,3.8366e7,3.735e7,3.9659e7,3.794e7,3.5564e7,3.9103e7,3.647e7,3.7961e7,3.7052e7,3.7559e7,3.6229e7,3.6238e7,3.6106e7,3.6028e7,3.636e7,3.6928e7,3.5866e7,3.6475e7,3.8301e7,3.6889e7,3.6274e7,3.5499e7,3.8088e7,3.6083e7,3.7011e7,3.785e7,3.6913e7,4.3627e7,9.1801e7,3.7912e7,3.644e7,3.5457e7,3.4867e7,3.6256e7,3.6317e7,3.7371e7,3.6752e7,3.6126e7,3.6293e7,3.6581e7,3.6745e7,3.7969e7,3.6144e7,3.5754e7,3.6176e7,3.696e7,3.5844e7,3.6661e7,3.536e7,3.5906e7,3.6673e7,3.5545e7,3.5062e7,3.7729e7,3.5957e7,3.896e7,3.7979e7,3.705e7,3.5953e7,3.6345e7,3.6058e7,3.6305e7,3.5689e7,3.8396e7,1.0331e8]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Valid inputs)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

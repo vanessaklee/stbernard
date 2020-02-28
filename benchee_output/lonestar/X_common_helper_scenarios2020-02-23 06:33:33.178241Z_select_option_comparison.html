@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Select option
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          Run Time Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="Comparisons of the different benchmarking jobs. For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better. The Box Plot shows a distribution of run times with the median and outliers."
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_navigate__hound_.html">Navigate (hound)</a></td>
+        
+        
+          <td>70.92</td>
+          <td>14.10 ms</td>
+          <td>±7.52%</td>
+          <td>13.89 ms</td>
+          <td>none</td>
+          <td>12.77 ms</td>
+          <td>19.17 ms</td>
+        
+        <td>71</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_navigate__wallaby_.html">Navigate (wallaby)</a></td>
+        
+        
+          <td>62.49</td>
+          <td>16.00 ms</td>
+          <td>±6.22%</td>
+          <td>16.07 ms</td>
+          <td>none</td>
+          <td>13.78 ms</td>
+          <td>18.94 ms</td>
+        
+        <td>63</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_select_option__hound_.html">Select option (hound)</a></td>
+        
+        
+          <td>55.25</td>
+          <td>18.10 ms</td>
+          <td>±17.95%</td>
+          <td>17.63 ms</td>
+          <td>17.38 ms</td>
+          <td>15.72 ms</td>
+          <td>33.98 ms</td>
+        
+        <td>56</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_find_element__hound_.html">Find element (hound)</a></td>
+        
+        
+          <td>53.77</td>
+          <td>18.60 ms</td>
+          <td>±16.86%</td>
+          <td>18.03 ms</td>
+          <td>none</td>
+          <td>15.62 ms</td>
+          <td>33.80 ms</td>
+        
+        <td>55</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_element_displayed__hound_.html">Element displayed (hound)</a></td>
+        
+        
+          <td>38.93</td>
+          <td>25.69 ms</td>
+          <td>±13.46%</td>
+          <td>25.14 ms</td>
+          <td>none</td>
+          <td>23.32 ms</td>
+          <td>46.25 ms</td>
+        
+        <td>39</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_visible_text__hound_.html">Visible text (hound)</a></td>
+        
+        
+          <td>36.91</td>
+          <td>27.09 ms</td>
+          <td>±18.98%</td>
+          <td>26.14 ms</td>
+          <td>none</td>
+          <td>24.89 ms</td>
+          <td>57.21 ms</td>
+        
+        <td>37</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_find_element__wallaby_.html">Find element (wallaby)</a></td>
+        
+        
+          <td>35.30</td>
+          <td>28.33 ms</td>
+          <td>±12.97%</td>
+          <td>27.68 ms</td>
+          <td>none</td>
+          <td>26.18 ms</td>
+          <td>49.33 ms</td>
+        
+        <td>36</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_element_displayed__wallaby_.html">Element displayed (wallaby)</a></td>
+        
+        
+          <td>34.85</td>
+          <td>28.70 ms</td>
+          <td>±12.41%</td>
+          <td>28.05 ms</td>
+          <td>none</td>
+          <td>26.83 ms</td>
+          <td>48.81 ms</td>
+        
+        <td>35</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_visible_text__wallaby_.html">Visible text (wallaby)</a></td>
+        
+        
+          <td>27.14</td>
+          <td>36.85 ms</td>
+          <td>±3.47%</td>
+          <td>36.49 ms</td>
+          <td>none</td>
+          <td>34.00 ms</td>
+          <td>39.90 ms</td>
+        
+        <td>28</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_button_click__hound_.html">Button click (hound)</a></td>
+        
+        
+          <td>17.54</td>
+          <td>57.00 ms</td>
+          <td>±23.46%</td>
+          <td>51.63 ms</td>
+          <td>none</td>
+          <td>49.74 ms</td>
+          <td>95.28 ms</td>
+        
+        <td>19</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_fill_in_element__wallaby_.html">Fill-in element (wallaby)</a></td>
+        
+        
+          <td>13.94</td>
+          <td>71.75 ms</td>
+          <td>±8.13%</td>
+          <td>70.05 ms</td>
+          <td>none</td>
+          <td>65.35 ms</td>
+          <td>88.55 ms</td>
+        
+        <td>14</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_fill_in_element__hound_.html">Fill-in element (hound)</a></td>
+        
+        
+          <td>13.24</td>
+          <td>75.51 ms</td>
+          <td>±12.26%</td>
+          <td>71.61 ms</td>
+          <td>none</td>
+          <td>67.58 ms</td>
+          <td>96.55 ms</td>
+        
+        <td>14</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_button_click__wallaby_.html">Button click (wallaby)</a></td>
+        
+        
+          <td>12.25</td>
+          <td>81.62 ms</td>
+          <td>±10.06%</td>
+          <td>83.98 ms</td>
+          <td>none</td>
+          <td>60.76 ms</td>
+          <td>93.25 ms</td>
+        
+        <td>13</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="X_common_helper_scenarios2020-02-23 06:33:33.178241Z_select_option_select_option__wallaby_.html">Select option (wallaby)</a></td>
+        
+        
+          <td>8.55</td>
+          <td>116.91 ms</td>
+          <td>±5.60%</td>
+          <td>115.32 ms</td>
+          <td>none</td>
+          <td>111.70 ms</td>
+          <td>133.60 ms</td>
+        
+        <td>9</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="ips-comparison" class=" plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-time-box-plot" class=" plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenarios     = [{"name":"Navigate (hound)","job_name":"Navigate (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":null,"average":14099586.774647888,"ips":70.92406437031721,"maximum":19167013.0,"median":13891009.0,"minimum":12766009.0,"mode":null,"percentiles":{"50":13891009.0,"99":19167013.0},"relative_less":null,"relative_more":null,"sample_size":71,"std_dev":1060868.9386441016,"std_dev_ips":5.336407236285361,"std_dev_ratio":0.07524113689286437},"samples":[13020008.0,13610009.0,16237011.0,14009009.0,13395009.0,14719010.0,14630010.0,13387008.0,13823010.0,14721009.0,13891009.0,12766009.0,14115009.0,12842009.0,13277008.0,13039009.0,13160009.0,14177009.0,12857009.0,13644009.0,13162008.0,13695009.0,15590011.0,15836010.0,13150009.0,14459009.0,13883009.0,13857010.0,13390008.0,13995010.0,13029008.0,13765009.0,19167013.0,14107009.0,14159010.0,14514009.0,12878009.0,14517009.0,15905011.0,13012008.0,14222010.0,14711010.0,14209009.0,13214009.0,14097009.0,14174009.0,15010010.0,14462010.0,14543009.0,13918010.0,16096010.0,15301010.0,14469010.0,14923010.0,13439009.0,13429008.0,13969010.0,13529009.0,15283010.0,15341010.0,13525009.0,13450009.0,15188010.0,13263008.0,13243009.0,13856009.0,13846009.0,15619011.0,13110008.0,13420009.0,12822009.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Navigate (wallaby)","job_name":"Navigate (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":1902471.3999552876,"average":16002058.174603175,"ips":62.4919612895232,"maximum":18939013.0,"median":16066010.0,"minimum":13781009.0,"mode":null,"percentiles":{"50":16066010.0,"99":18939013.0},"relative_less":0.8811108309195691,"relative_more":1.1349310040331164,"sample_size":63,"std_dev":995337.8484444615,"std_dev_ips":3.8870383807069913,"std_dev_ratio":0.062200614294988604},"samples":[14394009.0,13781009.0,15027010.0,15669011.0,16003010.0,14944010.0,15841010.0,15223011.0,15349010.0,14037009.0,15383010.0,15334010.0,14688010.0,16622011.0,15759010.0,17509012.0,17109011.0,17291012.0,14742009.0,15831011.0,16176010.0,16588011.0,16842012.0,16541010.0,16691011.0,16614011.0,16378011.0,16053011.0,16220011.0,16357010.0,16385011.0,15893011.0,17832011.0,17097012.0,17199011.0,16890011.0,16875011.0,16391011.0,16118011.0,16674011.0,16066010.0,16375011.0,15387010.0,17776012.0,14739010.0,16816011.0,15055010.0,15162010.0,14537010.0,15800010.0,15914010.0,15023010.0,15458011.0,14304009.0,18939013.0,16544010.0,15437011.0,14628009.0,15822011.0,16358011.0,16607010.0,16785012.0,16247010.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Select option (hound)","job_name":"Select option (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":3999835.8860663995,"average":18099422.660714287,"ips":55.25038111688229,"maximum":33976023.0,"median":17633511.5,"minimum":15715010.0,"mode":17380011.0,"percentiles":{"50":17633511.5,"99":33976023.0},"relative_less":0.7790075428898489,"relative_more":1.2836846178540782,"sample_size":56,"std_dev":3247989.2834583856,"std_dev_ips":9.91482707148092,"std_dev_ratio":0.17945264577462522},"samples":[17735012.0,16182010.0,15818011.0,17380011.0,16058011.0,15917010.0,17621012.0,16528011.0,17615011.0,17378012.0,15821010.0,15876011.0,17860012.0,17891011.0,16760011.0,17532012.0,19809013.0,16809011.0,33769023.0,18338012.0,19343012.0,18183012.0,17773012.0,17696012.0,18561012.0,15719010.0,16963012.0,17667011.0,17207012.0,17470011.0,17153012.0,15970010.0,17079011.0,19207013.0,18355012.0,17706012.0,17941012.0,17380011.0,16692011.0,17155011.0,17568012.0,19075013.0,17646011.0,18737013.0,18006012.0,15873010.0,16646011.0,15715010.0,18003012.0,18949013.0,20417013.0,33976023.0,17984012.0,18163012.0,19163012.0,17729012.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Find element (hound)","job_name":"Find element (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":4497607.334443022,"average":18597194.10909091,"ips":53.771552532818255,"maximum":33798023.0,"median":18029012.0,"minimum":15615010.0,"mode":null,"percentiles":{"50":18029012.0,"99":33798023.0},"relative_less":0.7581566709440084,"relative_more":1.3189885921004476,"sample_size":55,"std_dev":3135023.8677107194,"std_dev_ips":9.064544877328622,"std_dev_ratio":0.16857510059424602},"samples":[17524012.0,18434012.0,18783012.0,18970013.0,17376011.0,17358012.0,20128013.0,17748012.0,18945012.0,17985012.0,17532012.0,18583012.0,20003013.0,18029012.0,18558012.0,20572014.0,18845013.0,18715012.0,19309013.0,18663012.0,21107014.0,30303020.0,17667012.0,16447010.0,18360013.0,18794012.0,17652012.0,16871011.0,17280011.0,16561011.0,16250011.0,16410011.0,16572011.0,18294012.0,15615010.0,15958010.0,16964012.0,16680011.0,17493011.0,17127012.0,16402010.0,17249012.0,17107011.0,17327011.0,17212012.0,18513012.0,18608012.0,18163012.0,18239012.0,18063012.0,17198012.0,18307012.0,19254012.0,33798023.0,26940018.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Element displayed (hound)","job_name":"Element displayed (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":11588968.635608524,"average":25688555.410256412,"ips":38.92784097936235,"maximum":46250031.0,"median":25140017.0,"minimum":23320015.0,"mode":null,"percentiles":{"50":25140017.0,"99":46250031.0},"relative_less":0.5488664718382135,"relative_more":1.821936757497486,"sample_size":39,"std_dev":3457789.850463068,"std_dev_ips":5.2398545301281265,"std_dev_ratio":0.13460429343887945},"samples":[26713018.0,26579018.0,24031015.0,24864017.0,23320015.0,25039017.0,25104016.0,25539017.0,24429016.0,25169017.0,25107016.0,26117017.0,25852017.0,25474017.0,24498016.0,25562017.0,26315017.0,46250031.0,25452016.0,24241016.0,26053018.0,23900015.0,24501017.0,24852016.0,24897016.0,24754017.0,25340016.0,24712017.0,24965016.0,25323017.0,24958016.0,24877017.0,25175016.0,25140017.0,26285017.0,25823017.0,25141017.0,24199016.0,25303017.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Visible text (hound)","job_name":"Visible text (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":12995079.738865625,"average":27094666.513513513,"ips":36.90763270702181,"maximum":57214037.0,"median":26140018.0,"minimum":24886016.0,"mode":null,"percentiles":{"50":26140018.0,"99":57214037.0},"relative_less":0.5203823699994866,"relative_more":1.9216638718967105,"sample_size":37,"std_dev":5143107.096010778,"std_dev_ips":7.005803432855331,"std_dev_ratio":0.18981990767244336},"samples":[25989017.0,25119017.0,25619017.0,26275017.0,25903017.0,26509018.0,25728016.0,26570017.0,26094017.0,26140018.0,26523017.0,26582018.0,27461018.0,57214037.0,27055018.0,25754017.0,26043018.0,25604016.0,26473018.0,26064017.0,25487017.0,26424017.0,25554017.0,26408018.0,24886016.0,26804018.0,26700017.0,27241018.0,25817017.0,25687017.0,25479017.0,25927017.0,26085018.0,29068019.0,26584017.0,26974018.0,26658018.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Find element (wallaby)","job_name":"Find element (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":14230570.836463224,"average":28330157.611111112,"ips":35.29807400745978,"maximum":49327033.0,"median":27677018.0,"minimum":26183018.0,"mode":null,"percentiles":{"50":27677018.0,"99":49327033.0},"relative_less":0.4976882574461223,"relative_more":2.0092899220316767,"sample_size":36,"std_dev":3673712.036317935,"std_dev_ips":4.577276311699291,"std_dev_ratio":0.12967495934004625},"samples":[28018019.0,27431018.0,27940018.0,27600019.0,29347019.0,27769018.0,27208018.0,27186018.0,28113019.0,27448018.0,28074018.0,28814019.0,26932018.0,49327033.0,28605019.0,27493018.0,29104019.0,28528019.0,27177018.0,27610018.0,26599018.0,27118017.0,27148018.0,27050018.0,26183018.0,27744018.0,27258018.0,26982018.0,27178018.0,28254018.0,27893019.0,27901018.0,27265018.0,27953019.0,28200018.0,29435020.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Element displayed (wallaby)","job_name":"Element displayed (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":14597889.311066397,"average":28697476.085714284,"ips":34.8462699999532,"maximum":48812033.0,"median":28052019.0,"minimum":26829018.0,"mode":null,"percentiles":{"50":28052019.0,"99":48812033.0},"relative_less":0.49131800763714956,"relative_more":2.0353416411688388,"sample_size":35,"std_dev":3561054.834785039,"std_dev_ips":4.324055463516196,"std_dev_ratio":0.1240894782575582},"samples":[27981019.0,27917018.0,26829018.0,29865020.0,27238018.0,27894018.0,28058019.0,27453018.0,28919019.0,28284018.0,28934020.0,27957018.0,28278019.0,29789019.0,28533019.0,29265020.0,28088018.0,27729018.0,48812033.0,27541018.0,28301018.0,28095019.0,27773018.0,27417018.0,28044019.0,27869018.0,27380018.0,28026019.0,28608019.0,27199018.0,28078018.0,28052019.0,27820018.0,28100019.0,28285018.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Visible text (wallaby)","job_name":"Visible text (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":22752508.975352112,"average":36852095.75,"ips":27.13549879995631,"maximum":39904027.0,"median":36488024.0,"minimum":33997022.0,"mode":null,"percentiles":{"50":36488024.0,"99":39904027.0},"relative_less":0.38259932000333763,"relative_more":2.613700411154093,"sample_size":28,"std_dev":1279636.7494387885,"std_dev_ips":0.9422417035475177,"std_dev_ratio":0.03472358147877624},"samples":[36358024.0,33997022.0,35388023.0,35320024.0,35990023.0,36964025.0,36229024.0,37474025.0,36516024.0,38903025.0,39356026.0,36701025.0,36817024.0,36433024.0,36084024.0,36299024.0,36376024.0,35661023.0,39904027.0,37509024.0,35978024.0,37943025.0,36460024.0,38432026.0,38172025.0,36371024.0,37053024.0,37170025.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Button click (hound)","job_name":"Button click (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":42897292.96219422,"average":56996879.7368421,"ips":17.544820078170208,"maximum":95275063.0,"median":51631034.0,"minimum":49743033.0,"mode":null,"percentiles":{"50":51631034.0,"99":95275063.0},"relative_less":0.2473747131377454,"relative_more":4.042450367363018,"sample_size":19,"std_dev":13369732.321947569,"std_dev_ips":4.11548051691405,"std_dev_ratio":0.2345695480818669},"samples":[49743033.0,50522033.0,53525036.0,51584034.0,51631034.0,57081037.0,52449035.0,50350033.0,50626034.0,50049033.0,54340036.0,51441034.0,50876033.0,95275063.0,55532037.0,54599036.0,51151034.0,58939038.0,93227062.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Fill-in element (wallaby)","job_name":"Fill-in element (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":57649603.439637825,"average":71749190.21428572,"ips":13.937439530863077,"maximum":88547058.0,"median":70052046.0,"minimum":65350043.0,"mode":null,"percentiles":{"50":70052046.0,"99":88547058.0},"relative_less":0.1965121380818117,"relative_more":5.088744185276134,"sample_size":14,"std_dev":5831006.18106506,"std_dev_ips":1.1326858994500804,"std_dev_ratio":0.08126929605268311},"samples":[88547058.0,69851046.0,65350043.0,79531053.0,73037048.0,68428045.0,69211046.0,68619045.0,71448047.0,67732045.0,70253046.0,70318047.0,72564048.0,69599046.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Fill-in element (hound)","job_name":"Fill-in element (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":61406248.796780676,"average":75505835.57142857,"ips":13.244009452143594,"maximum":96550064.0,"median":71613547.0,"minimum":67579044.0,"mode":null,"percentiles":{"50":71613547.0,"99":96550064.0},"relative_less":0.18673506051475544,"relative_more":5.355180742402586,"sample_size":14,"std_dev":9253818.06043314,"std_dev_ips":1.6231547261648935,"std_dev_ratio":0.12255765386079362},"samples":[71013047.0,72633048.0,72430048.0,77747051.0,96550064.0,67579044.0,69502046.0,70117047.0,72214047.0,70459047.0,68564045.0,69672046.0,89756059.0,88845059.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Button click (wallaby)","job_name":"Button click (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":67525005.53304441,"average":81624592.3076923,"ips":12.251209736281401,"maximum":93249061.0,"median":83980056.0,"minimum":60756040.0,"mode":null,"percentiles":{"50":83980056.0,"99":93249061.0},"relative_less":0.1727369947711107,"relative_more":5.789147839031668,"sample_size":13,"std_dev":8208966.279589587,"std_dev_ips":1.2321013161107814,"std_dev_ratio":0.10056976760931366},"samples":[74425049.0,88909059.0,93249061.0,60756040.0,73793049.0,83980056.0,84061055.0,81057054.0,86885057.0,80399053.0,85080056.0,82689055.0,85836056.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null},{"name":"Select option (wallaby)","job_name":"Select option (wallaby)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":102813268.114241,"average":116912854.8888889,"ips":8.55337936063896,"maximum":133600088.0,"median":115318076.0,"minimum":111698074.0,"mode":null,"percentiles":{"50":115318076.0,"99":133600088.0},"relative_less":0.12059911451181128,"relative_more":8.291934845857112,"sample_size":9,"std_dev":6542915.525648208,"std_dev_ips":0.4786816528316791,"std_dev_ratio":0.055964038615483595},"samples":[112294074.0,117591078.0,133600088.0,114196075.0,111698074.0,115318076.0,114797076.0,116451077.0,116270076.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null}];
+      var inputHeadline = " (Select option)";
+
+      
+        drawIpsComparisonChart(scenarios, inputHeadline);
+        drawRunTimeComparisonBoxPlot(scenarios, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

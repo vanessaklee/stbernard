@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    datatypes
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Amount/neg int (Wallaby) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Amount/neg int (Wallaby).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Amount/neg int (Wallaby)</td>
+        
+        
+          <td>1.95</td>
+          <td>513.03 ms</td>
+          <td>±4.96%</td>
+          <td>502.89 ms</td>
+          <td>none</td>
+          <td>476.91 ms</td>
+          <td>566.97 ms</td>
+        
+        <td>36</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          <a name="memory" href="#memory">Amount/neg int (Wallaby) Memory</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual memory usage distribution for Amount/neg int (Wallaby).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Amount/neg int (Wallaby)</td>
+        
+        
+          <td>2.99 MB</td>
+          <td>±0.10%</td>
+          <td>2.99 MB</td>
+          <td>none</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>47</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        
+          <section class="benchee-plot-container">
+            <div id="memory-histogram" class="plot"></div>
+          </section>
+          <section class="benchee-plot-container">
+            <div id="raw-memory" class="plot"></div>
+          </section>
+        
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Amount/neg int (Wallaby)","job_name":"Amount/neg int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":189574047.61904758,"average":513025823.3333333,"ips":1.9492196192047435,"maximum":566969990.0,"median":502887990.0,"minimum":476912990.0,"mode":null,"percentiles":{"50":502887990.0,"99":566969990.0},"relative_less":0.6304785470888982,"relative_more":1.5860967904733465,"sample_size":36,"std_dev":25429129.83455897,"std_dev_ips":0.09661688850430711,"std_dev_ratio":0.04956695877282702},"samples":[476912990.0,508566990.0,486651990.0,536555990.0,493257990.0,519676990.0,482500990.0,525118990.0,489343990.0,525777990.0,496779990.0,541745990.0,508357990.0,530493990.0,503613990.0,497982990.0,534424990.0,499462990.0,500125990.0,537806990.0,493216990.0,537670990.0,492707990.0,566969990.0,486605990.0,502966990.0,548255990.0,500174990.0,564707990.0,502808990.0,497226990.0,550651990.0,485589990.0,499964990.0,558262990.0,485984990.0]},"memory_usage_data":{"statistics":{"absolute_difference":2209612.4903748734,"average":3140056.6808510637,"ips":null,"maximum":3146856,"median":3140432.0,"minimum":3134128,"mode":null,"percentiles":{"50":3140432.0,"99":3146856.0},"relative_less":0.2963144570447716,"relative_more":3.374793150402733,"sample_size":47,"std_dev":3083.4351616224553,"std_dev_ips":null,"std_dev_ratio":9.81967994535289e-4},"samples":[3142016,3142504,3138656,3143192,3135472,3137440,3134128,3141392,3142664,3140040,3140736,3141376,3140288,3138320,3145856,3139456,3142784,3138560,3141192,3142176,3141536,3137360,3145808,3140432,3141792,3141632,3138888,3143176,3138304,3142848,3142480,3143968,3140120,3139352,3140936,3134224,3140520,3137152,3134704,3135376,3139560,3137832,3135008,3141248,3137672,3135632,3146856]},"tag":null};
+
+      var inputHeadline = " (datatypes)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+        if (scenario.memory_usage_data.statistics.std_dev !== 0) {
+          drawMemoryHistogram(scenario, inputHeadline);
+          drawRawMemoryChart(scenario, inputHeadline);
+        };
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    datatypes
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          Run Time Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="Comparisons of the different benchmarking jobs. For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better. The Box Plot shows a distribution of run times with the median and outliers."
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:44:36.423769Z_datatypes_valid_form__hound_.html">Valid form (Hound)</a></td>
+        
+        
+          <td>2.89</td>
+          <td>345.64 ms</td>
+          <td>±4.57%</td>
+          <td>347.54 ms</td>
+          <td>none</td>
+          <td>306.04 ms</td>
+          <td>385.12 ms</td>
+        
+        <td>53</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:44:36.423769Z_datatypes_valid_form__wallaby_.html">Valid form (Wallaby)</a></td>
+        
+        
+          <td>2.10</td>
+          <td>475.46 ms</td>
+          <td>±3.08%</td>
+          <td>473.71 ms</td>
+          <td>none</td>
+          <td>446.71 ms</td>
+          <td>517.50 ms</td>
+        
+        <td>38</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="ips-comparison" class="job-count-2 plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-time-box-plot" class="job-count-2 plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          Memory Usage Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="This is a memory usage comparison"
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:44:36.423769Z_datatypes_valid_form__hound_.html">Valid form (Hound)</a></td>
+        
+        
+          <td>0.74 MB</td>
+          <td>±0.12%</td>
+          <td>0.74 MB</td>
+          <td>none</td>
+          <td>0.73 MB</td>
+          <td>0.74 MB</td>
+        
+        <td>22</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:44:36.423769Z_datatypes_valid_form__wallaby_.html">Valid form (Wallaby)</a></td>
+        
+        
+          <td>2.64 MB</td>
+          <td>±0.10%</td>
+          <td>2.64 MB</td>
+          <td>none</td>
+          <td>2.64 MB</td>
+          <td>2.65 MB</td>
+        
+        <td>53</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-comparison" class="job-count-2 plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-box-plot" class="job-count-2 plot"></div>
+        </section>
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenarios     = [{"name":"Valid form (Hound)","job_name":"Valid form (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":null,"average":345635528.3018868,"ips":2.893221090184267,"maximum":3.85123e8,"median":3.47538e8,"minimum":3.06037e8,"mode":null,"percentiles":{"50":3.47538e8,"99":3.85123e8},"relative_less":null,"relative_more":null,"sample_size":53,"std_dev":15798687.45230216,"std_dev_ips":0.1322465197915264,"std_dev_ratio":0.045709095734230154},"samples":[3.43869e8,3.22266e8,3.53372e8,3.33552e8,3.4712e8,3.3599e8,3.85123e8,3.32048e8,3.68901e8,3.25882e8,3.38054e8,3.4818e8,3.49408e8,3.30814e8,3.51484e8,3.57831e8,3.57682e8,3.66877e8,3.66249e8,3.72637e8,3.63316e8,3.34443e8,3.30668e8,3.47538e8,3.65009e8,3.38287e8,3.50515e8,3.5223e8,3.40033e8,3.58232e8,3.30159e8,3.50928e8,3.54074e8,3.31807e8,3.49314e8,3.30221e8,3.22429e8,3.48936e8,3.68579e8,3.46895e8,3.47693e8,3.19691e8,3.67741e8,3.5783e8,3.38277e8,3.31165e8,3.53354e8,3.34687e8,3.28661e8,3.60087e8,3.06037e8,3.38784e8,3.33724e8]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":771214.1818181818,"ips":null,"maximum":772448,"median":771636.0,"minimum":769352,"mode":null,"percentiles":{"50":771636.0,"99":772448.0},"relative_less":null,"relative_more":null,"sample_size":22,"std_dev":896.261634651912,"std_dev_ips":null,"std_dev_ratio":0.0011621436116993125},"samples":[770888,769352,770840,769512,770264,771888,771920,771696,771776,771768,771784,771616,772448,772136,771976,771656,769744,770440,770752,772000,770736,771520]},"tag":null},{"name":"Valid form (Wallaby)","job_name":"Valid form (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":129825313.80337638,"average":475460842.1052632,"ips":2.1032226241222367,"maximum":5.17498e8,"median":4.73711e8,"minimum":4.46706e8,"mode":null,"percentiles":{"50":4.73711e8,"99":5.17498e8},"relative_less":0.7269484628249699,"relative_more":1.3756133359357192,"sample_size":38,"std_dev":14644714.453817626,"std_dev_ips":0.06478155935344103,"std_dev_ratio":0.030801094763079157},"samples":[4.83574e8,4.6594e8,4.84628e8,4.6584e8,4.83363e8,4.5001e8,4.74935e8,4.82599e8,4.77704e8,4.82925e8,4.68696e8,4.69106e8,4.85665e8,4.6087e8,4.81824e8,4.86078e8,5.02817e8,4.62664e8,4.8876e8,4.61914e8,4.67276e8,4.90585e8,4.55799e8,4.8793e8,4.65758e8,4.84061e8,4.8204e8,4.62961e8,4.46706e8,5.17498e8,4.72391e8,4.63365e8,4.72487e8,4.93744e8,4.68559e8,4.67374e8,4.90937e8,4.58129e8]},"memory_usage_data":{"statistics":{"absolute_difference":1998843.7804459692,"average":2770057.962264151,"ips":null,"maximum":2774632,"median":2770344.0,"minimum":2763912,"mode":null,"percentiles":{"50":2770344.0,"99":2774632.0},"relative_less":0.27841084638814473,"relative_more":3.591814086890337,"sample_size":53,"std_dev":2647.6885271893593,"std_dev_ips":null,"std_dev_ratio":9.558242330154092e-4},"samples":[2772928,2772984,2774504,2770680,2771520,2768496,2769472,2765448,2769352,2766328,2768336,2772648,2766152,2767520,2767616,2770472,2769152,2773296,2771632,2769768,2767032,2770568,2774048,2772304,2770344,2766816,2770696,2773760,2767784,2763912,2772776,2769752,2771064,2768560,2771408,2771912,2771120,2768096,2764216,2773136,2767896,2771720,2770536,2770336,2772056,2768840,2774312,2771224,2769728,2770256,2766712,2767216,2774632]},"tag":null}];
+      var inputHeadline = " (datatypes)";
+
+      
+        drawIpsComparisonChart(scenarios, inputHeadline);
+        drawRunTimeComparisonBoxPlot(scenarios, inputHeadline);
+      
+
+      
+        drawMemoryComparisonChart(scenarios, inputHeadline);
+        drawMemoryComparisonBoxPlot(scenarios, inputHeadline);
+      
+    </script>
+  </body>
+</html>

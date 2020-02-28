@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Valid inputs
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Element displayed (wallaby) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Element displayed (wallaby).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Element displayed (wallaby)</td>
+        
+        
+          <td>33.99</td>
+          <td>29.42 ms</td>
+          <td>±14.43%</td>
+          <td>28.74 ms</td>
+          <td>28.68 ms</td>
+          <td>26.68 ms</td>
+          <td>66.01 ms</td>
+        
+        <td>171</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Element displayed (wallaby)","job_name":"Element displayed (wallaby)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":14557489.787773091,"average":29417988.304093566,"ips":33.99280704251447,"maximum":6.6012e7,"median":2.8744e7,"minimum":2.668e7,"mode":2.8679e7,"percentiles":{"50":2.8744e7,"99":61046880.00000001},"relative_less":0.5051500586208544,"relative_more":1.9796097871000353,"sample_size":171,"std_dev":4243668.378389709,"std_dev_ips":4.903605197196589,"std_dev_ratio":0.14425420033902164},"samples":[2.9683e7,3.0346e7,2.8998e7,2.7942e7,2.708e7,2.774e7,3.0494e7,2.8398e7,2.706e7,2.7922e7,2.7951e7,2.756e7,2.7272e7,2.8385e7,2.8553e7,2.8906e7,2.8248e7,2.686e7,2.8763e7,3.0233e7,2.8826e7,2.8319e7,5.2737e7,2.8204e7,2.9133e7,2.9132e7,2.9633e7,2.8979e7,3.0039e7,2.8461e7,2.7489e7,3.0493e7,2.7722e7,2.9029e7,2.8866e7,3.0184e7,2.8771e7,2.678e7,2.8209e7,2.8475e7,2.7763e7,2.8086e7,2.8018e7,2.8551e7,2.762e7,2.7553e7,2.84e7,2.889e7,3.0955e7,2.9705e7,3.0274e7,2.9511e7,2.8744e7,3.084e7,3.0071e7,3.0241e7,3.0475e7,3.0018e7,2.9608e7,3.0123e7,3.0638e7,2.9868e7,3.0109e7,3.083e7,3.2733e7,3.1057e7,5.9116e7,2.9797e7,2.9342e7,2.9215e7,2.7953e7,2.7775e7,2.8712e7,2.79e7,2.7704e7,2.7968e7,2.7519e7,2.7684e7,2.8679e7,2.8737e7,2.8524e7,2.8266e7,2.9057e7,2.7724e7,2.7252e7,2.8787e7,3.0962e7,2.8275e7,2.7886e7,2.8933e7,2.7751e7,2.7642e7,3.0095e7,2.8031e7,2.8618e7,2.7721e7,2.9554e7,2.993e7,2.8313e7,2.9219e7,2.7228e7,2.8508e7,2.9277e7,3.0304e7,3.0704e7,2.877e7,2.8367e7,2.8164e7,2.8997e7,3.2246e7,2.8717e7,2.8271e7,2.7931e7,2.9185e7,2.8535e7,2.85e7,3.1192e7,2.9905e7,2.8379e7,2.8291e7,6.6012e7,2.9792e7,2.8882e7,2.7846e7,2.7369e7,2.9211e7,2.7309e7,2.7526e7,2.7544e7,2.7572e7,2.668e7,2.7409e7,2.78e7,2.9045e7,2.8034e7,2.7151e7,2.7416e7,3.0438e7,2.9172e7,2.8069e7,2.7919e7,2.7082e7,2.7441e7,2.8679e7,2.6847e7,2.8093e7,2.8098e7,2.9981e7,2.8932e7,2.8755e7,3.0178e7,2.8957e7,2.7918e7,2.8497e7,2.9197e7,3.1054e7,3.03e7,2.9274e7,3.0157e7,2.8124e7,2.9306e7,2.8154e7,2.9152e7,3.1629e7,3.1324e7,3.0771e7,3.0678e7,3.064e7,3.0557e7,2.9631e7,3.2206e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Valid inputs)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    datatypes
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          Run Time Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="Comparisons of the different benchmarking jobs. For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better. The Box Plot shows a distribution of run times with the median and outliers."
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 02:59:18.288619Z_datatypes_w__wildcard_form__large_int_.html">W: Wildcard form (large int)</a></td>
+        
+        
+          <td>1.96</td>
+          <td>511.01 ms</td>
+          <td>±4.37%</td>
+          <td>508.02 ms</td>
+          <td>none</td>
+          <td>479.56 ms</td>
+          <td>554.20 ms</td>
+        
+        <td>20</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="ips-comparison" class="job-count-1 plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-time-box-plot" class="job-count-1 plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          Memory Usage Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="This is a memory usage comparison"
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 02:59:18.288619Z_datatypes_w__wildcard_form__large_int_.html">W: Wildcard form (large int)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.13%</td>
+          <td>3.00 MB</td>
+          <td>none</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>20</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-comparison" class="job-count-1 plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-box-plot" class="job-count-1 plot"></div>
+        </section>
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenarios     = [{"name":"W: Wildcard form (large int)","job_name":"W: Wildcard form (large int)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":null,"average":511010650.0,"ips":1.9569063775872382,"maximum":5.54197e8,"median":5.080235e8,"minimum":4.79559e8,"mode":null,"percentiles":{"50":5.080235e8,"99":5.54197e8},"relative_less":null,"relative_more":null,"sample_size":20,"std_dev":22332172.7023569,"std_dev_ips":0.08552066612823402,"std_dev_ratio":0.04370197118662185},"samples":[4.96727e8,5.19298e8,4.83553e8,5.18242e8,4.84562e8,5.19994e8,4.91485e8,5.45395e8,5.10384e8,5.41904e8,4.87303e8,5.54197e8,4.97326e8,5.45558e8,5.05663e8,5.1662e8,4.79559e8,5.01897e8,5.01413e8,5.19133e8]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":3141313.6,"ips":null,"maximum":3146808,"median":3141836.0,"minimum":3133928,"mode":null,"percentiles":{"50":3141836.0,"99":3146808.0},"relative_less":null,"relative_more":null,"sample_size":20,"std_dev":4067.0668908608864,"std_dev_ips":null,"std_dev_ratio":0.001294702601758986},"samples":[3138608,3145296,3141136,3133976,3139784,3143640,3140184,3141912,3134632,3143664,3146808,3146240,3145024,3141760,3138720,3137984,3142240,3146624,3144112,3133928]},"tag":null}];
+      var inputHeadline = " (datatypes)";
+
+      
+        drawIpsComparisonChart(scenarios, inputHeadline);
+        drawRunTimeComparisonBoxPlot(scenarios, inputHeadline);
+      
+
+      
+        drawMemoryComparisonChart(scenarios, inputHeadline);
+        drawMemoryComparisonBoxPlot(scenarios, inputHeadline);
+      
+    </script>
+  </body>
+</html>

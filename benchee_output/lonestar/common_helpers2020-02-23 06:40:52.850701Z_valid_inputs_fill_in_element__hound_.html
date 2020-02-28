@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Valid inputs
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Fill-in element (hound) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Fill-in element (hound).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Fill-in element (hound)</td>
+        
+        
+          <td>14.18</td>
+          <td>70.54 ms</td>
+          <td>±9.19%</td>
+          <td>68.91 ms</td>
+          <td>none</td>
+          <td>63.87 ms</td>
+          <td>99.12 ms</td>
+        
+        <td>71</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Fill-in element (hound)","job_name":"Fill-in element (hound)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":55948745.61655647,"average":70536511.12676056,"ips":14.177055031867235,"maximum":99122990.0,"median":68911990.0,"minimum":63865990.0,"mode":null,"percentiles":{"50":68911990.0,"99":99122990.0},"relative_less":0.2068115544301381,"relative_more":4.835319780635393,"sample_size":71,"std_dev":6481037.837655226,"std_dev_ips":1.302616596997994,"std_dev_ratio":0.09188203008805197},"samples":[69972990.0,69083990.0,89769990.0,63865990.0,66295990.0,68122990.0,68383990.0,65871990.0,70836990.0,68401990.0,68911990.0,66134990.0,69961990.0,68637990.0,68809990.0,68231990.0,71734990.0,68109990.0,73724990.0,79924990.0,68865990.0,67829990.0,68895990.0,73011990.0,99122990.0,69708990.0,67764990.0,69776990.0,69288990.0,90407990.0,69119990.0,67170990.0,66570990.0,66627990.0,66062990.0,66322990.0,66630990.0,69841990.0,66122990.0,67663990.0,69808990.0,68683990.0,66644990.0,69944990.0,72597990.0,70808990.0,68504990.0,71338990.0,71877990.0,65985990.0,71118990.0,71110990.0,72987990.0,70127990.0,72217990.0,68124990.0,70543990.0,71632990.0,71851990.0,70398990.0,69383990.0,99083990.0,66059990.0,66687990.0,67768990.0,67532990.0,70353990.0,70184990.0,67423990.0,67755990.0,67938990.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Valid inputs)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Valid inputs
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Find elem (W) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Find elem (W).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Find elem (W)</td>
+        
+        
+          <td>33.30</td>
+          <td>30.03 ms</td>
+          <td>±13.26%</td>
+          <td>29.38 ms</td>
+          <td>29.15 ms, 30.15 ms, 30.22 ms, 29.20 ms</td>
+          <td>27.36 ms</td>
+          <td>63.73 ms</td>
+        
+        <td>167</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Find elem (W)","job_name":"Find elem (W)","input_name":"Valid inputs","run_time_data":{"statistics":{"absolute_difference":14443337.92228627,"average":30028415.1497006,"ips":33.30179082095082,"maximum":63728990.0,"median":29380990.0,"minimum":27357990.0,"mode":[29146990.0,30146990.0,30216990.0,29195990.0],"percentiles":{"50":29380990.0,"99":59588469.999999955},"relative_less":0.5190109817557162,"relative_more":1.9267415048082195,"sample_size":167,"std_dev":3982299.437778978,"std_dev_ips":4.416406999908814,"std_dev_ratio":0.1326177028633056},"samples":[28982990.0,28196990.0,29474990.0,29146990.0,30073990.0,31673990.0,29636990.0,31723990.0,28994990.0,28754990.0,29572990.0,29848990.0,29603990.0,28267990.0,28842990.0,29870990.0,29548990.0,29239990.0,29194990.0,29625990.0,29021990.0,30146990.0,31158990.0,30116990.0,52646990.0,28103990.0,28298990.0,28416990.0,29733990.0,28930990.0,28558990.0,29255990.0,28710990.0,29635990.0,28998990.0,28703990.0,28943990.0,28158990.0,30596990.0,28455990.0,28620990.0,28683990.0,29627990.0,30188990.0,29336990.0,29810990.0,29333990.0,29127990.0,28955990.0,29294990.0,30899990.0,29574990.0,28477990.0,29380990.0,28598990.0,30773990.0,29351990.0,30241990.0,29293990.0,30146990.0,29869990.0,28914990.0,29070990.0,29011990.0,30327990.0,32983990.0,29658990.0,29553990.0,57639990.0,29792990.0,29566990.0,29992990.0,28986990.0,28881990.0,29135990.0,30216990.0,30212990.0,27357990.0,29445990.0,29498990.0,28888990.0,28975990.0,28232990.0,29195990.0,29149990.0,29323990.0,28674990.0,28735990.0,31443990.0,29369990.0,29450990.0,29311990.0,29968990.0,29195990.0,29475990.0,29996990.0,30098990.0,30190990.0,29656990.0,29184990.0,29180990.0,28750990.0,29540990.0,29442990.0,28074990.0,27869990.0,33174990.0,29350990.0,28812990.0,30227990.0,30815990.0,34027990.0,29865990.0,30216990.0,29470990.0,29728990.0,31967990.0,30632990.0,30159990.0,30526990.0,30102990.0,63728990.0,29279990.0,28415990.0,30056990.0,27913990.0,27826990.0,27824990.0,28405990.0,27695990.0,29146990.0,30209990.0,30210990.0,29159990.0,28504990.0,29500990.0,29056990.0,29757990.0,30832990.0,29734990.0,29663990.0,29723990.0,28048990.0,30268990.0,29679990.0,28675990.0,29040990.0,29052990.0,31485990.0,29839990.0,29129990.0,29995990.0,28612990.0,29197990.0,28584990.0,32420990.0,29160990.0,29987990.0,29777990.0,29312990.0,29104990.0,30320990.0,29299990.0,28096990.0,30044990.0,33509990.0,28238990.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Valid inputs)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

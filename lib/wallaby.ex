@@ -13,9 +13,9 @@ defmodule StbernardWeb.Wallaby do
 
   def start(session), do: fill_in_valid_form(session)
 
-  def fill_in_valid_form(session) do
+  def fill_in_valid_form(session, nav \\ true) do
+    if nav, do: session |> visit("/")
     session
-    |> visit("/")
     |> fill_in(Query.text_field("payment_name"), with: Enum.random(C.valid_names()))
     |> fill_in(Query.text_field("payment_postal"), with: Enum.random(C.valid_postals()))
     |> fill_in(Query.text_field("payment_account"), with: Enum.random(C.valid_accounts()))
@@ -35,5 +35,9 @@ defmodule StbernardWeb.Wallaby do
     session
     |> fill_in(Query.text_field(field), with: new_value)
     |> Browser.click(Query.button("payment_submit"))
+  end
+
+  def submit(session) do
+    session |> Browser.click(Query.button("payment_submit"))
   end
 end

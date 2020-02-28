@@ -5,16 +5,16 @@ html {
     margin-top: 10px;
     height: 100%;
     font-size: 10px !important;
-    color: #4C1C00 !important;
+    color: #ffffff !important;
 }
 
 body {
     font-family: 'Titillium Web' !important; 
-    background-color: #4C1C00 !important;
+    background-color: #ffffff !important;
 }
 
 h1 {
-    color: #ffffff;
+    color: #4C1C00;
     font-size: 28px;
 }
 

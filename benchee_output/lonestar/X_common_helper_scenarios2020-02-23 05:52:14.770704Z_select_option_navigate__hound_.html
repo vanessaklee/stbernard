@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Select option
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Navigate (hound) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Navigate (hound).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Navigate (hound)</td>
+        
+        
+          <td>71.56</td>
+          <td>13.97 ms</td>
+          <td>±5.74%</td>
+          <td>13.84 ms</td>
+          <td>13.30 ms</td>
+          <td>12.31 ms</td>
+          <td>16.11 ms</td>
+        
+        <td>72</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Navigate (hound)","job_name":"Navigate (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":null,"average":13973865.0,"ips":71.56216265149263,"maximum":16109990.0,"median":13835490.0,"minimum":12311990.0,"mode":13301990.0,"percentiles":{"50":13835490.0,"99":16109990.0},"relative_less":null,"relative_more":null,"sample_size":72,"std_dev":802582.3451675521,"std_dev_ips":4.110139057883897,"std_dev_ratio":0.05743452832609676},"samples":[14203990.0,14488990.0,15411990.0,12776990.0,14174990.0,14116990.0,13175990.0,13686990.0,13301990.0,14158990.0,13840990.0,14496990.0,12736990.0,13730990.0,13077990.0,14091990.0,13515990.0,13381990.0,13562990.0,15742990.0,13233990.0,13199990.0,13547990.0,13331990.0,12311990.0,15779990.0,13120990.0,14451990.0,14220990.0,16109990.0,14366990.0,14781990.0,13399990.0,15446990.0,13455990.0,13556990.0,13367990.0,13857990.0,13829990.0,14016990.0,14233990.0,14538990.0,13341990.0,14166990.0,15380990.0,13351990.0,13762990.0,14929990.0,14252990.0,13301990.0,14102990.0,13234990.0,15079990.0,13591990.0,13421990.0,13391990.0,14922990.0,14000990.0,14313990.0,14224990.0,15550990.0,13676990.0,13574990.0,13946990.0,12978990.0,13684990.0,14757990.0,14686990.0,12997990.0,15068990.0,12942990.0,13629990.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Select option)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

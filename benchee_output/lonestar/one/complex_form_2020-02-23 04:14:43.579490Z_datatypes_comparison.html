@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    datatypes
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          Run Time Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="Comparisons of the different benchmarking jobs. For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better. The Box Plot shows a distribution of run times with the median and outliers."
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_neg_int__hound_.html">neg int (Hound)</a></td>
+        
+        
+          <td>3.15</td>
+          <td>317.53 ms</td>
+          <td>±4.25%</td>
+          <td>316.77 ms</td>
+          <td>none</td>
+          <td>296.67 ms</td>
+          <td>358.42 ms</td>
+        
+        <td>57</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_large_int__hound_.html">large int (Hound)</a></td>
+        
+        
+          <td>3.05</td>
+          <td>328.14 ms</td>
+          <td>±5.94%</td>
+          <td>319.81 ms</td>
+          <td>none</td>
+          <td>300.66 ms</td>
+          <td>391.03 ms</td>
+        
+        <td>55</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_float__hound_.html">float (Hound)</a></td>
+        
+        
+          <td>3.00</td>
+          <td>333.32 ms</td>
+          <td>±3.98%</td>
+          <td>332.68 ms</td>
+          <td>none</td>
+          <td>312.58 ms</td>
+          <td>371.74 ms</td>
+        
+        <td>55</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_int__hound_.html">int (Hound)</a></td>
+        
+        
+          <td>2.66</td>
+          <td>376.44 ms</td>
+          <td>±3.41%</td>
+          <td>376.83 ms</td>
+          <td>none</td>
+          <td>348.87 ms</td>
+          <td>409.28 ms</td>
+        
+        <td>48</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_str__hound_.html">str (Hound)</a></td>
+        
+        
+          <td>2.15</td>
+          <td>464.84 ms</td>
+          <td>±31.45%</td>
+          <td>432.56 ms</td>
+          <td>none</td>
+          <td>359.01 ms</td>
+          <td>958.14 ms</td>
+        
+        <td>39</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_neg_int__wallaby_.html">neg int (Wallaby)</a></td>
+        
+        
+          <td>1.99</td>
+          <td>501.26 ms</td>
+          <td>±3.58%</td>
+          <td>497.70 ms</td>
+          <td>none</td>
+          <td>471.27 ms</td>
+          <td>541.44 ms</td>
+        
+        <td>36</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_int__wallaby_.html">int (Wallaby)</a></td>
+        
+        
+          <td>1.97</td>
+          <td>508.18 ms</td>
+          <td>±3.15%</td>
+          <td>507.98 ms</td>
+          <td>none</td>
+          <td>480.81 ms</td>
+          <td>540.52 ms</td>
+        
+        <td>36</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_large_int__wallaby_.html">large int (Wallaby)</a></td>
+        
+        
+          <td>1.95</td>
+          <td>512.59 ms</td>
+          <td>±4.23%</td>
+          <td>512.30 ms</td>
+          <td>none</td>
+          <td>474.55 ms</td>
+          <td>549.10 ms</td>
+        
+        <td>36</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_float__wallaby_.html">float (Wallaby)</a></td>
+        
+        
+          <td>1.91</td>
+          <td>524.79 ms</td>
+          <td>±4.01%</td>
+          <td>525.03 ms</td>
+          <td>none</td>
+          <td>478.49 ms</td>
+          <td>569.83 ms</td>
+        
+        <td>35</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_str__wallaby_.html">str (Wallaby)</a></td>
+        
+        
+          <td>1.89</td>
+          <td>530.43 ms</td>
+          <td>±6.94%</td>
+          <td>529.94 ms</td>
+          <td>none</td>
+          <td>470.65 ms</td>
+          <td>665.52 ms</td>
+        
+        <td>34</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="ips-comparison" class=" plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-time-box-plot" class=" plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          Memory Usage Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="This is a memory usage comparison"
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_neg_int__hound_.html">neg int (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.23%</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB, 0.89 MB</td>
+          <td>0.88 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>22</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_large_int__hound_.html">large int (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.26%</td>
+          <td>0.89 MB</td>
+          <td>none</td>
+          <td>0.88 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>21</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_float__hound_.html">float (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.25%</td>
+          <td>0.89 MB</td>
+          <td>none</td>
+          <td>0.88 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>21</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_int__hound_.html">int (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.24%</td>
+          <td>0.89 MB</td>
+          <td>none</td>
+          <td>0.88 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>22</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_str__hound_.html">str (Hound)</a></td>
+        
+        
+          <td>0.87 MB</td>
+          <td>±0.22%</td>
+          <td>0.87 MB</td>
+          <td>0.87 MB</td>
+          <td>0.87 MB</td>
+          <td>0.88 MB</td>
+        
+        <td>21</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_neg_int__wallaby_.html">neg int (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.10%</td>
+          <td>3.00 MB</td>
+          <td>3.00 MB</td>
+          <td>2.99 MB</td>
+          <td>3 MB</td>
+        
+        <td>50</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_int__wallaby_.html">int (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.10%</td>
+          <td>3.00 MB</td>
+          <td>none</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>50</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_large_int__wallaby_.html">large int (Wallaby)</a></td>
+        
+        
+          <td>2.99 MB</td>
+          <td>±0.12%</td>
+          <td>2.99 MB</td>
+          <td>none</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>50</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_float__wallaby_.html">float (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.11%</td>
+          <td>3.00 MB</td>
+          <td>none</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>48</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 04:14:43.579490Z_datatypes_str__wallaby_.html">str (Wallaby)</a></td>
+        
+        
+          <td>2.98 MB</td>
+          <td>±0.09%</td>
+          <td>2.98 MB</td>
+          <td>2.98 MB, 2.98 MB, 2.98 MB</td>
+          <td>2.97 MB</td>
+          <td>2.98 MB</td>
+        
+        <td>47</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-comparison" class=" plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-box-plot" class=" plot"></div>
+        </section>
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenarios     = [{"name":"neg int (Hound)","job_name":"neg int (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":null,"average":317527154.49122804,"ips":3.1493369491572913,"maximum":358424977.0,"median":316767979.0,"minimum":296671981.0,"mode":null,"percentiles":{"50":316767979.0,"99":358424977.0},"relative_less":null,"relative_more":null,"sample_size":57,"std_dev":13501880.961066008,"std_dev_ips":0.13391601944073492,"std_dev_ratio":0.042521972593808535},"samples":[330364978.0,300478981.0,321770978.0,322529979.0,327418978.0,316767979.0,320682979.0,308751980.0,301628980.0,326210978.0,358424977.0,318347979.0,336133978.0,312936979.0,316591979.0,303102980.0,330098978.0,313380980.0,340043977.0,313440979.0,316360980.0,299919980.0,333918978.0,311106979.0,347842977.0,302922980.0,303878980.0,315616979.0,296671981.0,318816979.0,327532978.0,325294979.0,299995980.0,329588978.0,302250980.0,299245980.0,322844979.0,329802978.0,316433979.0,321285979.0,310132980.0,296996980.0,315753979.0,322242979.0,313092979.0,322808979.0,328034978.0,297322981.0,339139977.0,313845980.0,297954980.0,316435979.0,320881979.0,317001979.0,329606978.0,319767979.0,297578981.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":930014.5454545454,"ips":null,"maximum":933288,"median":929144.0,"minimum":926784,"mode":[929144,928072],"percentiles":{"50":929144.0,"99":933288.0},"relative_less":null,"relative_more":null,"sample_size":22,"std_dev":2151.089396811205,"std_dev_ips":null,"std_dev_ratio":0.0023129631760327556},"samples":[926784,929144,931880,930352,932496,932432,928072,932544,928224,928072,929144,928408,933288,927864,931616,931032,932776,928304,928376,928184,933264,928064]},"tag":null},{"name":"large int (Hound)","job_name":"large int (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":10616714.745135605,"average":328143869.23636365,"ips":3.0474438005718008,"maximum":391026974.0,"median":319813979.0,"minimum":300657980.0,"mode":null,"percentiles":{"50":319813979.0,"99":391026974.0},"relative_less":0.9676461584674972,"relative_more":1.0334356120255186,"sample_size":55,"std_dev":19503810.705682658,"std_dev_ips":0.18113020718892645,"std_dev_ratio":0.05943676702255853},"samples":[315610979.0,329703978.0,321361979.0,317625979.0,328781978.0,319600979.0,316807979.0,337313978.0,309976979.0,318767979.0,340973978.0,307064980.0,315805979.0,343684977.0,307942980.0,300657980.0,345441977.0,322288979.0,316253979.0,318480979.0,328969978.0,319813979.0,316862979.0,317359979.0,350235977.0,317072979.0,348610977.0,321219979.0,361715976.0,322814979.0,360932976.0,315860979.0,319720979.0,359566976.0,316439979.0,320583979.0,316853979.0,319176979.0,363794976.0,317191979.0,315832980.0,317455979.0,321984978.0,377623975.0,316328980.0,333787977.0,312575980.0,322660979.0,379041975.0,315085979.0,321069979.0,333673978.0,325477978.0,391026974.0,315332979.0]},"memory_usage_data":{"statistics":{"absolute_difference":-574.1645021644654,"average":929440.380952381,"ips":null,"maximum":933136,"median":929096.0,"minimum":925104,"mode":null,"percentiles":{"50":929096.0,"99":933136.0},"relative_less":1.0006177529123235,"relative_more":0.9993826284707367,"sample_size":21,"std_dev":2457.5662448078683,"std_dev_ips":null,"std_dev_ratio":0.0026441354337215736},"samples":[928744,932504,928920,930624,932440,929272,927864,931504,931176,928056,928536,925104,930592,925848,929096,932896,925528,931584,933136,928064,926760]},"tag":null},{"name":"float (Hound)","job_name":"float (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":15788336.417862892,"average":333315490.90909094,"ips":3.0001605904141484,"maximum":3.71737e8,"median":3.32678e8,"minimum":3.12579e8,"mode":null,"percentiles":{"50":3.32678e8,"99":3.71737e8},"relative_less":0.9526324552909272,"relative_more":1.0497227912465013,"sample_size":55,"std_dev":13262218.094009161,"std_dev_ips":0.11937274189868297,"std_dev_ratio":0.039788784067123724},"samples":[3.29367e8,3.19884e8,3.29347e8,3.21646e8,3.50367e8,3.32986e8,3.17562e8,3.32608e8,3.16093e8,3.23571e8,3.27046e8,3.33755e8,3.52655e8,3.30777e8,3.1372e8,3.4246e8,3.25657e8,3.17737e8,3.32678e8,3.41357e8,3.59282e8,3.34017e8,3.33558e8,3.61665e8,3.16987e8,3.38016e8,3.32454e8,3.34979e8,3.61002e8,3.37392e8,3.32552e8,3.33412e8,3.71737e8,3.2762e8,3.12579e8,3.20884e8,3.3125e8,3.19802e8,3.33597e8,3.49809e8,3.32872e8,3.42729e8,3.23513e8,3.34129e8,3.31691e8,3.50338e8,3.34287e8,3.49155e8,3.16616e8,3.17289e8,3.35422e8,3.29875e8,3.14677e8,3.38282e8,3.4761e8]},"memory_usage_data":{"statistics":{"absolute_difference":589.6450216451194,"average":930604.1904761905,"ips":null,"maximum":934688,"median":930256.0,"minimum":926072,"mode":null,"percentiles":{"50":930256.0,"99":934688.0},"relative_less":0.9993663847340475,"relative_more":1.0006340169887955,"sample_size":21,"std_dev":2341.1349303072566,"std_dev_ips":null,"std_dev_ratio":0.002515715009954229},"samples":[931680,928072,929008,932216,934368,931440,934688,930160,928880,928824,929608,929744,926072,930256,931224,930696,926728,929512,932792,933216,933504]},"tag":null},{"name":"int (Hound)","job_name":"int (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":58917383.17543864,"average":376444537.6666667,"ips":2.6564338167804094,"maximum":409278973.0,"median":376825975.0,"minimum":348873977.0,"mode":null,"percentiles":{"50":376825975.0,"99":409278973.0},"relative_less":0.8434898709365557,"relative_more":1.185550691782067,"sample_size":48,"std_dev":12821594.70578922,"std_dev_ips":0.09047738605167456,"std_dev_ratio":0.03405971776151115},"samples":[377172975.0,372972976.0,383628974.0,364654976.0,392342974.0,374486976.0,371643975.0,382479975.0,372092975.0,377699975.0,380091975.0,368405976.0,371772975.0,378351975.0,384371975.0,367641976.0,370538975.0,380021975.0,382802975.0,368039976.0,377725975.0,369428975.0,409278973.0,359420977.0,362142976.0,354785976.0,398491974.0,378998975.0,394745974.0,392976974.0,381679975.0,348873977.0,387925974.0,382278975.0,365548976.0,388490974.0,372701976.0,351164976.0,394119974.0,353930977.0,370847976.0,403667973.0,381520975.0,378593975.0,371086975.0,371516976.0,376478975.0,369691976.0]},"memory_usage_data":{"statistics":{"absolute_difference":-321.4545454544714,"average":929693.0909090909,"ips":null,"maximum":932984,"median":929064.0,"minimum":925600,"mode":null,"percentiles":{"50":929064.0,"99":932984.0},"relative_less":1.0003457641544267,"relative_more":0.999654355357101,"sample_size":22,"std_dev":2184.802288300028,"std_dev_ips":null,"std_dev_ratio":0.0023500253036877377},"samples":[932656,930560,931504,932016,932984,928320,928336,928160,928192,929056,928176,932368,928064,927816,925600,930136,928864,925944,931120,932712,931592,929072]},"tag":null},{"name":"str (Hound)","job_name":"str (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":147311045.61133605,"average":464838200.1025641,"ips":2.151286188999431,"maximum":958138937.0,"median":432562972.0,"minimum":359008977.0,"mode":null,"percentiles":{"50":432562972.0,"99":958138937.0},"relative_less":0.6830917820892675,"relative_more":1.4639321189627756,"sample_size":39,"std_dev":146197076.70481262,"std_dev_ips":0.6766047883279783,"std_dev_ratio":0.3145117519871538},"samples":[431469972.0,470891968.0,411376973.0,388120975.0,364560976.0,436965971.0,476693968.0,359008977.0,545003964.0,928518938.0,454536970.0,441453971.0,389688975.0,441259970.0,377549975.0,366459976.0,428136972.0,401869974.0,418959972.0,462917969.0,403814974.0,366276975.0,432562972.0,417633972.0,484134968.0,363346976.0,456782970.0,441750971.0,442649971.0,410807973.0,450716970.0,447123971.0,386532974.0,372160975.0,958138937.0,469606969.0,949387938.0,416403972.0,463406970.0]},"memory_usage_data":{"statistics":{"absolute_difference":-15872.450216450146,"average":914142.0952380953,"ips":null,"maximum":918136,"median":913368.0,"minimum":911424,"mode":912784,"percentiles":{"50":913368.0,"99":918136.0},"relative_less":1.017363219896701,"relative_more":0.9829331161603581,"sample_size":21,"std_dev":2036.8774608395545,"std_dev_ips":null,"std_dev_ratio":0.00222818473347848},"samples":[915368,911424,911984,912336,913216,912240,916712,911640,914728,916576,915888,915360,913760,917264,912784,913368,912784,912448,912936,918136,916032]},"tag":null},{"name":"neg int (Wallaby)","job_name":"neg int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":183734062.42543864,"average":501261216.9166667,"ips":1.9949678256601433,"maximum":541437964.0,"median":497699467.5,"minimum":471265969.0,"mode":null,"percentiles":{"50":497699467.5,"99":541437964.0},"relative_less":0.6334564569834177,"relative_more":1.5786404716152063,"sample_size":36,"std_dev":17952275.619899683,"std_dev_ips":0.0714482011582334,"std_dev_ratio":0.03581421225908287},"samples":[487703968.0,515688966.0,485308968.0,496666967.0,483962968.0,502504967.0,482892968.0,539971964.0,493420968.0,541437964.0,471265969.0,517369966.0,486132968.0,516303966.0,500699967.0,516613966.0,478618968.0,523050965.0,494632968.0,502740967.0,479118968.0,525592965.0,493526968.0,510740966.0,487606968.0,514966966.0,489310968.0,493603967.0,505540967.0,498555967.0,480080968.0,503151967.0,479571968.0,526531965.0,496842968.0,523666965.0]},"memory_usage_data":{"statistics":{"absolute_difference":2210892.3345454545,"average":3140906.88,"ips":null,"maximum":3145728,"median":3141240.0,"minimum":3133960,"mode":3143200,"percentiles":{"50":3141240.0,"99":3145728.0},"relative_less":0.2960974587869811,"relative_more":3.3772664044355123,"sample_size":50,"std_dev":3004.942327810866,"std_dev_ips":null,"std_dev_ratio":9.567116895267097e-4},"samples":[3140400,3145272,3137272,3134840,3141064,3141856,3143968,3136264,3140064,3139944,3144688,3133960,3138464,3143776,3139488,3143200,3141120,3141016,3143376,3136840,3138640,3143200,3141392,3139576,3143144,3142560,3140016,3144192,3138584,3139016,3141360,3138232,3142608,3136584,3143040,3143240,3144896,3144136,3142456,3136048,3145728,3140272,3141800,3143544,3139176,3144312,3136536,3142328,3145040,3136816]},"tag":null},{"name":"int (Wallaby)","job_name":"int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":190648089.75877196,"average":508175244.25,"ips":1.9678250983592656,"maximum":540523965.0,"median":507981966.5,"minimum":480808968.0,"mode":null,"percentiles":{"50":507981966.5,"99":540523965.0},"relative_less":0.6248379040184385,"relative_more":1.6004150733635563,"sample_size":36,"std_dev":16018064.46379018,"std_dev_ips":0.06202732155027241,"std_dev_ratio":0.03152074927898297},"samples":[481775968.0,519358966.0,488806968.0,512565966.0,483377968.0,519925966.0,494499967.0,520540966.0,504087966.0,540523965.0,486450968.0,538557964.0,499997967.0,507070967.0,508892966.0,517090966.0,496532967.0,516994966.0,500344967.0,520578966.0,494168967.0,522313966.0,498805967.0,518822965.0,497241968.0,506943966.0,509202967.0,532288964.0,501099967.0,528231965.0,485087968.0,521554966.0,480808968.0,519057966.0,498221967.0,522476966.0]},"memory_usage_data":{"statistics":{"absolute_difference":2210629.7745454544,"average":3140644.32,"ips":null,"maximum":3145648,"median":3141364.0,"minimum":3132336,"mode":null,"percentiles":{"50":3141364.0,"99":3145648.0},"relative_less":0.29612221273580747,"relative_more":3.3769840862704004,"sample_size":50,"std_dev":3219.275906923474,"std_dev_ips":null,"std_dev_ratio":0.0010250367691822786},"samples":[3145352,3143296,3139112,3143616,3141016,3144288,3142288,3141240,3142936,3133952,3143336,3141896,3142560,3137136,3143176,3141400,3141344,3134944,3133800,3141384,3144800,3137560,3142744,3137984,3137904,3135384,3138920,3143608,3142000,3140840,3138832,3137176,3139336,3137448,3140480,3145648,3132336,3143640,3137232,3143480,3143368,3143216,3142128,3143576,3143472,3141312,3142568,3139560,3140632,3136960]},"tag":null},{"name":"large int (Wallaby)","job_name":"large int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":195064228.34210527,"average":512591382.8333333,"ips":1.950871656235285,"maximum":549098964.0,"median":512302466.5,"minimum":474554968.0,"mode":null,"percentiles":{"50":512302466.5,"99":549098964.0},"relative_less":0.6194547257819792,"relative_more":1.6143229817766471,"sample_size":36,"std_dev":21704672.586048685,"std_dev_ips":0.08260581815078429,"std_dev_ratio":0.04234303055598938},"samples":[541740964.0,488736968.0,548507964.0,484458968.0,519148965.0,503984967.0,522307966.0,474554968.0,509118967.0,506073966.0,549098964.0,505788967.0,507357966.0,542043964.0,542470965.0,523926965.0,515485966.0,501462967.0,516079966.0,479248968.0,544435964.0,525281966.0,535456964.0,496348968.0,541305964.0,494152967.0,535126965.0,499915967.0,517181966.0,481513968.0,518798966.0,497290967.0,497975967.0,484952968.0,515504966.0,486443968.0]},"memory_usage_data":{"statistics":{"absolute_difference":2209748.0145454546,"average":3139762.56,"ips":null,"maximum":3147400,"median":3139636.0,"minimum":3132784,"mode":null,"percentiles":{"50":3139636.0,"99":3.1474e6},"relative_less":0.29620537466837793,"relative_more":3.376035972066908,"sample_size":50,"std_dev":3773.8134243272616,"std_dev_ips":null,"std_dev_ratio":0.00120194229729501},"samples":[3135840,3138672,3138544,3147400,3135256,3139384,3137856,3145384,3140840,3143824,3138664,3133752,3135312,3141744,3144280,3132784,3137304,3135800,3137360,3140296,3134376,3146304,3137952,3133864,3135992,3146264,3141424,3143104,3139584,3143752,3137648,3141992,3143864,3142472,3137376,3144992,3144800,3142064,3139688,3139984,3141064,3140584,3139576,3133912,3140816,3137896,3137168,3144048,3134384,3140888]},"tag":null},{"name":"float (Wallaby)","job_name":"float (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":207266616.93734336,"average":524793771.4285714,"ips":1.9055104203653985,"maximum":5.69833e8,"median":5.25033e8,"minimum":4.78487e8,"mode":null,"percentiles":{"50":5.25033e8,"99":5.69833e8},"relative_less":0.6050513016320088,"relative_more":1.6527524150476058,"sample_size":35,"std_dev":21056647.761365496,"std_dev_ips":0.076456055524483,"std_dev_ratio":0.04012366172724569},"samples":[5.24256e8,5.07988e8,5.28042e8,4.84281e8,5.37879e8,4.78487e8,5.40586e8,5.11659e8,5.38479e8,5.14851e8,5.41403e8,5.05987e8,5.28965e8,5.02675e8,5.4837e8,4.99704e8,5.48775e8,5.05675e8,5.50527e8,5.15145e8,5.56755e8,5.08161e8,5.21691e8,5.69833e8,5.2805e8,5.20245e8,5.54908e8,5.25033e8,5.3538e8,4.92926e8,5.3905e8,5.1434e8,5.37757e8,5.14553e8,5.35366e8]},"memory_usage_data":{"statistics":{"absolute_difference":2212645.621212121,"average":3142660.1666666665,"ips":null,"maximum":3149120,"median":3143364.0,"minimum":3131984,"mode":null,"percentiles":{"50":3143364.0,"99":3149120.0},"relative_less":0.29593226633886616,"relative_more":3.379151629430364,"sample_size":48,"std_dev":3392.5378897417395,"std_dev_ips":null,"std_dev_ratio":0.001079511531576165},"samples":[3141640,3148008,3146816,3143960,3144568,3143400,3144328,3141520,3138440,3144984,3139832,3147760,3137128,3144272,3138688,3143712,3140848,3148072,3145360,3143480,3142176,3135744,3144656,3140944,3141608,3145728,3141488,3144120,3140056,3141352,3144768,3146136,3142592,3138408,3136488,3142568,3140616,3142688,3143376,3143352,3145560,3140368,3142104,3145744,3131984,3149120,3143504,3143624]},"tag":null},{"name":"str (Wallaby)","job_name":"str (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":212901428.126419,"average":530428582.61764705,"ips":1.8852679376081771,"maximum":665521956.0,"median":529943465.0,"minimum":470652969.0,"mode":null,"percentiles":{"50":529943465.0,"99":665521956.0},"relative_less":0.5986237636822705,"relative_more":1.6704983341268866,"sample_size":34,"std_dev":36793130.131803736,"std_dev_ips":0.13077143810656175,"std_dev_ratio":0.0693649085617349},"samples":[470652969.0,553197963.0,517977966.0,504752967.0,530163965.0,535292964.0,543928964.0,508727967.0,510173966.0,541168964.0,611153960.0,526283965.0,520138966.0,553139964.0,498546967.0,665521956.0,530468965.0,538002964.0,499056967.0,537721965.0,496946967.0,540677964.0,486707968.0,533798965.0,490927968.0,574102962.0,522372965.0,502160967.0,547145964.0,529722965.0,554441963.0,495379968.0,504877966.0,559230963.0]},"memory_usage_data":{"statistics":{"absolute_difference":2195490.986460348,"average":3125505.5319148935,"ips":null,"maximum":3129552,"median":3124960.0,"minimum":3118288,"mode":[3128088,3124680,3124152],"percentiles":{"50":3124960.0,"99":3129552.0},"relative_less":0.29755651876410416,"relative_more":3.360706074104787,"sample_size":47,"std_dev":2682.112931278848,"std_dev_ips":null,"std_dev_ratio":8.581373169528855e-4},"samples":[3126712,3124680,3123536,3122280,3125544,3124944,3121144,3124464,3124552,3127656,3124680,3120400,3128088,3127888,3129224,3124368,3122536,3128448,3124176,3126680,3128088,3123280,3124792,3128712,3128464,3128456,3118288,3124664,3124152,3122576,3123064,3129272,3122488,3128648,3122712,3128216,3128896,3129552,3125872,3125640,3124152,3124960,3128752,3124992,3128928,3125552,3123592]},"tag":null}];
+      var inputHeadline = " (datatypes)";
+
+      
+        drawIpsComparisonChart(scenarios, inputHeadline);
+        drawRunTimeComparisonBoxPlot(scenarios, inputHeadline);
+      
+
+      
+        drawMemoryComparisonChart(scenarios, inputHeadline);
+        drawMemoryComparisonBoxPlot(scenarios, inputHeadline);
+      
+    </script>
+  </body>
+</html>

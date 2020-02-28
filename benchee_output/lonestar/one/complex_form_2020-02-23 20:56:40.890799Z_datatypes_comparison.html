@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    datatypes
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          Run Time Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="Comparisons of the different benchmarking jobs. For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better. The Box Plot shows a distribution of run times with the median and outliers."
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_int__hound_.html">int (Hound)</a></td>
+        
+        
+          <td>2.54</td>
+          <td>393.98 ms</td>
+          <td>±4.70%</td>
+          <td>394.71 ms</td>
+          <td>none</td>
+          <td>345.07 ms</td>
+          <td>439.97 ms</td>
+        
+        <td>102</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_float__hound_.html">float (Hound)</a></td>
+        
+        
+          <td>2.39</td>
+          <td>418.79 ms</td>
+          <td>±4.07%</td>
+          <td>416.78 ms</td>
+          <td>none</td>
+          <td>371.83 ms</td>
+          <td>456.28 ms</td>
+        
+        <td>96</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_neg_int__hound_.html">neg int (Hound)</a></td>
+        
+        
+          <td>2.35</td>
+          <td>424.66 ms</td>
+          <td>±5.50%</td>
+          <td>418.68 ms</td>
+          <td>none</td>
+          <td>381.35 ms</td>
+          <td>494.98 ms</td>
+        
+        <td>95</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_str__hound_.html">str (Hound)</a></td>
+        
+        
+          <td>2.19</td>
+          <td>456.40 ms</td>
+          <td>±15.30%</td>
+          <td>436.29 ms</td>
+          <td>none</td>
+          <td>371.93 ms</td>
+          <td>776.51 ms</td>
+        
+        <td>88</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_large_int__hound_.html">large int (Hound)</a></td>
+        
+        
+          <td>1.93</td>
+          <td>519.18 ms</td>
+          <td>±4.11%</td>
+          <td>521.57 ms</td>
+          <td>none</td>
+          <td>477.83 ms</td>
+          <td>561.89 ms</td>
+        
+        <td>78</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_float__wallaby_.html">float (Wallaby)</a></td>
+        
+        
+          <td>1.89</td>
+          <td>528.87 ms</td>
+          <td>±3.59%</td>
+          <td>530.61 ms</td>
+          <td>none</td>
+          <td>492.99 ms</td>
+          <td>578.24 ms</td>
+        
+        <td>76</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_neg_int__wallaby_.html">neg int (Wallaby)</a></td>
+        
+        
+          <td>1.88</td>
+          <td>532.09 ms</td>
+          <td>±3.99%</td>
+          <td>531.21 ms</td>
+          <td>none</td>
+          <td>484.99 ms</td>
+          <td>591.05 ms</td>
+        
+        <td>76</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_int__wallaby_.html">int (Wallaby)</a></td>
+        
+        
+          <td>1.79</td>
+          <td>557.88 ms</td>
+          <td>±5.03%</td>
+          <td>557.13 ms</td>
+          <td>525.69 ms</td>
+          <td>502.92 ms</td>
+          <td>638.90 ms</td>
+        
+        <td>72</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_str__wallaby_.html">str (Wallaby)</a></td>
+        
+        
+          <td>1.77</td>
+          <td>566.06 ms</td>
+          <td>±5.60%</td>
+          <td>566.83 ms</td>
+          <td>none</td>
+          <td>499.13 ms</td>
+          <td>651.26 ms</td>
+        
+        <td>71</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_large_int__wallaby_.html">large int (Wallaby)</a></td>
+        
+        
+          <td>1.49</td>
+          <td>669.89 ms</td>
+          <td>±4.87%</td>
+          <td>666.08 ms</td>
+          <td>none</td>
+          <td>615.05 ms</td>
+          <td>753.64 ms</td>
+        
+        <td>60</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="ips-comparison" class=" plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-time-box-plot" class=" plot"></div>
+        </section>
+      </article>
+    
+
+    
+      <article>
+        <h2>
+          Memory Usage Comparison
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+            <i
+            class="benchee-help-icon icon-question-circle-o"
+            title="This is a memory usage comparison"
+            ></i>
+          </a>
+        </h2>
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_int__hound_.html">int (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.15%</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB, 0.89 MB</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>41</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_float__hound_.html">float (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.15%</td>
+          <td>0.89 MB</td>
+          <td>none</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>41</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_neg_int__hound_.html">neg int (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.17%</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB, 0.89 MB</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>37</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_str__hound_.html">str (Hound)</a></td>
+        
+        
+          <td>0.87 MB</td>
+          <td>±0.18%</td>
+          <td>0.88 MB</td>
+          <td>0.87 MB</td>
+          <td>0.87 MB</td>
+          <td>0.88 MB</td>
+        
+        <td>39</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_large_int__hound_.html">large int (Hound)</a></td>
+        
+        
+          <td>0.89 MB</td>
+          <td>±0.17%</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB, 0.89 MB, 0.89 MB</td>
+          <td>0.89 MB</td>
+          <td>0.89 MB</td>
+        
+        <td>37</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_float__wallaby_.html">float (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.08%</td>
+          <td>3.00 MB</td>
+          <td>3.00 MB, 3.00 MB, 3.00 MB, 3.00 MB, 3.00 MB, 3.00 MB, 3.00 MB</td>
+          <td>2.99 MB</td>
+          <td>3.01 MB</td>
+        
+        <td>93</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_neg_int__wallaby_.html">neg int (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.08%</td>
+          <td>3.00 MB</td>
+          <td>3.00 MB, 3.00 MB, 3.00 MB</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>92</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_int__wallaby_.html">int (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.09%</td>
+          <td>3.00 MB</td>
+          <td>3.00 MB, 3.00 MB, 3.00 MB, 2.99 MB, 3.00 MB</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>82</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_str__wallaby_.html">str (Wallaby)</a></td>
+        
+        
+          <td>2.98 MB</td>
+          <td>±0.08%</td>
+          <td>2.98 MB</td>
+          <td>none</td>
+          <td>2.98 MB</td>
+          <td>2.99 MB</td>
+        
+        <td>85</td>
+      </tr>
+    
+      
+      <tr>
+        
+          <td class="text-left"><a href="complex_form_2020-02-23 20:56:40.890799Z_datatypes_large_int__wallaby_.html">large int (Wallaby)</a></td>
+        
+        
+          <td>3.00 MB</td>
+          <td>±0.08%</td>
+          <td>3.00 MB</td>
+          <td>3.00 MB, 3.00 MB</td>
+          <td>2.99 MB</td>
+          <td>3.00 MB</td>
+        
+        <td>78</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-comparison" class=" plot"></div>
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="memory-box-plot" class=" plot"></div>
+        </section>
+      </article>
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenarios     = [{"name":"int (Hound)","job_name":"int (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":null,"average":393979950.98039216,"ips":2.5382002244316455,"maximum":4.39971e8,"median":3.947105e8,"minimum":3.45072e8,"mode":null,"percentiles":{"50":3.947105e8,"99":439897320.0},"relative_less":null,"relative_more":null,"sample_size":102,"std_dev":18520120.643266276,"std_dev_ips":0.11931514346418892,"std_dev_ratio":0.04700777437323961},"samples":[3.78637e8,3.93305e8,3.76704e8,3.9771e8,4.00401e8,4.02952e8,3.62039e8,3.76016e8,3.95434e8,3.78364e8,3.95629e8,3.87768e8,3.75864e8,3.95344e8,4.12946e8,4.01366e8,4.06336e8,3.90753e8,3.94082e8,4.06596e8,3.88709e8,3.99117e8,4.03851e8,3.79087e8,3.53534e8,3.76973e8,3.76612e8,4.06377e8,3.89434e8,3.79956e8,4.01844e8,3.7978e8,4.03756e8,3.9677e8,3.9022e8,3.95042e8,3.96901e8,3.66211e8,3.71421e8,3.94173e8,3.87549e8,3.96878e8,4.06689e8,4.10766e8,3.97745e8,4.00271e8,3.83292e8,3.8957e8,4.13035e8,4.28732e8,3.86679e8,3.72242e8,4.10326e8,3.76962e8,3.75953e8,3.87685e8,3.95061e8,3.70436e8,3.70885e8,3.90862e8,3.68396e8,3.87575e8,3.78422e8,3.80222e8,4.09815e8,4.11777e8,4.00259e8,4.34534e8,3.76058e8,3.83189e8,4.07148e8,3.97667e8,3.79548e8,3.88706e8,4.10577e8,3.99982e8,3.91513e8,3.62585e8,3.67594e8,3.85557e8,3.94379e8,3.87646e8,4.09451e8,3.72443e8,3.45072e8,3.70724e8,4.13718e8,4.28233e8,3.86972e8,4.05821e8,4.11974e8,4.15714e8,4.00345e8,4.07073e8,4.27337e8,4.37053e8,3.95939e8,4.37515e8,3.95131e8,4.2388e8,4.28808e8,4.39971e8]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":932412.2926829269,"ips":null,"maximum":934608,"median":932072.0,"minimum":930072,"mode":[931360,931160],"percentiles":{"50":932072.0,"99":934608.0},"relative_less":null,"relative_more":null,"sample_size":41,"std_dev":1361.5298425650178,"std_dev_ips":null,"std_dev_ratio":0.0014602229649368376},"samples":[931872,931776,933656,931976,933816,933840,932000,931072,930904,933792,931360,930496,930216,932072,933808,934048,934328,930616,933576,931048,933960,934032,934064,932128,934608,931152,932464,930072,934080,931992,931160,931160,931360,933112,933624,933200,932368,930832,931960,931104,934200]},"tag":null},{"name":"float (Hound)","job_name":"float (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":24806038.602941155,"average":418785989.5833333,"ips":2.3878544766861456,"maximum":4.56282e8,"median":4.167785e8,"minimum":3.71826e8,"mode":null,"percentiles":{"50":4.167785e8,"99":4.56282e8},"relative_less":0.9407667896731177,"relative_more":1.0629626927492453,"sample_size":96,"std_dev":17060636.671339948,"std_dev_ips":0.09727717417506511,"std_dev_ratio":0.040738317650774916},"samples":[4.19257e8,4.14762e8,4.51622e8,4.28147e8,4.20816e8,4.41217e8,4.56282e8,4.39482e8,4.13699e8,4.3575e8,4.14784e8,4.00838e8,4.13413e8,3.84829e8,3.97205e8,3.9024e8,4.08496e8,4.43267e8,4.27483e8,4.05181e8,4.28471e8,3.71826e8,4.13635e8,4.38017e8,4.1047e8,4.15257e8,4.51933e8,4.32292e8,3.944e8,4.39287e8,3.96445e8,4.01686e8,4.1593e8,4.07154e8,4.11343e8,4.27174e8,4.08081e8,4.07216e8,3.91016e8,4.06646e8,4.05845e8,4.04287e8,4.15641e8,4.22071e8,4.09539e8,4.10098e8,4.2038e8,4.05193e8,3.968e8,4.25132e8,4.11003e8,4.14503e8,4.21262e8,4.51342e8,4.13577e8,4.04821e8,4.07123e8,4.279e8,4.2663e8,4.23256e8,4.26857e8,4.4056e8,4.24964e8,4.18982e8,4.27376e8,4.37493e8,4.30569e8,4.40909e8,4.25711e8,4.24542e8,4.1214e8,4.18829e8,4.44535e8,4.1076e8,3.89733e8,4.11711e8,4.02602e8,4.07914e8,3.92365e8,4.35132e8,3.99138e8,4.53507e8,4.11591e8,4.24872e8,4.44288e8,4.24129e8,4.25623e8,4.0138e8,4.25051e8,4.42976e8,4.17627e8,4.53896e8,4.11613e8,4.30879e8,4.0097e8,4.20779e8]},"memory_usage_data":{"statistics":{"absolute_difference":1760.9756097560748,"average":934173.268292683,"ips":null,"maximum":937344,"median":934024.0,"minimum":931800,"mode":null,"percentiles":{"50":934024.0,"99":937344.0},"relative_less":0.998114936843596,"relative_more":1.001888623330661,"sample_size":41,"std_dev":1361.0591284802845,"std_dev_ips":null,"std_dev_ratio":0.0014569664693657829},"samples":[934224,933824,933128,934456,935768,934992,933744,936408,934472,935544,933176,933752,933296,932736,935560,933168,934608,932000,932664,931888,934640,932960,933624,937344,931872,933312,933672,935536,935344,933944,934056,935120,933648,933248,935728,931800,935584,934752,934312,934024,937176]},"tag":null},{"name":"neg int (Hound)","job_name":"neg int (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":30680175.335397303,"average":424660126.31578946,"ips":2.3548243360535603,"maximum":4.94983e8,"median":4.18678e8,"minimum":3.8135e8,"mode":null,"percentiles":{"50":4.18678e8,"99":4.94983e8},"relative_less":0.9277535764858162,"relative_more":1.0778724279219076,"sample_size":95,"std_dev":23349513.014759593,"std_dev_ips":0.12947766478378414,"std_dev_ratio":0.05498400148215522},"samples":[4.27801e8,4.28702e8,4.03485e8,4.22702e8,4.1267e8,4.49084e8,4.51815e8,4.16905e8,4.14859e8,4.39198e8,4.09804e8,4.23576e8,4.26162e8,4.60226e8,3.89647e8,4.4962e8,4.17086e8,4.32523e8,4.19703e8,3.90715e8,4.42182e8,3.99474e8,4.50514e8,3.99156e8,4.00285e8,4.28519e8,4.2117e8,4.00827e8,4.22448e8,4.43904e8,3.98978e8,4.01738e8,4.15197e8,4.32414e8,4.19517e8,4.14775e8,4.34445e8,4.18349e8,4.21559e8,4.6026e8,4.15848e8,4.33462e8,4.4689e8,4.69085e8,4.16436e8,4.16808e8,4.17009e8,4.3024e8,4.69216e8,4.1827e8,4.16442e8,4.15298e8,4.26027e8,4.90602e8,3.99529e8,4.172e8,4.18678e8,4.26398e8,4.89205e8,4.18294e8,4.32117e8,4.15777e8,4.22736e8,4.93121e8,4.17732e8,3.99952e8,4.05843e8,4.94983e8,4.14988e8,4.18193e8,3.99488e8,4.75749e8,4.57181e8,3.99019e8,4.22763e8,4.1198e8,3.81436e8,4.05733e8,4.29733e8,3.8135e8,4.05572e8,4.27977e8,4.18384e8,4.19948e8,4.2959e8,3.98896e8,4.06142e8,4.27493e8,4.1615e8,4.18409e8,4.48422e8,4.00033e8,4.16192e8,4.25036e8,4.41663e8]},"memory_usage_data":{"statistics":{"absolute_difference":217.3289386947872,"average":932629.6216216217,"ips":null,"maximum":934616,"median":9.332e5,"minimum":928920,"mode":[933944,930168],"percentiles":{"50":9.332e5,"99":934616.0},"relative_less":0.9997669718678709,"relative_more":1.0002330824468963,"sample_size":37,"std_dev":1599.8431754975813,"std_dev_ips":null,"std_dev_ratio":0.0017154110682393226},"samples":[930168,928920,933944,933944,931840,931992,934024,934616,933648,934120,932104,930904,933912,931032,931968,931912,934320,933640,934424,933360,933200,933904,932272,933928,931720,930168,930480,930280,931376,933816,934472,934208,930352,934376,934080,931016,932856]},"tag":null},{"name":"str (Hound)","job_name":"str (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":62421549.01960784,"average":4.564015e8,"ips":2.191053272173733,"maximum":7.76507e8,"median":4.362895e8,"minimum":3.71931e8,"mode":null,"percentiles":{"50":4.362895e8,"99":7.76507e8},"relative_less":0.8632310607664352,"relative_more":1.1584383897309396,"sample_size":88,"std_dev":69848824.44135386,"std_dev_ips":0.33532426021763073,"std_dev_ratio":0.15304249534971698},"samples":[4.92854e8,4.38401e8,4.13493e8,5.50362e8,4.52636e8,4.28479e8,4.4975e8,4.82284e8,4.53312e8,5.67102e8,4.51633e8,4.4576e8,3.71931e8,4.10586e8,5.53893e8,4.32721e8,4.02433e8,3.7726e8,4.2144e8,3.96988e8,4.08803e8,4.06469e8,4.4842e8,4.71736e8,3.88886e8,5.79345e8,4.33253e8,4.12246e8,4.42469e8,5.08828e8,3.87426e8,5.61425e8,4.20138e8,4.46638e8,4.19887e8,4.97606e8,4.15369e8,4.35385e8,4.20608e8,6.10358e8,5.22707e8,4.11069e8,4.21317e8,6.11736e8,5.43554e8,4.22358e8,3.84311e8,4.43265e8,4.05549e8,4.35317e8,3.80574e8,4.36152e8,3.81111e8,4.72131e8,4.62434e8,4.05319e8,3.9501e8,5.79592e8,7.76507e8,4.45022e8,5.59011e8,4.5608e8,5.02485e8,4.80196e8,4.20911e8,6.80031e8,4.05074e8,4.45026e8,4.17924e8,4.31974e8,3.86896e8,4.29328e8,4.58694e8,4.09997e8,4.06663e8,4.73107e8,5.10411e8,4.58573e8,4.16748e8,4.36427e8,4.12326e8,4.03466e8,4.46155e8,5.00276e8,3.84324e8,4.3992e8,4.25211e8,5.2245e8]},"memory_usage_data":{"statistics":{"absolute_difference":-15325.728580362746,"average":917086.5641025641,"ips":null,"maximum":919304,"median":917736.0,"minimum":912912,"mode":917112,"percentiles":{"50":917736.0,"99":919304.0},"relative_less":1.01671132167917,"relative_more":0.9835633563600235,"sample_size":39,"std_dev":1637.6341053141232,"std_dev_ips":null,"std_dev_ratio":0.0017856919612781233},"samples":[918384,917832,917072,915280,915696,919304,912912,916816,917784,916464,914936,915000,918048,916952,917152,918216,918136,914840,916824,916688,918904,918496,917936,918208,917736,915056,917112,918192,919152,918184,913160,919208,918016,918312,917112,914112,918064,918680,916400]},"tag":null},{"name":"large int (Hound)","job_name":"large int (Hound)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":125195266.9683258,"average":519175217.94871795,"ips":1.9261319982703335,"maximum":5.61892e8,"median":5.215705e8,"minimum":4.77826e8,"mode":null,"percentiles":{"50":5.215705e8,"99":5.61892e8},"relative_less":0.7588573902603107,"relative_more":1.3177706547167842,"sample_size":78,"std_dev":21317013.506774005,"std_dev_ips":0.07908578915839928,"std_dev_ratio":0.041059381822958305},"samples":[4.89088e8,5.13299e8,4.85951e8,5.33008e8,5.00321e8,5.18178e8,5.03838e8,5.32704e8,4.95071e8,5.05586e8,4.77826e8,4.89888e8,5.09114e8,4.88235e8,4.95544e8,5.08308e8,4.92305e8,5.20526e8,4.96253e8,5.08188e8,4.91859e8,5.03952e8,4.95532e8,5.14334e8,4.85899e8,5.22836e8,5.11044e8,5.34931e8,4.96709e8,4.90833e8,5.27534e8,5.04987e8,4.94422e8,4.87811e8,4.93373e8,4.94873e8,4.88416e8,5.19116e8,5.17767e8,5.36308e8,5.13343e8,5.05647e8,5.108e8,5.05352e8,5.44624e8,5.2284e8,5.61892e8,5.5926e8,5.40917e8,5.55159e8,5.25022e8,5.56127e8,5.29877e8,5.44224e8,5.3717e8,5.48729e8,5.36664e8,5.38484e8,5.26437e8,5.44072e8,5.22615e8,5.37235e8,5.4634e8,5.57842e8,5.24938e8,5.24566e8,5.25751e8,5.33e8,5.17149e8,5.29756e8,5.37551e8,5.48217e8,5.33538e8,5.26192e8,5.41146e8,5.27197e8,5.40491e8,5.39736e8]},"memory_usage_data":{"statistics":{"absolute_difference":128.89650626236107,"average":932541.1891891892,"ips":null,"maximum":934432,"median":932680.0,"minimum":930048,"mode":[934432,933928,930800],"percentiles":{"50":932680.0,"99":934432.0},"relative_less":0.9998617792889402,"relative_more":1.000138239818666,"sample_size":37,"std_dev":1569.8245803952789,"std_dev_ips":null,"std_dev_ratio":0.001683383638807616},"samples":[934432,930688,931448,930048,930184,930208,934000,933968,933928,931416,930800,934432,934304,932160,933064,931824,934160,933944,931744,931928,934280,930800,934192,931656,932680,930168,933336,933864,934216,932248,934024,933928,931528,934112,930360,933736,930216]},"tag":null},{"name":"float (Wallaby)","job_name":"float (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":134892022.70381838,"average":528871973.68421054,"ips":1.8908167756249834,"maximum":5.78236e8,"median":5.306055e8,"minimum":4.92989e8,"mode":null,"percentiles":{"50":5.306055e8,"99":5.78236e8},"relative_less":0.7449439005736341,"relative_more":1.3423829623008705,"sample_size":76,"std_dev":19007918.312095568,"std_dev_ips":0.06795688295572207,"std_dev_ratio":0.035940490814219614},"samples":[5.24419e8,5.03851e8,5.29098e8,5.22113e8,5.45353e8,5.13664e8,5.4196e8,5.15926e8,5.55672e8,5.04323e8,5.39183e8,4.93736e8,5.41722e8,4.93535e8,5.54832e8,4.92989e8,5.33552e8,5.06143e8,5.5206e8,5.14204e8,5.35376e8,5.1619e8,5.3611e8,5.13452e8,5.33903e8,4.96552e8,5.35758e8,5.16201e8,5.32613e8,5.18152e8,5.15117e8,5.17766e8,5.31106e8,5.19376e8,5.26296e8,5.00204e8,5.37304e8,5.19191e8,5.44817e8,5.32856e8,5.61398e8,5.2235e8,5.57946e8,5.31785e8,5.39348e8,5.07371e8,5.78236e8,5.24297e8,5.36932e8,5.04872e8,5.41935e8,5.15292e8,5.49826e8,5.16817e8,5.30764e8,5.21299e8,5.47196e8,5.16187e8,5.30447e8,5.19943e8,5.37185e8,5.10669e8,5.43905e8,5.03283e8,5.43348e8,5.08057e8,5.44339e8,5.09949e8,5.32143e8,5.17442e8,5.66411e8,5.46557e8,5.67993e8,5.48076e8,5.59302e8,5.44695e8]},"memory_usage_data":{"statistics":{"absolute_difference":2212131.793338578,"average":3144544.0860215053,"ips":null,"maximum":3151160,"median":3144320.0,"minimum":3138840,"mode":[3143400,3141760,3145664,3143832,3142736,3147008,3143464],"percentiles":{"50":3144320.0,"99":3151160.0},"relative_less":0.29651748144597334,"relative_more":3.3724824422610102,"sample_size":93,"std_dev":2498.251352167515,"std_dev_ips":null,"std_dev_ratio":7.944717211226371e-4},"samples":[3140680,3144000,3142552,3143272,3146592,3143400,3145664,3145376,3142792,3142784,3143240,3144824,3141032,3142192,3142736,3144456,3143528,3144888,3143832,3143648,3143464,3145616,3143632,3142200,3145744,3143400,3138840,3146776,3145832,3147288,3146688,3141760,3143264,3141640,3144952,3143280,3146384,3144232,3144552,3145816,3141408,3142728,3148152,3148592,3144320,3147184,3151160,3147584,3144760,3144688,3144192,3143408,3141320,3141008,3143160,3144336,3141768,3147008,3148520,3144984,3141536,3141040,3143920,3140072,3147664,3149016,3142488,3148376,3148104,3148248,3144632,3145048,3139104,3148792,3142736,3145664,3147008,3146280,3142264,3150048,3145888,3146800,3143464,3144472,3146848,3141760,3143576,3141648,3146320,3143832,3147560,3147752,3143512]},"tag":null},{"name":"neg int (Wallaby)","job_name":"neg int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":138108272.70381838,"average":532088223.68421054,"ips":1.879387581773452,"maximum":5.9105e8,"median":5.312075e8,"minimum":4.8499e8,"mode":null,"percentiles":{"50":5.312075e8,"99":5.9105e8},"relative_less":0.7404410273402623,"relative_more":1.3505464487726986,"sample_size":76,"std_dev":21223485.39745451,"std_dev_ips":0.07496342358743663,"std_dev_ratio":0.0398871548979262},"samples":[5.02672e8,5.31517e8,4.8499e8,5.35627e8,5.14881e8,5.36507e8,5.33173e8,5.7333e8,5.09288e8,5.9105e8,5.22857e8,5.31076e8,5.00731e8,5.33695e8,5.18124e8,5.34898e8,5.17661e8,5.45914e8,5.01282e8,5.33358e8,5.15789e8,5.20554e8,5.14525e8,5.54839e8,5.11482e8,5.37361e8,5.12227e8,5.34499e8,4.9833e8,5.16847e8,5.16872e8,5.18656e8,5.30327e8,5.51588e8,5.16035e8,5.55336e8,5.27451e8,5.5704e8,5.2611e8,5.67255e8,5.33719e8,5.43534e8,5.25393e8,5.61691e8,5.17598e8,5.53926e8,5.2963e8,5.32851e8,5.18123e8,5.53682e8,5.46923e8,5.54487e8,5.14543e8,5.54157e8,5.09381e8,5.52976e8,5.13983e8,5.49517e8,5.1732e8,5.49616e8,5.16261e8,5.70021e8,5.30476e8,5.71549e8,4.94462e8,5.34804e8,5.15819e8,5.50508e8,5.15724e8,5.36111e8,5.00891e8,5.72489e8,5.24539e8,5.52741e8,5.31339e8,5.52167e8]},"memory_usage_data":{"statistics":{"absolute_difference":2209989.707317073,"average":3142402.0,"ips":null,"maximum":3148088,"median":3.1425e6,"minimum":3136000,"mode":[3145296,3143080,3143456],"percentiles":{"50":3.1425e6,"99":3148088.0},"relative_less":0.2967196089752129,"relative_more":3.370185082993747,"sample_size":92,"std_dev":2418.481986883326,"std_dev_ips":null,"std_dev_ratio":7.696284520196099e-4},"samples":[3147544,3140600,3139576,3146624,3140264,3143224,3143080,3140472,3147272,3143160,3145784,3144912,3140968,3143424,3142072,3143208,3145216,3143488,3142848,3142856,3140400,3142424,3138496,3140368,3143248,3147088,3141128,3144600,3142536,3141224,3140408,3139976,3138328,3145296,3141648,3140512,3144592,3139168,3144384,3140552,3142768,3143456,3142512,3142112,3143072,3142280,3141848,3143768,3139416,3140304,3145848,3143976,3140320,3145208,3140296,3145296,3136000,3141376,3138760,3145320,3139912,3141720,3146256,3141216,3141888,3143456,3144504,3140720,3143080,3139824,3143696,3142960,3141936,3143824,3144056,3142656,3146744,3141024,3139888,3143344,3139368,3143792,3138072,3145240,3139944,3141584,3148088,3142056,3142488,3137936,3142680,3140128]},"tag":null},{"name":"int (Wallaby)","job_name":"int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":163903618.46405226,"average":557883569.4444444,"ips":1.7924887104953227,"maximum":6.38902e8,"median":5.571275e8,"minimum":5.02922e8,"mode":5.25693e8,"percentiles":{"50":5.571275e8,"99":6.38902e8},"relative_less":0.7062046142938536,"relative_more":1.4160202011706162,"sample_size":72,"std_dev":28081268.061947286,"std_dev_ips":0.0902255573283126,"std_dev_ratio":0.05033535597743338},"samples":[5.25693e8,5.25693e8,5.64985e8,5.30283e8,5.34857e8,5.32944e8,5.56215e8,5.10705e8,5.61095e8,5.21191e8,5.44586e8,5.0489e8,5.31266e8,5.57363e8,5.63625e8,5.02922e8,5.64062e8,5.15056e8,5.69167e8,5.52702e8,5.68534e8,5.10063e8,5.49749e8,5.61241e8,5.59165e8,5.38756e8,5.91225e8,5.3721e8,5.79431e8,5.46301e8,5.75513e8,5.7614e8,5.73055e8,5.62879e8,5.94303e8,5.54382e8,5.90366e8,5.43217e8,5.96156e8,5.56892e8,6.05442e8,5.42085e8,5.52953e8,5.46486e8,5.74055e8,5.25816e8,5.77915e8,5.23777e8,5.74291e8,5.58219e8,5.61919e8,5.22367e8,5.79166e8,5.37673e8,5.48599e8,5.56108e8,5.27113e8,5.82388e8,6.34931e8,5.82989e8,5.99221e8,6.38902e8,5.62962e8,5.97683e8,5.94442e8,5.3959e8,5.83275e8,5.70201e8,5.46785e8,5.55158e8,5.44368e8,5.8686e8]},"memory_usage_data":{"statistics":{"absolute_difference":2209934.1463414636,"average":3142346.43902439,"ips":null,"maximum":3150104,"median":3142588.0,"minimum":3132352,"mode":[3147080,3142040,3142656,3140136,3145296],"percentiles":{"50":3142588.0,"99":3150104.0},"relative_less":0.2967248553830413,"relative_more":3.370125494573425,"sample_size":82,"std_dev":2766.8892908983407,"std_dev_ips":null,"std_dev_ratio":8.805169463610708e-4},"samples":[3140592,3142040,3141552,3132352,3143272,3141088,3139816,3146632,3140064,3140760,3138816,3142960,3140504,3140408,3143560,3140136,3145544,3139992,3139800,3145720,3143000,3140240,3145384,3139808,3142040,3143032,3143080,3148424,3142848,3143104,3142656,3147080,3144704,3141104,3144136,3138408,3138728,3142968,3141120,3142688,3142656,3139416,3143768,3139880,3143720,3144912,3140136,3141256,3140336,3143248,3147080,3145536,3143920,3141560,3143712,3143864,3139792,3144752,3145640,3140352,3147224,3145296,3142864,3141728,3139528,3139704,3143168,3141320,3139832,3139640,3150104,3143128,3143544,3139472,3146752,3140752,3145296,3142520,3138504,3145040,3139400,3141896]},"tag":null},{"name":"str (Wallaby)","job_name":"str (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":172080457.47031206,"average":566060408.4507042,"ips":1.7665959057920684,"maximum":6.51256e8,"median":5.6683e8,"minimum":4.99135e8,"mode":null,"percentiles":{"50":5.6683e8,"99":6.51256e8},"relative_less":0.6960033683661205,"relative_more":1.4367746557714463,"sample_size":71,"std_dev":31717138.870052792,"std_dev_ips":0.09898478472400223,"std_dev_ratio":0.05603136767127373},"samples":[6.30726e8,6.04353e8,5.46993e8,5.49972e8,6.0532e8,6.12535e8,6.2282e8,5.61252e8,6.26257e8,5.7318e8,5.70174e8,5.45154e8,5.83308e8,5.6683e8,6.51256e8,5.52529e8,5.80286e8,5.87209e8,5.62375e8,5.32731e8,5.86013e8,5.97627e8,5.69698e8,5.4621e8,5.76019e8,5.58798e8,5.70836e8,5.45101e8,5.75651e8,5.40341e8,5.17715e8,4.99135e8,5.33652e8,5.18134e8,5.34949e8,5.45076e8,5.84514e8,5.16412e8,5.87123e8,5.16065e8,5.56598e8,5.40805e8,5.59719e8,5.05362e8,5.84959e8,5.52642e8,6.34556e8,5.45556e8,5.72674e8,6.103e8,5.87431e8,5.78993e8,5.72874e8,5.44371e8,5.74588e8,5.73501e8,6.16823e8,5.34837e8,5.74659e8,5.73613e8,6.0392e8,5.46405e8,5.546e8,5.46836e8,5.39438e8,5.4399e8,5.75187e8,5.25003e8,5.4066e8,5.61135e8,5.73925e8]},"memory_usage_data":{"statistics":{"absolute_difference":2194550.719081779,"average":3126963.011764706,"ips":null,"maximum":3132376,"median":3127120.0,"minimum":3121120,"mode":null,"percentiles":{"50":3127120.0,"99":3132376.0},"relative_less":0.29818462488199327,"relative_more":3.3536269698538295,"sample_size":85,"std_dev":2416.4966302781504,"std_dev_ips":null,"std_dev_ratio":7.727934808267518e-4},"samples":[3128720,3126072,3128488,3128152,3128224,3127000,3129248,3126160,3129688,3121120,3123672,3130528,3124112,3126656,3129504,3125536,3132376,3124496,3129376,3130264,3125936,3123112,3126528,3125344,3128536,3127432,3131928,3124344,3125160,3130984,3125280,3127840,3127752,3121776,3124520,3125456,3127816,3130192,3127184,3127880,3123224,3127560,3129208,3127832,3125072,3130792,3126992,3125776,3127120,3128360,3128024,3127528,3127192,3123152,3125296,3126096,3123800,3127760,3129416,3125848,3128848,3124448,3125288,3123600,3129408,3124832,3125808,3129280,3128512,3123840,3126080,3126920,3126064,3126112,3128192,3129352,3127808,3126288,3130640,3130296,3125320,3130936,3123040,3127504,3123000]},"tag":null},{"name":"large int (Wallaby)","job_name":"large int (Wallaby)","input_name":"datatypes","run_time_data":{"statistics":{"absolute_difference":275905632.3529412,"average":669885583.3333334,"ips":1.4927922392717063,"maximum":7.53641e8,"median":6.66081e8,"minimum":6.15052e8,"mode":null,"percentiles":{"50":6.66081e8,"99":7.53641e8},"relative_less":0.5881302132521767,"relative_more":1.7003037379601904,"sample_size":60,"std_dev":32628364.98928951,"std_dev_ips":0.07270998398527913,"std_dev_ratio":0.04870737003613604},"samples":[7.08052e8,6.69562e8,7.01944e8,6.81074e8,7.20367e8,6.79267e8,7.05058e8,6.79316e8,6.93533e8,6.90684e8,7.2917e8,6.70828e8,7.10462e8,6.38883e8,6.98344e8,6.51693e8,6.70886e8,6.42581e8,6.90031e8,6.42978e8,6.49945e8,6.79571e8,6.37377e8,6.95451e8,6.39471e8,6.34374e8,6.8074e8,6.3334e8,6.61323e8,6.39654e8,6.16043e8,6.8696e8,6.45681e8,6.88638e8,6.46197e8,6.79432e8,6.35304e8,6.34459e8,6.8592e8,6.4717e8,6.33041e8,6.84293e8,6.15052e8,6.32586e8,7.11754e8,6.42725e8,6.47992e8,7.17737e8,6.34046e8,6.48147e8,7.26893e8,6.54984e8,6.50639e8,7.13258e8,6.38468e8,6.47186e8,7.31356e8,6.54974e8,6.626e8,7.53641e8]},"memory_usage_data":{"statistics":{"absolute_difference":2209628.732958099,"average":3142041.0256410255,"ips":null,"maximum":3147008,"median":3142256.0,"minimum":3136168,"mode":[3142752,3141384],"percentiles":{"50":3142256.0,"99":3147008.0},"relative_less":0.29675369769963467,"relative_more":3.3697979427106266,"sample_size":78,"std_dev":2616.342758108239,"std_dev_ips":null,"std_dev_ratio":8.326889231417545e-4},"samples":[3143928,3140248,3143096,3143536,3147008,3140920,3140408,3138240,3142752,3142152,3146640,3142552,3138592,3142896,3136768,3144112,3144160,3141664,3141408,3145104,3141224,3138472,3139760,3141912,3137032,3143824,3144040,3143160,3142120,3140280,3138304,3142872,3141240,3142600,3136736,3136760,3142344,3141392,3145240,3143496,3140632,3144016,3145008,3142168,3140624,3144856,3144000,3144752,3145000,3140416,3141104,3141744,3137328,3139880,3145664,3139448,3143224,3143240,3146616,3142032,3142576,3136168,3140688,3144240,3139392,3143480,3145696,3146128,3143568,3140200,3142752,3141384,3136896,3141024,3144528,3145576,3142776,3141384]},"tag":null}];
+      var inputHeadline = " (datatypes)";
+
+      
+        drawIpsComparisonChart(scenarios, inputHeadline);
+        drawRunTimeComparisonBoxPlot(scenarios, inputHeadline);
+      
+
+      
+        drawMemoryComparisonChart(scenarios, inputHeadline);
+        drawMemoryComparisonBoxPlot(scenarios, inputHeadline);
+      
+    </script>
+  </body>
+</html>

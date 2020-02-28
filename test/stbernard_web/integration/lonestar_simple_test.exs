@@ -9,7 +9,7 @@ defmodule StbernardWeb.LonestarSimpleTest do
   """
   @tag lonestar1: true
   describe "landing" do
-    test "landing page loads correctly", _meta do
+    test "Landing page loads correctly", _meta do
 
       # HOUND
       Hound.start_session()

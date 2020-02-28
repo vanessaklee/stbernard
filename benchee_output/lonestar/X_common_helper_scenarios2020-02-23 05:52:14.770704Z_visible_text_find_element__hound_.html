@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Visible text
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Find element (hound) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Find element (hound).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Find element (hound)</td>
+        
+        
+          <td>54.39</td>
+          <td>18.38 ms</td>
+          <td>±23.01%</td>
+          <td>17.36 ms</td>
+          <td>none</td>
+          <td>15.68 ms</td>
+          <td>36.00 ms</td>
+        
+        <td>55</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Find element (hound)","job_name":"Find element (hound)","input_name":"Visible text","run_time_data":{"statistics":{"absolute_difference":4440818.1818181835,"average":18384808.181818184,"ips":54.392735029400995,"maximum":35996990.0,"median":17362990.0,"minimum":15681990.0,"mode":null,"percentiles":{"50":17362990.0,"99":35996990.0},"relative_less":0.7584517533226173,"relative_more":1.3184754278953286,"sample_size":55,"std_dev":4231113.674825214,"std_dev_ips":12.518044393938457,"std_dev_ratio":0.230141844994043},"samples":[18609990.0,35996990.0,18542990.0,17709990.0,16893990.0,16675990.0,18449990.0,17121990.0,17147990.0,17362990.0,17444990.0,17627990.0,16798990.0,18178990.0,18194990.0,17255990.0,17404990.0,16462990.0,18568990.0,34929990.0,18198990.0,17797990.0,16433990.0,16443990.0,17573990.0,17204990.0,16553990.0,16642990.0,16609990.0,17086990.0,15681990.0,16879990.0,16690990.0,16588990.0,17985990.0,17166990.0,17771990.0,17057990.0,17289990.0,16944990.0,16691990.0,17541990.0,18116990.0,18641990.0,18192990.0,17572990.0,17754990.0,16627990.0,16807990.0,17254990.0,19558990.0,17828990.0,17125990.0,35806990.0,17648990.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Visible text)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

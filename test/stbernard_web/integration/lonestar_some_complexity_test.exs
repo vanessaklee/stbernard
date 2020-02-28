@@ -17,40 +17,40 @@ defmodule StbernardWeb.PropertyBased.LonestarSomeComplexityTest do
   @moduletag timeout: 1200_000
 
   @doc """
-  User property-based testing to test that the amount succeeds if it is greater than 0, fails if not5
+  Test one field (amount) for expected success/failure outcomes
   """
   @tag lonestar3: true
-  property "One field (amount) shall succeed with fuzzing" do
-    Benchee.run(
-      test_manager(),
-      save: [path: "benchee_output/one/lonestar.benchee", tag: DateTime.to_string(DateTime.utc_now)],
-      time: 8,
-      warmup: 1,
-      memory_time: 8,
-      formatters: [
-        {Console, extended_statistics: true},
-        {HTML, file: "benchee_output/lonestar/one/fuzzing_" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
-        {Markdown, file: "benchee_output/md/lonestar/one/fuzzing_" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
-      ]
-    )
-    HH.end_sess()
-  end
-
-  def test_manager() do
-    wallaby_sess = WH.start_sess(nil)
-    wallaby_sess |> WH.start
-    %{
-      "Hound" => fn -> hound(%{streamdata: integers(), assert: &assert_amount/2}) end,
-      "Wallaby" => fn -> wallaby(%{streamdata: integers(), assert: &assert_amount/2}, wallaby_sess) end
-    }
+  describe "Form input tests" do
+    test "Test one field (amount) for expected success/failure outcomes" do
+      Benchee.run(
+        %{
+          "Hound" => fn _session -> hound(%{streamdata: test_data(), assert: &assert_amount/2}) end,
+          "Wallaby" => fn session -> wallaby(%{streamdata: test_data(), assert: &assert_amount/2}, session) end
+        },
+        before_scenario: fn(_inputs) ->
+          session = WH.start_sess(nil)
+          session |> WH.start
+          session
+        end,
+        time: 3,
+        warmup: 1,
+        memory_time: 3,
+        formatters: [
+          {Console, extended_statistics: true},
+          {HTML, file: "benchee_output/lonestar/one/complex_form_" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true},
+          {Markdown, file: "benchee_output/md/lonestar/one/complex_form_" <> DateTime.to_string(DateTime.utc_now) <> ".md"}
+        ]
+      )
+    end
   end
 
   # test structure for each library
   def wallaby(%{streamdata: streamdata, assert: assert}, session) do
     {agen, gen} = Enum.random(streamdata)
     log("Wallaby", gen)
-    WH.fill_in_valid_form(session)
-    WH.swap_single_field(session, "payment_amount", gen)
+    session
+    |> WH.fill_in_valid_form()
+    |> WH.swap_single_field("payment_amount", gen)
     |> Browser.click(Query.button("payment_submit"))
     assert.(agen, Element.text(find(session, Query.css(".alert"))))
   end
@@ -76,7 +76,7 @@ defmodule StbernardWeb.PropertyBased.LonestarSomeComplexityTest do
   # test data
   # StreamData `check all` is preferable to this, but does not produce good benchmarking results
   # Send streamed data as a tuple to accommate the cvv testing
-  def integers do
+  def test_data do
     integers = Enum.take(StreamData.integer(), 50) |> Enum.map(fn n -> {n, n} end)
     strings =  "./test/integer_blns.txt"
       |> File.stream!

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    Select option
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.7.4</li>
+    <li>Erlang: 22.0</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz</li>
+    <li>Number of Available Cores: 16</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">Button click (hound) Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for Button click (hound).
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">Button click (hound)</td>
+        
+        
+          <td>17.83</td>
+          <td>56.10 ms</td>
+          <td>±22.96%</td>
+          <td>52.77 ms</td>
+          <td>51.08 ms</td>
+          <td>47.48 ms</td>
+          <td>125.68 ms</td>
+        
+        <td>90</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"Button click (hound)","job_name":"Button click (hound)","input_name":"Select option","run_time_data":{"statistics":{"absolute_difference":41693376.436781615,"average":56095333.333333336,"ips":17.82679486112927,"maximum":1.25677e8,"median":5.2775e7,"minimum":4.7479e7,"mode":5.1082e7,"percentiles":{"50":5.2775e7,"99":1.25677e8},"relative_less":0.2567407311936535,"relative_more":3.8949799486460273,"sample_size":90,"std_dev":12877363.200157244,"std_dev_ips":4.092356680676794,"std_dev_ratio":0.2295621121214583},"samples":[5.0433e7,5.0028e7,4.9573e7,4.9213e7,4.9492e7,5.1809e7,6.1717e7,5.7377e7,6.0613e7,5.4584e7,5.4989e7,5.5813e7,7.0665e7,5.8119e7,9.7155e7,5.2883e7,4.8622e7,5.1082e7,5.1024e7,4.976e7,5.0004e7,5.3494e7,5.5389e7,4.8971e7,5.5637e7,4.7697e7,5.1343e7,5.5128e7,5.425e7,7.4296e7,5.4904e7,5.7429e7,5.551e7,5.3483e7,5.7499e7,5.3304e7,5.8957e7,9.3386e7,5.0521e7,4.8284e7,4.7479e7,5.0103e7,4.815e7,4.9617e7,4.8495e7,5.1082e7,5.0217e7,4.9452e7,4.921e7,5.0393e7,5.0056e7,5.0092e7,5.2058e7,5.2276e7,5.056e7,5.1612e7,4.8514e7,4.9916e7,4.82e7,5.5524e7,1.18257e8,5.1613e7,5.6121e7,5.2254e7,5.4891e7,5.345e7,5.4789e7,5.4317e7,5.4008e7,5.3595e7,5.4651e7,5.5476e7,5.0957e7,5.2583e7,5.1664e7,5.8475e7,5.6044e7,5.2667e7,5.5867e7,5.9696e7,6.1608e7,6.945e7,5.4501e7,7.5669e7,1.25677e8,5.3432e7,4.8723e7,5.1444e7,4.9612e7,4.9646e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (Select option)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

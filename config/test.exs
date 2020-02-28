@@ -20,7 +20,8 @@ config :wallaby,
   driver: Wallaby.Experimental.Chrome,
   chrome: [headless: false],
   max_wait_time: 5_000,
-  creenshot_on_failure: true
+  screenshot_on_failure: true,
+  screenshot_dir: "/"
 
 config :hound,
   driver: "chrome_driver",

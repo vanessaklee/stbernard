@@ -26,8 +26,8 @@ defmodule StbernardWeb.Hound do
   def end_sess(pid), do: Hound.end_session(pid)
   def end_sess(), do: Hound.end_session
 
-  def fill_in_valid_form() do
-    navigate_to("/")
+  def fill_in_valid_form(nav \\ true) do
+    if nav, do: navigate_to("/")
     find_element(:id, "payment_name") |> fill_field(Enum.random(C.valid_names()))
     find_element(:id, "payment_postal") |> fill_field(Enum.random(C.valid_postals()))
     find_element(:id, "payment_account") |> fill_field(Enum.random(C.valid_accounts()))
@@ -46,8 +46,10 @@ defmodule StbernardWeb.Hound do
       # ChromeDriver only supports characters in the BMP
       nil
     end
-    find_element(:id, "payment_submit") |> click()
+    submit()
   end
+
+  def submit(), do: find_element(:id, "payment_submit") |> click()
 
   def assert_alert(alert), do: element_displayed?(alert)
 
