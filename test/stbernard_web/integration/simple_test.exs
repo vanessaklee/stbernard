@@ -1,13 +1,15 @@
-defmodule StbernardWeb.LonestarSimpleTest do
+defmodule StbernardWeb.SimpleTest do
   @moduledoc """
   Tests for the landing page.
   """
   use ExUnit.Case
+  use Wallaby.DSL
 
   @doc """
   Page title should be present on landing page
   """
   @tag lonestar1: true
+  @tag codebeam1: true
   describe "landing" do
     test "Landing page loads correctly", _meta do
 
@@ -23,4 +25,5 @@ defmodule StbernardWeb.LonestarSimpleTest do
       assert Wallaby.Browser.page_title(session) == "St. Bernard Payments"
     end
   end
+
 end

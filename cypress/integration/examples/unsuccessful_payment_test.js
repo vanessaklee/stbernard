@@ -8,7 +8,7 @@ describe('Failed Payment Test', function () {
   })
 
   it('Submit a bad payment', function () {
-    cy.get('input#payment_name').type('Lonestar Elixir')
+    cy.get('input#payment_name').type('CodeBeam SF')
     cy.get('input#payment_account').type('mind your own business')
     cy.get('input#payment_postal').type('78704')
     cy.get('input#payment_cvv').type('123')

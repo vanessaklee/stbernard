@@ -1,4 +1,4 @@
-defmodule StbernardWeb.PropertyBased.LonestarSomeComplexityTest do
+defmodule StbernardWeb.PropertyBased.SomeComplexityTest do
   @moduledoc """
   Tests for the form submission, specifically the amount field
   """

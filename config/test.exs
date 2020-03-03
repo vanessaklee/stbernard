@@ -21,7 +21,7 @@ config :wallaby,
   chrome: [headless: false],
   max_wait_time: 5_000,
   screenshot_on_failure: true,
-  screenshot_dir: "/"
+  screenshot_dir: "test/stbernard_web/integration/screenshots"
 
 config :hound,
   driver: "chrome_driver",
