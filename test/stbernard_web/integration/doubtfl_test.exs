@@ -90,17 +90,15 @@ defmodule StbernardWeb.DoubtflTest do
           "Hound" => fn _session ->
             pid = change_session_to("unknown-submission")
             navigate_to("http://www.google.com")
-
             find_element(:name, "q") |> fill_field("browser tests")
-            find_element(:name, "btnK") |> click()
+            find_element(:xpath, ~s|//*[@id="tsf"]/div[2]/div[1]/div[3]/center/input[1]|) |> click()
+            # find_element(:name, "btnK") |> click()
+            # send_keys(:enter)
             assert text_visible?(find_element(:id, "result-stats"), ~r/results/)
-
             find_element(:xpath, ~s|//*[@id="rso"]|)
             assert text_visible?({:xpath, ~s|//*[@id="rso"]/div[1]/div/div[1]|}, ~r/browser/)
-
             results = find_all_elements(:xpath, ~s|//*[@class="g"]|)
-            assert Enum.count(results) > 10
-
+            assert Enum.count(results) >= 10
             Hound.Helpers.Session.end_session(pid)
           end,
           "Wallaby" => fn session ->
@@ -109,13 +107,10 @@ defmodule StbernardWeb.DoubtflTest do
             |> fill_in(text_field("q"), with: "browser tests")
             |> send_keys([:enter])
             |> assert_has(css("#rso", text: "results"))
-            |> find(css(".g", count: :any))
-            |> (fn list ->
-              assert Enum.count(list) > 10
-              list
-            end).()
-            |> List.first()
-            |> (fn first -> assert has_text?(first, "browser") end).()
+            |> find(css(".g", count: :any), fn(list) ->
+              assert Enum.count(list) >= 10
+              assert has_text?(List.first(list), "browser")
+            end)
           end},
           before_scenario: fn(_inputs) ->
             Hound.start_session()
@@ -125,8 +120,8 @@ defmodule StbernardWeb.DoubtflTest do
           after_scenario: fn(_return) ->
             Hound.end_session
           end,
-          time: 5,
-          memory_time: 5,
+          time: 30,
+          memory_time: 30,
           formatters: [
             {Console, extended_statistics: true},
             {HTML, file: "benchee_output/codebeam/doubtfl_" <> DateTime.to_string(DateTime.utc_now) <> ".html", auto_open: true}
