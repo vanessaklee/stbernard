@@ -13,7 +13,7 @@ defmodule StbernardWeb.SimpleformTest do
   Page title should be present on landing page
   """
   @tag lonestar2: true
-  @tag codebeam3: true
+  @tag codebeam2: true
   describe "landing" do
     test "Form filled with valid data succeeds", _meta do
       for _i <- 1..2 do
